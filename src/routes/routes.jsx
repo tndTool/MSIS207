@@ -2,14 +2,14 @@ import React from 'react';
 
 import { Route, Switch } from 'react-router-dom';
 
-import Home from '../pages/Home';
-import Top from '../pages/Top';
-import Outwear from '../pages/Outwear';
-import Bottom from '../pages/Bottom';
-import Accessories from '../pages/Accessories';
+import Home from '../pages/Home/Home';
+import Top from '../pages/Home/Top';
+import Outwear from '../pages/Home/Outwear';
+import Bottom from '../pages/Home/Bottom';
+import Accessories from '../pages/Home/Accessories';
 import Cart from '../pages/Cart';
 import Product from '../pages/Product';
-import Profile from '../pages/Profile';
+import Profile from '../pages/Profile/Profile';
 
 const Routes = () => {
     return (
