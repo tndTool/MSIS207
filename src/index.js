@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Layout from './layouts/Layout';
+
 import './assets/boxicons-2.0.7/css/boxicons.min.css';
 import './sass/index.scss';
 
-import Layout from './layouts/Layout';
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-ReactDOM.render(
+root.render(
     <React.StrictMode>
         <Layout />
     </React.StrictMode>,
-    document.getElementById('root'),
 );

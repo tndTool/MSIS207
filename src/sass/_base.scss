@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap');
 
+:root {
+    --primary: #fe2c55;
+    --black: black;
+    --white: #fff;
+    --text-color: #161823;
+
+    --default-layout-header-height: 65px;
+    --default-layout-width: 1150px;
+    --default-layout-horizontal-spacer: 24px;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -9,11 +20,48 @@
 }
 
 html {
-    font-size: 13px;
+    font-size: 62.5%;
 }
 
 body {
     font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    color: var(--text-color);
+
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        background-color: #333;
+        border: 1px solid black;
+    }
+
+    .tippy-arrow {
+        color: #333;
+    }
+
+    .tippy-content {
+        padding: 4px 9px;
+    }
+
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        top: -8px;
+    }
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
 }
 
 ul {
