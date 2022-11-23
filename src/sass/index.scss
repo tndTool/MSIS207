@@ -1,2 +1,5 @@
-@import './GlobalStyle.scss';
-@import './variables.scss';
+@import './variables';
+@import './mixins';
+@import './base';
+
+@import './components/header';
