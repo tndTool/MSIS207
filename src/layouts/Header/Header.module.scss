@@ -8,8 +8,10 @@
     background-color: #fff;
     box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
     display: flex;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    z-index: 99;
     width: 100%;
 }
 
