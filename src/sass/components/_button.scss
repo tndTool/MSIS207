@@ -1,13 +1,20 @@
 .btn {
     border: 0;
     outline: 0;
-    color: $btn-main-color;
+    color: black;
+    background-color: transparent;
+    border: 1px solid var(--black);
     font-size: 1.5rem;
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
     overflow: hidden;
     position: relative;
+
+    &:hover {
+        border-radius: 3px;
+        background-color: #ccc;
+    }
 
     @include mobile {
         font-size: 1rem;
