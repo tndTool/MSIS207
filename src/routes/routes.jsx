@@ -10,6 +10,7 @@ import Accessories from '../pages/Home/Accessories';
 import Cart from '../pages/Cart';
 import Product from '../pages/Product';
 import Profile from '../pages/Profile/Profile';
+import Login from '~/pages/Authen/Login';
 
 const Routes = () => {
     return (
@@ -28,6 +29,8 @@ const Routes = () => {
             <Route path="/profile" component={Profile} />
 
             <Route path="/cart" component={Cart} />
+
+            <Route path="/login" component={Login} />
         </Switch>
     );
 };

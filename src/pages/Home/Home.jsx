@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Helmet from '~/layouts/Main/Helmet';
-import HeroSlider from '~/layouts/Main/HeroSlider';
+import Helmet from '~/components/Main/Helmet';
+import HeroSlider from '~/components/Main/HeroSlider';
 
 const Home = () => {
     return <Helmet title="Home">{<HeroSlider />}</Helmet>;

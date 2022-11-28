@@ -1,14 +1,9 @@
 import React from 'react';
 
-import Helmet from '~/layouts/Main/Helmet';
-import HeroSlider from '~/layouts/Main/HeroSlider';
+import Helmet from '~/components/Main/Helmet';
 
 const Top = () => {
-    return (
-        <Helmet title="Top">
-            <HeroSlider />
-        </Helmet>
-    );
+    return <Helmet title="Top">Top</Helmet>;
 };
 
 export default Top;

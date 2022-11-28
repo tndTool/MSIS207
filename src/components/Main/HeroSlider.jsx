@@ -2,10 +2,11 @@ import React, { useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Button from '~/components/Button';
+import Button from './button';
+import heroSliderData from '~/assets/fake-data/hero-slider';
 
 const HeroSlider = (props) => {
-    const data = props.data;
+    const data = heroSliderData;
 
     const timeOut = props.timeOut ? props.timeOut : 3000;
 

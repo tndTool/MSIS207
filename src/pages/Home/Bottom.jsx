@@ -1,7 +1,8 @@
 import React from 'react';
+import Helmet from '~/components/Main/Helmet';
 
 const Bottom = () => {
-    return <div>Bottom</div>;
+    return <Helmet title="Bottoms"></Helmet>;
 };
 
 export default Bottom;

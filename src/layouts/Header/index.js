@@ -89,7 +89,7 @@ export default function Header() {
                     <img
                         width="200"
                         height="65"
-                        src="https://res.cloudinary.com/dcwka06ph/image/upload/v1669214170/Website_project/logo_kmoxb5.jpg"
+                        src="https://res.cloudinary.com/dcwka06ph/image/upload/v1669344948/Website_project/logo_mwaet4.jpg"
                         alt="Taturo's Shop"
                     />
                 </Link>
