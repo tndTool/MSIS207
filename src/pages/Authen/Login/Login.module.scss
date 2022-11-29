@@ -8,7 +8,7 @@ section {
     justify-content: center;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url('https://res.cloudinary.com/dcwka06ph/image/upload/v1669691338/Website_project/backgroung_login_oqy72s.jpg?fbclid=IwAR0dqoy_-5USAoHr9SRJk6okY_tvVZ0KqDD1TS0xO6C-GZrX2libhhAGniI');
+    background-image: url('https://w0.peakpx.com/wallpaper/564/875/HD-wallpaper-anime-city-shop.jpg?fbclid=IwAR3Gb9RDIOwX21DsbsbUapwCDQz3zfFMwUv-xc3ShvY6pRPHLdHWj7Yqts8');
 }
 
 .container {
@@ -51,9 +51,9 @@ section {
         width: 380px;
         height: 420px;
         background: #000;
+        animation-delay: -3s;
         transform-origin: bottom right;
         animation: anima 6s linear infinite;
-        animation-delay: -3s;
     }
     @keyframes anima {
         0% {

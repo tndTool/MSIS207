@@ -1,9 +1,14 @@
 section {
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+    align-items: center;
+    background-size: cover;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('https://w0.peakpx.com/wallpaper/564/875/HD-wallpaper-anime-city-shop.jpg?fbclid=IwAR3Gb9RDIOwX21DsbsbUapwCDQz3zfFMwUv-xc3ShvY6pRPHLdHWj7Yqts8');
 }
 section .color {
     position: absolute;
@@ -145,6 +150,7 @@ section .color:nth-child(9) {
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     overflow: hidden;
+    left: -350px;
 
     &::before {
         content: '';
@@ -153,7 +159,7 @@ section .color:nth-child(9) {
         left: -50%;
         width: 380px;
         height: 420px;
-        background: linear-gradient(0deg, aqua, purple, aqua);
+        background: linear-gradient(0deg, #333, purple, #333);
         transform-origin: bottom right;
         animation: anima 6s linear infinite;
     }
@@ -165,10 +171,10 @@ section .color:nth-child(9) {
         left: -50%;
         width: 380px;
         height: 420px;
-        background: linear-gradient(0deg, aqua, purple, aqua);
+        background: #000;
+        animation-delay: -3s;
         transform-origin: bottom right;
         animation: anima 6s linear infinite;
-        animation-delay: -3s;
     }
 
     @keyframes anima {
@@ -184,14 +190,14 @@ section .color:nth-child(9) {
 .form-register {
     position: absolute;
     inset: 2px;
-    background: linear-gradient(to left, #30cfd0, #c43ad6);
+    background: #fff;
     z-index: 10;
     padding: 50px 40px;
     display: flex;
     flex-direction: column;
 
     h2 {
-        color: #fff;
+        color: #333;
         font-weight: 500;
         text-align: center;
         letter-spacing: 0.1em;
@@ -210,7 +216,7 @@ section .color:nth-child(9) {
         background: transparent;
         border: none;
         outline: none;
-        color: purple;
+        color: #333;
         font-size: 1em;
         letter-spacing: 0.05em;
         z-index: 10;
@@ -221,7 +227,7 @@ section .color:nth-child(9) {
         left: 0;
         font-size: 1em;
         padding: 20px 0px 10px;
-        color: purple;
+        color: #333;
         pointer-events: none;
         letter-spacing: 0.05em;
         transition: 0.5s;
@@ -233,7 +239,7 @@ section .color:nth-child(9) {
         bottom: 0;
         width: 314px;
         height: 5px;
-        background: #45f3ff;
+        background: #ccc;
         border-radius: 4px;
         transition: 0.5s;
         pointer-events: none;
@@ -243,7 +249,7 @@ section .color:nth-child(9) {
 
 .form-register__inputBox input:valid ~ span,
 .form-register__inputBox input:focus ~ span {
-    color: #45f3ff;
+    color: #333;
     transform: translateX(0px) translateY(-34px);
     font-size: 0.75em;
 }
@@ -255,7 +261,7 @@ section .color:nth-child(9) {
 
 .form-register__links {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 
     span {
         position: relative;
@@ -265,7 +271,7 @@ section .color:nth-child(9) {
         margin: 5px 0;
         padding: 2px 0;
         background: transparent;
-        color: aqua;
+        color: #333;
         cursor: pointer;
         border-radius: 4px;
         font-weight: 500;
@@ -274,9 +280,11 @@ section .color:nth-child(9) {
         letter-spacing: 2px;
 
         &:hover {
-            background: aqua;
-            color: purple;
+            color: black;
             border-radius: 4px;
+            border: 1px solid #000;
+            background-color: #ccc;
+            padding: 0 5px;
         }
     }
 }
@@ -288,9 +296,9 @@ section .color:nth-child(9) {
     outline: none;
     margin: 5px 0;
     padding: 11px 25px;
-    border: 2px solid aqua;
+    border: 2px solid #333;
     background: transparent;
-    color: aqua;
+    color: #333;
     cursor: pointer;
     border-radius: 4px;
     font-weight: 500;
@@ -299,8 +307,8 @@ section .color:nth-child(9) {
     letter-spacing: 2px;
 }
 .form-register__btn span:hover {
-    background: aqua;
-    color: purple;
+    background: #ccc;
+    color: #000;
 }
 .form-register__btn span {
     position: relative;
