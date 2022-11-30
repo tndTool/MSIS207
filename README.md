@@ -1,4 +1,4 @@
-<h1 style="color:#0000;">A Blue Heading</h1>
+<h1 style="color:#000;">A Blue Heading</h1>
 # About project
 
 #### Siuuuuuuuuuuuu
