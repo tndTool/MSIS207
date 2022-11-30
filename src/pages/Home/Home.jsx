@@ -24,7 +24,7 @@ const Home = () => {
                 <SectionBody>
                     <Grid col={4} mdCol={2} smCol={1} gap={20}>
                         {policy.map((item, index) => (
-                            <Link key={index} to="/policy">
+                            <Link key={index} to="/">
                                 <Policy name={item.name} description={item.description} icon={item.icon} />
                             </Link>
                         ))}
@@ -55,7 +55,7 @@ const Home = () => {
             {/* End */}
 
             {/* New arrival */}
-            {/* <Section>
+            <Section>
                 <SectionTitle>sản phẩm mới</SectionTitle>
                 <SectionBody>
                     <Grid col={4} mdCol={2} smCol={1} gap={20}>
@@ -66,16 +66,17 @@ const Home = () => {
                                 img02={item.image02}
                                 name={item.title}
                                 price={Number(item.price)}
+                                path={item.path}
                                 slug={item.slug}
                             />
                         ))}
                     </Grid>
                 </SectionBody>
-            </Section> */}
+            </Section>
             {/* End*/}
 
             {/* Popular product*/}
-            {/* <Section>
+            <Section>
                 <SectionTitle>phổ biến</SectionTitle>
                 <SectionBody>
                     <Grid col={4} mdCol={2} smCol={1} gap={20}>
@@ -86,12 +87,13 @@ const Home = () => {
                                 img02={item.image02}
                                 name={item.title}
                                 price={Number(item.price)}
+                                path={item.path}
                                 slug={item.slug}
                             />
                         ))}
                     </Grid>
                 </SectionBody>
-            </Section> */}
+            </Section>
             {/* End  */}
         </Helmet>
     );

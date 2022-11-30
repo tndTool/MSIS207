@@ -9,7 +9,7 @@ const products = [
         categorySlug: 'ao-thun',
         colors: ['white', 'red', 'orange'],
         path: '/top',
-        slug: '/ao-thun-dinosaur-01',
+        slug: '/ao-thun',
         size: ['s', 'm', 'l', 'xl'],
     },
     {
@@ -22,7 +22,7 @@ const products = [
         categorySlug: 'ao-thun',
         colors: ['white', 'red', 'blue'],
         path: '/top',
-        slug: '/ao-thun-dinosaur-02',
+        slug: '/ao-thun',
         size: ['s', 'm', 'l', 'xl'],
     },
     {
@@ -35,7 +35,7 @@ const products = [
         categorySlug: 'ao-thun',
         colors: ['white', 'red', 'orange', 'yellow'],
         path: '/top',
-        slug: '/ao-thun-dinosaur-03',
+        slug: '/ao-thun',
         size: ['s', 'm', 'l', 'xl'],
     },
     {
@@ -48,7 +48,7 @@ const products = [
         categorySlug: 'ao-thun',
         colors: ['white', 'orange', 'blue'],
         path: '/top',
-        slug: '/ao-thun-polo-04',
+        slug: '/ao-thun',
         size: ['s', 'm', 'l', 'xl'],
     },
 ];
