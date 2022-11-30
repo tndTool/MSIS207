@@ -3,7 +3,7 @@
 </p>
 
 
-# Taturo's Shop website
+## About project
 
 #### Siuuuuuuuuuuuu
 
