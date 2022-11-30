@@ -33,3 +33,7 @@ demo-online: [link to website]
       + API Doc: http://localhost:3000/docs
       + API URL: http://localhost:4000/...
 
+## License
+
+Copyright 2022. Released under the MIT license.
+
