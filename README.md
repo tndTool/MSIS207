@@ -1,6 +1,6 @@
 
 # About project
-SIUUUUU
+SIUUUUU 😮😮😮
 
 ![logo web](https://res.cloudinary.com/dw8ilqth2/image/upload/v1669807030/logo_mwaet4_f0vgnl.png)
 ## Participants:
@@ -11,7 +11,7 @@ SIUUUUU
 
 ### Website
 Tech stack
-- Front-end: Reactjs
-- Back-end: Nodejs
+- Front-end: ⚛️Reactjs
+- Back-end: 💻Nodejs
 
 demo-online: [link to website]
