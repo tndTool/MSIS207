@@ -1,147 +1,90 @@
-section {
+.container {
     width: 100%;
     height: 100%;
     display: flex;
     min-height: 100vh;
     align-items: center;
     background-size: cover;
-    justify-content: center;
+    justify-content: space-around;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url('https://w0.peakpx.com/wallpaper/564/875/HD-wallpaper-anime-city-shop.jpg?fbclid=IwAR3Gb9RDIOwX21DsbsbUapwCDQz3zfFMwUv-xc3ShvY6pRPHLdHWj7Yqts8');
+    background-color: #ccc;
 }
-section .color {
+.container .color {
     position: absolute;
     filter: blur(150px);
 }
-section .color:nth-child(1) {
+.container .color:nth-child(1) {
     top: calc(100% - (100% / 3));
     left: 0;
     width: calc(100% / 3);
     height: calc(100% / 3);
     background: #c43ad6;
 }
-section .color:nth-child(2) {
+.container .color:nth-child(2) {
     bottom: calc(100% - (100% / 3));
     left: 0;
     width: calc(100% / 3);
     height: calc(100% / 3);
     background: #c43ad6;
 }
-section .color:nth-child(3) {
+.container .color:nth-child(3) {
     bottom: calc(100% / 3);
     left: 0;
     width: calc(100% / 3);
     height: calc(100% / 3);
     background: #6b6b83;
 }
-section .color:nth-child(4) {
+.container .color:nth-child(4) {
     top: calc(100% - (100% / 3));
     right: 0;
     width: calc(100% / 3);
     height: calc(100% / 3);
     background: #c43ad6;
 }
-section .color:nth-child(5) {
+.container .color:nth-child(5) {
     bottom: calc(100% - (100% / 3));
     right: 0;
     width: calc(100% / 3);
     height: calc(100% / 3);
     background: #c43ad6;
 }
-section .color:nth-child(6) {
+.container .color:nth-child(6) {
     bottom: calc(100% / 3);
     right: 0;
     width: calc(100% / 3);
     height: calc(100% / 3);
     background: #6b6b83;
 }
-section .color:nth-child(7) {
+.container .color:nth-child(7) {
     right: calc(100% / 3);
     bottom: calc(100% - (100% / 3));
     width: calc(100% / 3);
     height: calc(100% / 3);
     background: #6b6b83;
 }
-section .color:nth-child(8) {
+.container .color:nth-child(8) {
     right: calc(100% / 3);
     top: calc(100% / 3);
     width: calc(100% / 3);
     height: calc(100% / 3);
     background: #1bffff;
 }
-section .color:nth-child(9) {
+.container .color:nth-child(9) {
     right: calc(100% / 3);
     top: calc(100% - (100% / 3));
     width: calc(100% / 3);
     height: calc(100% / 3);
     background: #6b6b83;
 }
-.container {
-    position: relative;
-}
-.container .square {
-    position: absolute;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    background: linear-gradient(to left, #30cfd0, #c43ad6);
-    border-radius: 10px;
-    animation: animate 10s linear infinite;
-    animation-delay: calc(-1s * var(--i));
-}
-@keyframes animate {
-    0%,
-    100% {
-        transform: translateY(-40px);
-    }
-    50% {
-        transform: translateY(40px);
-    }
-}
-.container .square:nth-child(1) {
-    top: -50px;
-    right: -60px;
-    width: 100px;
-    height: 100px;
-}
-.container .square:nth-child(2) {
-    top: 150px;
-    left: -100px;
-    width: 120px;
-    height: 120px;
-    z-index: 2;
-}
-.container .square:nth-child(3) {
-    bottom: 50px;
-    right: -60px;
-    width: 80px;
-    height: 80px;
-    z-index: 2;
-}
-.container .square:nth-child(4) {
-    bottom: -80px;
-    left: 100px;
-    width: 50px;
-    height: 50px;
-}
-.container .square:nth-child(5) {
-    top: -80px;
-    left: 140px;
-    width: 60px;
-    height: 60px;
-}
 
 /* Start Form*/
-.box {
+.box1 {
     position: relative;
     min-width: 400px;
-    min-height: 500px;
+    min-height: 550px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    display: flex;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(5px);
@@ -150,7 +93,6 @@ section .color:nth-child(9) {
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     overflow: hidden;
-    left: -350px;
 
     &::before {
         content: '';
@@ -313,4 +255,11 @@ section .color:nth-child(9) {
 .form-register__btn span {
     position: relative;
     z-index: 100;
+}
+.box2 {
+    position: relative;
+    width: 50%;
+    min-width: 500px;
+    min-height: 550px;
+    background-image: url('https://xuongmaydongphuc.vn/images/detailed/95/mau-y-tuong-ao-phong__13_.jpg');
 }
