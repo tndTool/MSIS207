@@ -1,5 +1,5 @@
 
-# About project
+# About Project
 
 #### Siuuuuuuuuuuuu
 
@@ -13,7 +13,7 @@
 ### Website
 Tech stack
 - Front-end: ⚛️Reactjs
-- Back-end: 💻Nodejs
+- Back-end: 💻Nodejs + MongoDB
 
 Link website: taturoshop.online
 
