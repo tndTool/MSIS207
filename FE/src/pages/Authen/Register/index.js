@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 export default function Register() {
     return (
         <div className={cx('container')}>
-            <div className={cx('box1')}>
+            <div className={cx('box')}>
                 <div className={cx('form-register')}>
                     <h2>REGISTER</h2>
 
@@ -36,22 +36,18 @@ export default function Register() {
                     </div>
 
                     <div className={cx('form-register__links')}>
-                        <Link to="#">
-                            <span>Already account?</span>
-                        </Link>
                         <Link to="/login">
                             <span>LOGIN</span>
                         </Link>
                     </div>
 
                     <div className={cx('form-register__btn')}>
-                        <Link to="/">
+                        <Link to="#">
                             <span>SIGN UP</span>
                         </Link>
                     </div>
                 </div>
             </div>
-            <div className={cx('box2')}></div>
         </div>
     );
 }
