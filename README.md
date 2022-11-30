@@ -1,17 +1,23 @@
+<p align="center">
+  <img width="600" src="https://res.cloudinary.com/dxchkmler/image/upload/v1669826665/logo_mwaet4_id1fjm.png">
+</p>
+
+
 # About project
 
 #### Siuuuuuuuuuuuu
 
-![logo web](https://res.cloudinary.com/dw8ilqth2/image/upload/v1669810446/logo_mwaet4_llfiai.png)
 ## Participants:
-- Nguyễn Đức Toàn ( Leader )
-- Nguyễn Thanh
-- Trần Lương Tiến Sĩ
-- Nguyễn Thành Trung
 
-### Website
+* Nguyễn Đức Toàn ( Leader )
+* Nguyễn Thanh
+* Trần Lương Tiến Sĩ
+* Nguyễn Thành Trung
+
+## Website
+
 Tech stack
 - Front-end: ⚛️Reactjs
-- Back-end: 💻Nodejs
+- Back-end: 💻Nodejs + MongoDB
 
 demo-online: [link to website]
