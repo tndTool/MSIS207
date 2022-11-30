@@ -35,7 +35,7 @@ Tech stack
 
 =======
 
-Link website: [link to website]
+Link website: https://taturoshop.online
 
 ## Usage
 
