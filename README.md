@@ -3,7 +3,7 @@
 
 #### Siuuuuuuuuuuuu
 
-![logo web](https://res.cloudinary.com/dw8ilqth2/image/upload/v1669810188/logo_mwaet4_rm2f6c.png)
+![logo web](https://res.cloudinary.com/dw8ilqth2/image/upload/v1669810270/logo_mwaet4_eeffwp.png)
 ## Participants:
 - Nguyễn Đức Toàn ( Leader )
 - Nguyễn Thanh
