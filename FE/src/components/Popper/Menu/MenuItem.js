@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import Button from '~/components/Button';
+import Button from '~/components/ButtonHeader';
 import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
