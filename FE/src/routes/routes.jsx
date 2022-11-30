@@ -11,6 +11,7 @@ import Cart from '~/pages/Cart';
 import Product from '~/pages/Product';
 import Profile from '~/pages/Profile/Profile';
 import Login from '~/pages/Authen/Login';
+import Register from '~/pages/Authen/Register';
 
 const Routes = () => {
     return (
@@ -31,6 +32,7 @@ const Routes = () => {
             <Route path="/cart" component={Cart} />
 
             <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
         </Switch>
     );
 };

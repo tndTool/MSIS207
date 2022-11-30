@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import styles from './Register.module.scss';
