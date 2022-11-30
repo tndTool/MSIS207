@@ -1,8 +1,9 @@
 
 # About project
-SIUUUUU
 
-![logo web](https://res.cloudinary.com/dw8ilqth2/image/upload/v1669807030/logo_mwaet4_f0vgnl.png)
+#### Siuuuuuuuuuuuu
+
+![logo web](https://res.cloudinary.com/dw8ilqth2/image/upload/v1669810446/logo_mwaet4_llfiai.png)
 ## Participants:
 - Nguyễn Đức Toàn ( Leader )
 - Nguyễn Thanh
@@ -11,7 +12,7 @@ SIUUUUU
 
 ### Website
 Tech stack
-- Front-end: Reactjs
-- Back-end: Nodejs
+- Front-end: ⚛️Reactjs
+- Back-end: 💻Nodejs
 
 demo-online: [link to website]

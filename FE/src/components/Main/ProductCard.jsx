@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
-import Button from './Button';
+import Button from './button';
 
 import numberWithCommas from '~/utils/numberWithCommas';
 
