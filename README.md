@@ -3,10 +3,13 @@
   <img width="600" src="https://res.cloudinary.com/dxchkmler/image/upload/v1669827309/logo_mwaet4_rtfdjz.png">
 </p>
 
-[![Discord](https://img.shields.io/discord/823720615965622323.svg?style=for-the-badge)]()
-[![openupm](https://img.shields.io/npm/v/com.alelievr.mixture?label=openupm&registry_uri=https://package.openupm.com&style=for-the-badge)]()
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://github.com/l0ntdtn0l/Group13_MSIS207.N12.CTTT/blob/main/LICENSE.md)
-[![Documentation](https://img.shields.io/badge/Documentation-github-brightgreen.svg?style=for-the-badge)]()
+<p align="center">
+    <a href="https://github.com/badges/shields/graphs/contributors" alt="Contributors">
+        <img src="https://github.com/l0ntdtn0l/Group13_MSIS207.N12.CTTT/graphs/contributors" /></a>
+  
+    <a href="https://img.shields.io/librariesio/github/l0ntdtn0l/Group13_MSIS207.N12.CTTT" alt="Dependencies">
+      <img src="https://github.com/l0ntdtn0l/Group13_MSIS207.N12.CTTT/blob/main/FE/package.json" /></a>
+</p>
 
 
 ## About project
