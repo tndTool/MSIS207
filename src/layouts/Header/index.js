@@ -21,7 +21,7 @@ import 'tippy.js/dist/tippy.css';
 import HeadlessTippy from '@tippyjs/react/headless';
 
 // Components:
-import Button from '~/components/Button';
+import Button from '~/components/ButtonHeader';
 import Menu from '~/components/Popper/Menu';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { Link } from 'react-router-dom';
