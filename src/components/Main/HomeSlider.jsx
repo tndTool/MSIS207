@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Button from './button';
+import Button from './Button';
 
 const HeroSlider = (props) => {
     const data = props.data;
