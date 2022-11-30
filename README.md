@@ -21,3 +21,15 @@ Tech stack
 - Back-end: 💻Nodejs + MongoDB
 
 demo-online: [link to website]
+
+## Usage
+
+- open ```cmd``` program
+- go to project folder
+- type "npm install" to install dependencies
+- type "npm run debug" to execute the api server
+- type "npm run genAPIDoc" to generate the apidoc documents
+- to check the result: open web browser
+      + API Doc: http://localhost:5000/docs
+      + API URL: http://localhost:5000/...
+
