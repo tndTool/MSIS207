@@ -1,0 +1,36 @@
+.my-account-header {
+    position: relative;
+    background-color: #f7f7f7;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+    box-sizing: border-box;
+}
+.page-title-inner {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    padding-top: 0px;
+    min-height: 60px;
+    padding: 0 40px;
+    background: #eee;
+}
+.flex-col {
+    max-height: 100%;
+}
+.uppercase {
+    margin-bottom: 0;
+    color: #f05023;
+    text-align: left;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-size: 1.7em;
+}
+.uppercase1 {
+    font-size: 80%;
+    display: inline-block;
+    color: #777777;
+}
+//hehee
+.page-wrapper {
+}
