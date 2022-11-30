@@ -7,8 +7,8 @@
         <img src="https://img.shields.io/github/contributors/badges/shields" /></a>
     <a href="https://github.com/l0ntdtn0l/Group13_MSIS207.N12.CTTT/blob/main/FE/package.json" alt="Dependencies">
       <img src="https://img.shields.io/librariesio/github/l0ntdtn0l/Group13_MSIS207.N12.CTTT" /></a>
-    <a href="https://discord.gg/HjJCwm5">
-      <img src="#" alt="chat on Discord"></a>
+    <a href="#">
+      <img src="https://img.shields.io/discord/308323056592486420?logo=discord" alt="chat on Discord"></a>
      <a href="https://github.com/l0ntdtn0l/Group13_MSIS207.N12.CTTT/pulse" alt="Activity">
        <img src="https://img.shields.io/github/commit-activity/m/badges/shields" /></a>
 </p>
