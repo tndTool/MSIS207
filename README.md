@@ -15,4 +15,4 @@ Tech stack
 - Front-end: ⚛️Reactjs
 - Back-end: 💻Nodejs
 
-demo-online: [link to website]
+Link website: taturoshop.online     Developing...
