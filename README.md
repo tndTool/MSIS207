@@ -15,4 +15,5 @@ Tech stack
 - Front-end: ⚛️Reactjs
 - Back-end: 💻Nodejs
 
-Link website: taturoshop.online     Developing...
+Link website: taturoshop.online
+
