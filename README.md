@@ -5,7 +5,7 @@
 
 [![Discord](https://img.shields.io/discord/823720615965622323.svg?style=for-the-badge)]()
 [![openupm](https://img.shields.io/npm/v/com.alelievr.mixture?label=openupm&registry_uri=https://package.openupm.com&style=for-the-badge)]()
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://github.com/alelievr/Mixture/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://github.com/l0ntdtn0l/Group13_MSIS207.N12.CTTT/blob/main/LICENSE.md)
 [![Documentation](https://img.shields.io/badge/Documentation-github-brightgreen.svg?style=for-the-badge)]()
 
 
