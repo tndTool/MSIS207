@@ -27,7 +27,7 @@ demo-online: [link to website]
 1. open ```cmd``` program
 2. go to project folder
 3. type ```npm install``` to install dependencies
-4. type ```npm run debug``` to execute the api server
+4. type ```npm start``` to execute the api server
 5. type ```npm run genAPIDoc``` to generate the apidoc documents
 6. to check the result: open web browser
       + API Doc: http://localhost:3000/docs
