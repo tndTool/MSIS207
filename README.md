@@ -1,8 +1,9 @@
 
 # About project
+
 #### Siuuu
 
-![logo web](https://res.cloudinary.com/dw8ilqth2/image/upload/v1669807030/logo_mwaet4_f0vgnl.png)
+![logo web](https://res.cloudinary.com/dw8ilqth2/image/upload/v1669809612/logo_mwaet4_njkowh.png)
 ## Participants:
 - Nguyễn Đức Toàn ( Leader )
 - Nguyễn Thanh
