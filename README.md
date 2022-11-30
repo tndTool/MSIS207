@@ -1,4 +1,3 @@
-<h1 style="color:#000;">A Blue Heading</h1>
 # About project
 
 #### Siuuuuuuuuuuuu
