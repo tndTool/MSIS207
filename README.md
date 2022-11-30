@@ -1,4 +1,3 @@
-
 <p align="center">
   <img width="600" src="https://res.cloudinary.com/dxchkmler/image/upload/v1669827309/logo_mwaet4_rtfdjz.png">
 </p>
@@ -17,11 +16,11 @@
         <img src="https://img.shields.io/github/repo-size/l0ntdtn0l/Group13_MSIS207.N12.CTTT" /></a>
 </p>
 
-## About project
+## About Project
 
 #### Siuuuuuuuuuuuu
 
-## Participants:
+## Participants
 
 * Nguyễn Đức Toàn ( Leader )
 * Nguyễn Thanh
@@ -34,7 +33,9 @@ Tech stack
 - Front-end: ⚛️Reactjs
 - Back-end: 💻Nodejs + MongoDB
 
-demo-online: [link to website]
+=======
+
+Link website: [link to website]
 
 ## Usage
 
@@ -50,4 +51,3 @@ demo-online: [link to website]
 ## License
 
 Copyright 2022. Released under the MIT license.
-
