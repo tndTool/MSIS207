@@ -12,13 +12,17 @@ const Layout = () => {
             <Route
                 render={(props) => (
                     <div>
-                        <Header {...props} />
+                        {props.location.pathname !== '/login' && props.location.pathname !== '/register' ? (
+                            <Header />
+                        ) : null}
                         <div className="container">
                             <div className="main">
                                 <Routes />
                             </div>
                         </div>
-                        <Footer />
+                        {props.location.pathname !== '/login' && props.location.pathname !== '/register' ? (
+                            <Footer />
+                        ) : null}
                     </div>
                 )}
             />

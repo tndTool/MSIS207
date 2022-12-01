@@ -2,13 +2,12 @@ import React, { useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Button from './button';
-import heroSliderData from '~/assets/fake-data/hero-slider';
+import Button from './Button';
 
 const HeroSlider = (props) => {
-    const data = heroSliderData;
+    const data = props.data;
 
-    const timeOut = props.timeOut ? props.timeOut : 3000;
+    const timeOut = props.timeOut ? props.timeOut : 5000;
 
     const [activeSlide, setActiveSlide] = useState(0);
 
