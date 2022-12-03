@@ -94,8 +94,8 @@ export default function Header() {
                     />
                 </Link>
 
-                <div className="actions">
-                    <Button primary to="/top">
+                <div className={cx('actions')}>
+                    <Button primary to="/top" className="">
                         Top
                     </Button>
                     <Button primary to="/outwear">
@@ -135,7 +135,7 @@ export default function Header() {
                     </div>
                 </HeadlessTippy>
 
-                <div className={cx('actions')}>
+                <div className={cx('actionss')}>
                     {currentUser ? (
                         <>
                             <Menu items={userMenu} delay={[0, 0]}>
@@ -153,7 +153,6 @@ export default function Header() {
                         </Button>
                     )}
                 </div>
-
                 <Tippy delay={[0, 100]} content="Cart" placement="bottom">
                     <div className={cx('actions')}>
                         <Button primary to="/cart">

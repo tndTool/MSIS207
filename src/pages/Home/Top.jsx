@@ -10,7 +10,7 @@ import top_category from '~/assets/fake-data/top_category';
 import colors from '~/assets/fake-data/products-color';
 import size from '~/assets/fake-data/products-size';
 
-const Catalog = () => {
+const Top = () => {
     const initFilter = {
         category: [],
         color: [],
@@ -92,14 +92,14 @@ const Catalog = () => {
 
     return (
         <Helmet title="Top">
-            <div className="top">
-                <div className="top__filter" ref={filterRef}>
-                    <div className="top__filter__close" onClick={() => showHideFilter()}>
+            <div className="category">
+                <div className="category__filter" ref={filterRef}>
+                    <div className="category__filter__close" onClick={() => showHideFilter()}>
                         <i className="bx bx-left-arrow-alt"></i>
                     </div>
-                    <div className="top__filter__widget">
-                        <div className="top__filter__widget__title">danh mục sản phẩm</div>
-                        <div className="top__filter__widget__content">
+                    <div className="category__filter__widget">
+                        <div className="category__filter__widget__title">danh mục sản phẩm</div>
+                        <div className="category__filter__widget__content">
                             {top_category.map((item, index) => (
                                 <div key={index} className="top__filter__widget__content__item">
                                     <CheckBox
@@ -112,11 +112,11 @@ const Catalog = () => {
                         </div>
                     </div>
 
-                    <div className="top__filter__widget">
-                        <div className="top__filter__widget__title">màu sắc</div>
-                        <div className="top__filter__widget__content">
+                    <div className="category__filter__widget">
+                        <div className="category__filter__widget__title">màu sắc</div>
+                        <div className="category__filter__widget__content">
                             {colors.map((item, index) => (
-                                <div key={index} className="top__filter__widget__content__item">
+                                <div key={index} className="category__filter__widget__content__item">
                                     <CheckBox
                                         label={item.display}
                                         onChange={(input) => filterSelect('COLOR', input.checked, item)}
@@ -127,11 +127,11 @@ const Catalog = () => {
                         </div>
                     </div>
 
-                    <div className="top__filter__widget">
-                        <div className="top__filter__widget__title">kích cỡ</div>
-                        <div className="top__filter__widget__content">
+                    <div className="category__filter__widget">
+                        <div className="category__filter__widget__title">kích cỡ</div>
+                        <div className="category__filter__widget__content">
                             {size.map((item, index) => (
-                                <div key={index} className="top__filter__widget__content__item">
+                                <div key={index} className="category__filter__widget__content__item">
                                     <CheckBox
                                         label={item.display}
                                         onChange={(input) => filterSelect('SIZE', input.checked, item)}
@@ -142,20 +142,20 @@ const Catalog = () => {
                         </div>
                     </div>
 
-                    <div className="top__filter__widget">
-                        <div className="top__filter__widget__content">
+                    <div className="category__filter__widget">
+                        <div className="category__filter__widget__content">
                             <Button size="sm" onClick={clearFilter}>
                                 xóa bộ lọc
                             </Button>
                         </div>
                     </div>
                 </div>
-                <div className="top__filter__toggle">
+                <div className="category__filter__toggle">
                     <Button size="sm" onClick={() => showHideFilter()}>
                         bộ lọc
                     </Button>
                 </div>
-                <div className="top__content">
+                <div className="category__content">
                     <InfinityList data={products} />
                 </div>
             </div>
@@ -163,4 +163,4 @@ const Catalog = () => {
     );
 };
 
-export default Catalog;
+export default Top;

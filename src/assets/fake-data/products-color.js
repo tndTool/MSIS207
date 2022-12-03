@@ -23,6 +23,10 @@ const colors = [
         display: 'Nâu',
         color: 'brown',
     },
+    {
+        display: 'Beige',
+        color: 'be',
+    },
 ];
 
 export default colors;

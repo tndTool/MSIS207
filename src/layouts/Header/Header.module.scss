@@ -13,6 +13,7 @@
     left: 0;
     z-index: 99;
     width: 100%;
+    transition: height 0.3s ease;
 }
 
 .inner {
@@ -131,5 +132,25 @@
         border-color: #000;
         background: #ccc;
         color: #000;
+    }
+}
+
+@media (max-width: 739px) {
+    .search {
+        display: none;
+    }
+
+    .user-btn {
+        display: none;
+    }
+
+    .wrapper {
+        padding: 40px;
+    }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .search {
+        display: none;
     }
 }

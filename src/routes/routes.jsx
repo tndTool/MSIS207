@@ -11,29 +11,31 @@ import Outwear from '~/pages/Home/Outwear';
 import Bottom from '~/pages/Home/Bottom';
 import Accessories from '~/pages/Home/Accessories';
 
-import productTop from '~/pages/productTop';
+import Profile from '~/pages/Profile/Profile';
 
 import Cart from '~/pages/Cart';
 
-import Profile from '~/pages/Profile/Profile';
+import ProductOutwear from '~/pages/Products/productOutwear';
+import productTop from '~/pages/Products/productTop';
 
 const Routes = () => {
     return (
         <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+
             <Route path="/" exact component={Home} />
             <Route path="/top" component={Top} />
             <Route path="/outwear" component={Outwear} />
             <Route path="/bottoms" component={Bottom} />
             <Route path="/accessories" component={Accessories} />
 
-            <Route path="/:slug" component={productTop} />
-
             <Route path="/profile" component={Profile} />
 
             <Route path="/cart" component={Cart} />
 
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
+            <Route path="/:slug" component={ProductOutwear} />
+            <Route path="/:slug" component={productTop} />
         </Switch>
     );
 };
