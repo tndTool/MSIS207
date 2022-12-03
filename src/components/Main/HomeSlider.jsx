@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Button from './Button';
 
-const HeroSlider = (props) => {
+const HomeSlider = (props) => {
     const data = props.data;
 
     const timeOut = props.timeOut ? props.timeOut : 5000;
@@ -35,7 +35,7 @@ const HeroSlider = (props) => {
     return (
         <div className="hero-slider">
             {data.map((item, index) => (
-                <HeroSliderItem key={index} item={item} active={index === activeSlide} />
+                <HomeSliderItem key={index} item={item} active={index === activeSlide} />
             ))}
             {props.control ? (
                 <div className="hero-slider__control">
@@ -56,14 +56,14 @@ const HeroSlider = (props) => {
     );
 };
 
-HeroSlider.propTypes = {
+HomeSlider.propTypes = {
     data: PropTypes.array.isRequired,
     control: PropTypes.bool,
     auto: PropTypes.bool,
     timeOut: PropTypes.number,
 };
 
-const HeroSliderItem = (props) => (
+const HomeSliderItem = (props) => (
     <div className={`hero-slider__item ${props.active ? 'active' : ''}`}>
         <div className="hero-slider__item__info">
             <div className={`hero-slider__item__info__title color-${props.item.color}`}>
@@ -87,4 +87,4 @@ const HeroSliderItem = (props) => (
     </div>
 );
 
-export default HeroSlider;
+export default HomeSlider;
