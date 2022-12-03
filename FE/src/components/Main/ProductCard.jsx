@@ -10,7 +10,7 @@ import numberWithCommas from '~/utils/numberWithCommas';
 const ProductCard = (props) => {
     return (
         <div className="product-card">
-            <Link to={`${props.path}${props.slug}`}>
+            <Link to={`/${props.slug}`}>
                 <div className="product-card__image">
                     <img src={props.img01} alt="img01" />
                     <img src={props.img02} alt="img02" />
@@ -37,7 +37,6 @@ ProductCard.propTypes = {
     img02: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    path: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
 };
 
