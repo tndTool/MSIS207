@@ -6,7 +6,7 @@ import Button from '~/components/Main/Button';
 import InfinityList from '~/components/Main/InfinityList';
 
 import productData from '~/assets/fake-data/products';
-import accessories_category from '~/assets/fake-data/accessories_category';
+import categoryData from '~/assets/fake-data/category';
 import colors from '~/assets/fake-data/products-color';
 import size from '~/assets/fake-data/products-size';
 
@@ -18,6 +18,8 @@ const Accessories = () => {
     };
 
     const productList = productData.getAllAccessoriesProducts();
+
+    const categoryList = categoryData.getAccessoriesCategory();
 
     const [products, setProducts] = useState(productList);
 
@@ -100,7 +102,7 @@ const Accessories = () => {
                     <div className="category__filter__widget">
                         <div className="category__filter__widget__title">danh mục sản phẩm</div>
                         <div className="category__filter__widget__content">
-                            {accessories_category.map((item, index) => (
+                            {categoryList.map((item, index) => (
                                 <div key={index} className="top__filter__widget__content__item">
                                     <CheckBox
                                         label={item.display}
