@@ -76,3 +76,9 @@
         color: #adadad;
     }
 }
+
+@media (max-width: 739px) {
+    .wrapper {
+        display: none;
+    }
+}

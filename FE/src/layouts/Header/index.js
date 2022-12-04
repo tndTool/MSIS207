@@ -94,7 +94,7 @@ export default function Header() {
                     />
                 </Link>
 
-                <div className="actions">
+                <div className={cx('actions')}>
                     <Button primary to="/top">
                         Top
                     </Button>

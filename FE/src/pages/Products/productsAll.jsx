@@ -6,12 +6,12 @@ import Grid from '~/components/Main/Grid';
 import ProductCard from '~/components/Main/ProductCard';
 import ProductView from '~/components/Main/ProductView';
 
-import top_productData from '~/assets/fake-data/top_products';
+import productData from '~/assets/fake-data/products';
 
-const ProductTop = (props) => {
-    const product = top_productData.getProductBySlug(props.match.params.slug);
+const ProductsAll = (props) => {
+    const product = productData.getProductBySlug(props.match.params.slug);
 
-    const relatedProducts = top_productData.getProducts(4);
+    const relatedProducts = productData.getProducts(4);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -46,4 +46,4 @@ const ProductTop = (props) => {
     );
 };
 
-export default ProductTop;
+export default ProductsAll;

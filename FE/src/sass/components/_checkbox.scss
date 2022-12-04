@@ -4,7 +4,7 @@
     cursor: pointer;
 
     &:hover {
-        color: $main-color;
+        color: var(--black);
     }
 
     input {
@@ -28,8 +28,8 @@
     }
 
     input:checked ~ &__checkmark {
-        background-color: $main-color;
-        border: 1px solid $main-color;
+        background-color: var(--black);
+        border: 1px solid var(--black);
         color: $txt-white;
     }
 

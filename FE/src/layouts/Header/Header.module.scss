@@ -133,3 +133,33 @@
         color: #000;
     }
 }
+
+@media (max-width: 739px) {
+    .search {
+        display: none;
+    }
+
+    .user-btn {
+        display: none;
+    }
+
+    .wrapper {
+        padding: 40px;
+    }
+    .inner {
+        img {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .search {
+        display: none;
+    }
+    .inner {
+        img {
+            display: none;
+        }
+    }
+}
