@@ -10,7 +10,7 @@ import Grid from '~/components/Main/Grid';
 
 import homeSliderData from '~/assets/fake-data/home-slider';
 import policy from '~/assets/fake-data/policy';
-import top_productData from '~/assets/fake-data/top_products';
+import productData from '~/assets/fake-data/products';
 
 const Home = () => {
     return (
@@ -38,7 +38,7 @@ const Home = () => {
                 <SectionTitle>top sản phẩm bán chạy trong tuần</SectionTitle>
                 <SectionBody>
                     <Grid col={4} mdCol={2} smCol={1} gap={20}>
-                        {top_productData.getProducts(4).map((item, index) => (
+                        {productData.getProducts(4).map((item, index) => (
                             <ProductCard
                                 key={index}
                                 img01={item.image01}
@@ -58,7 +58,7 @@ const Home = () => {
                 <SectionTitle>sản phẩm mới</SectionTitle>
                 <SectionBody>
                     <Grid col={4} mdCol={2} smCol={1} gap={20}>
-                        {top_productData.getProducts(4).map((item, index) => (
+                        {productData.getProducts(4).map((item, index) => (
                             <ProductCard
                                 key={index}
                                 img01={item.image01}
@@ -78,7 +78,7 @@ const Home = () => {
                 <SectionTitle>phổ biến</SectionTitle>
                 <SectionBody>
                     <Grid col={4} mdCol={2} smCol={1} gap={20}>
-                        {top_productData.getProducts(4).map((item, index) => (
+                        {productData.getProducts(4).map((item, index) => (
                             <ProductCard
                                 key={index}
                                 img01={item.image01}
@@ -91,7 +91,7 @@ const Home = () => {
                     </Grid>
                 </SectionBody>
             </Section>
-            {/* End test */}
+            {/* End */}
         </Helmet>
     );
 };

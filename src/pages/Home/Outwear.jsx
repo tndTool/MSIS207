@@ -5,7 +5,7 @@ import CheckBox from '~/components/Main/CheckBox';
 import Button from '~/components/Main/Button';
 import InfinityList from '~/components/Main/InfinityList';
 
-import outwear_productData from '~/assets/fake-data/outwear_products';
+import productData from '~/assets/fake-data/products';
 import outwear_category from '~/assets/fake-data/outwear_category';
 import colors from '~/assets/fake-data/products-color';
 import size from '~/assets/fake-data/products-size';
@@ -17,7 +17,7 @@ const Outwear = () => {
         size: [],
     };
 
-    const productList = outwear_productData.getAllProducts();
+    const productList = productData.getAllOutwearProducts();
 
     const [products, setProducts] = useState(productList);
 

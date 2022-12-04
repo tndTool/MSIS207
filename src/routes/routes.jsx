@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Route, Switch } from 'react-router-dom';
 
 import Login from '~/pages/Authen/Login';
@@ -8,15 +7,14 @@ import Register from '~/pages/Authen/Register';
 import Home from '~/pages/Home/Home';
 import Top from '~/pages/Home/Top';
 import Outwear from '~/pages/Home/Outwear';
-import Bottom from '~/pages/Home/Bottom';
+import Bottom from '~/pages/Home/Bottoms';
 import Accessories from '~/pages/Home/Accessories';
 
 import Profile from '~/pages/Profile/Profile';
 
 import Cart from '~/pages/Cart';
 
-import ProductOutwear from '~/pages/Products/productOutwear';
-import productTop from '~/pages/Products/productTop';
+import ProductsAll from '~/pages/Products/productsAll';
 
 const Routes = () => {
     return (
@@ -34,10 +32,8 @@ const Routes = () => {
 
             <Route path="/cart" component={Cart} />
 
-            <Route path="/:slug" component={ProductOutwear} />
-            <Route path="/:slug" component={productTop} />
+            <Route path="/:slug" component={ProductsAll} />
         </Switch>
     );
 };
-
 export default Routes;

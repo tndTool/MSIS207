@@ -6,18 +6,18 @@ import Button from '~/components/Main/Button';
 import InfinityList from '~/components/Main/InfinityList';
 
 import productData from '~/assets/fake-data/products';
-import top_category from '~/assets/fake-data/top_category';
+import bottoms_category from '~/assets/fake-data/bottoms_category';
 import colors from '~/assets/fake-data/products-color';
 import size from '~/assets/fake-data/products-size';
 
-const Top = () => {
+const Bottoms = () => {
     const initFilter = {
         category: [],
         color: [],
         size: [],
     };
 
-    const productList = productData.getAllTopProducts();
+    const productList = productData.getAllBottomsProducts();
 
     const [products, setProducts] = useState(productList);
 
@@ -91,7 +91,7 @@ const Top = () => {
     const showHideFilter = () => filterRef.current.classList.toggle('active');
 
     return (
-        <Helmet title="Top">
+        <Helmet title="Bottoms">
             <div className="category">
                 <div className="category__filter" ref={filterRef}>
                     <div className="category__filter__close" onClick={() => showHideFilter()}>
@@ -100,7 +100,7 @@ const Top = () => {
                     <div className="category__filter__widget">
                         <div className="category__filter__widget__title">danh mục sản phẩm</div>
                         <div className="category__filter__widget__content">
-                            {top_category.map((item, index) => (
+                            {bottoms_category.map((item, index) => (
                                 <div key={index} className="top__filter__widget__content__item">
                                     <CheckBox
                                         label={item.display}
@@ -163,4 +163,4 @@ const Top = () => {
     );
 };
 
-export default Top;
+export default Bottoms;

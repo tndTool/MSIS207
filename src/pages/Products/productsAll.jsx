@@ -6,12 +6,12 @@ import Grid from '~/components/Main/Grid';
 import ProductCard from '~/components/Main/ProductCard';
 import ProductView from '~/components/Main/ProductView';
 
-import outwear_productData from '~/assets/fake-data/outwear_products';
+import productData from '~/assets/fake-data/products';
 
-const ProductOutwear = (props) => {
-    const product = outwear_productData.getProductBySlug(props.match.params.slug);
+const ProductsAll = (props) => {
+    const product = productData.getProductBySlug(props.match.params.slug);
 
-    const relatedProducts = outwear_productData.getProducts(4);
+    const relatedProducts = productData.getProducts(4);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -46,4 +46,4 @@ const ProductOutwear = (props) => {
     );
 };
 
-export default ProductOutwear;
+export default ProductsAll;
