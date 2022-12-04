@@ -78,7 +78,13 @@
 }
 
 @media (max-width: 739px) {
-    .wrapper {
+    .footer_content {
+        display: none;
+    }
+    .inner {
+        height: 380px;
+    }
+    .footer-p {
         display: none;
     }
 }
