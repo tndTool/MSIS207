@@ -102,7 +102,7 @@ const Top = () => {
                     <div className="category__filter__widget">
                         <div className="category__filter__widget__title">danh mục sản phẩm</div>
                         <div className="category__filter__widget__content">
-                            {categoryList.getTopCategory.map((item, index) => (
+                            {categoryList.map((item, index) => (
                                 <div key={index} className="top__filter__widget__content__item">
                                     <CheckBox
                                         label={item.display}
