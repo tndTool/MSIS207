@@ -11,7 +11,7 @@ export default function Footer() {
     return (
         <footer className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('footer_content')}>
+                <div className={cx('footer_content1')}>
                     <h3 className={cx('footer__heading')}>
                         <h2>
                             <b>TATURO'S SHOP</b>
