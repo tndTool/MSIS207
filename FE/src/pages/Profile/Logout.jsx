@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Helmet from '~/components/Main/Helmet';
 import ProfileSide from '~/components/Main/ProfileSide';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,7 +8,7 @@ import { faHandPointLeft, faHandPointRight } from '@fortawesome/free-solid-svg-i
 
 const Logout = () => {
     return (
-        <>
+        <Helmet title="Account">
             <div className="header-title">
                 <h2>Tài khoản</h2>
             </div>
@@ -33,7 +34,7 @@ const Logout = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </Helmet>
     );
 };
 

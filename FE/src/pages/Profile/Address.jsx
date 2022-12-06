@@ -1,9 +1,10 @@
 import React from 'react';
+import Helmet from '~/components/Main/Helmet';
 import ProfileSide from '~/components/Main/ProfileSide';
 
 const Address = () => {
     return (
-        <>
+        <Helmet title="Account">
             <div className="header-title">
                 <h2>Tài khoản</h2>
             </div>
@@ -19,7 +20,7 @@ const Address = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </Helmet>
     );
 };
 
