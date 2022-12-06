@@ -10,6 +10,19 @@ import numberWithCommas from '~/utils/numberWithCommas';
 const ProductView = (props) => {
     let product = props.product;
 
+    if (product === undefined)
+        product = {
+            title: '',
+            price: '',
+            image01: null,
+            image02: null,
+            categorySlug: '',
+            colors: [],
+            slug: '',
+            size: [],
+            description: '',
+        };
+
     const [previewImg, setPreviewImg] = useState(product.image01);
 
     const [descriptionExpand, setDescriptionExpand] = useState(false);

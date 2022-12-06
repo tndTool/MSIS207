@@ -5,6 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 
 import Routes from '../routes/routes';
+import ProductViewModal from '~/components/Main/ProductViewModal';
 
 const Layout = () => {
     return (
@@ -23,6 +24,9 @@ const Layout = () => {
                         {props.location.pathname !== '/login' && props.location.pathname !== '/register' ? (
                             <Footer />
                         ) : null}
+
+                        <ProductViewModal />
+                        
                     </div>
                 )}
             />

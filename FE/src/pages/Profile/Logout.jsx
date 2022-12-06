@@ -4,7 +4,7 @@ import Helmet from '~/components/Main/Helmet';
 import ProfileSide from '~/components/Main/ProfileSide';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHandPointLeft, faHandPointRight } from '@fortawesome/free-solid-svg-icons';
+import { faHandPointLeft, faHandPointRight } from '@fortawesome/free-regular-svg-icons';
 
 const Logout = () => {
     return (
@@ -22,12 +22,14 @@ const Logout = () => {
                         <p>
                             Bạn có chắc chắn muốn đăng xuất không?
                             <Link to="/login">
-                                <span>
-                                    <FontAwesomeIcon icon={faHandPointRight} />
-
-                                Xác nhận và đăng xuất
-
-                                    <FontAwesomeIcon icon={faHandPointLeft} />
+                            <span>
+                                    <span>
+                                        <FontAwesomeIcon icon={faHandPointRight} />
+                                    </span>
+                                    <span>Xác nhận và đăng xuất</span>
+                                    <span>
+                                        <FontAwesomeIcon icon={faHandPointLeft} />
+                                    </span>
                                 </span>
                             </Link>
                         </p>

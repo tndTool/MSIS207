@@ -322,8 +322,12 @@
 
                 @include mobile {
                     padding: 20px 0;
-                    display: block;
+                    display: inline-block;
                 }
+            }
+
+            span ~ span {
+                margin-left: 0;
             }
         }
     }
