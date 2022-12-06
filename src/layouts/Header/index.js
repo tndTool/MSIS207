@@ -59,7 +59,7 @@ export default function Header() {
 
         {
             title: 'LOG OUT',
-            to: '/login',
+            to: '/profile/logout',
             separate: true,
         },
     ];
