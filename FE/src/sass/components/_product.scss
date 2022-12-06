@@ -34,14 +34,14 @@
 
         &__main {
             flex-grow: 1;
-            padding-top: 100%;
+            padding-top: 80%;
             position: relative;
 
             img {
                 position: absolute;
                 top: 0;
                 left: 50%;
-                height: 70%;
+                height: 90%;
                 transform: translateX(-50%);
             }
         }
