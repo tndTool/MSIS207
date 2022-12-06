@@ -28,7 +28,7 @@ const Points = () => {
                                 <tr>
                                     <td>Points nhận được khi mua hàng</td>
                                     <td>07/12/2021</td>
-                                    <td>+3</td>
+                                    <td>+5</td>
                                 </tr>
                             </tbody>
                         </table>
