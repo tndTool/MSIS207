@@ -19,7 +19,8 @@ import Address from '~/pages/Profile/Address';
 import Account from '~/pages/Profile/Account';
 import Logout from '~/pages/Profile/Logout';
 
-import Cart from '~/pages/Cart';
+import Checkout from '~/pages/Pay/Checkout';
+import Cart from '~/pages/Pay/Cart';
 
 import ProductsAll from '~/pages/Products/productsAll';
 
@@ -44,6 +45,7 @@ const Routes = () => {
             <Route path="/profile/orders" component={Orders} />
             <Route path="/profile" component={Profile} />
 
+            <Route path="/checkout" component={Checkout} />
             <Route path="/cart" component={Cart} />
 
             <Route path="/:slug" component={ProductsAll} />
