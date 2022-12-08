@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; 
+    font-size: 10px;
+    color: #999999;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #52b9ce, #548bcf);
+}
+.container{
+    max-width: 1000px;
+    width: 370px;
+    background-color: #fff;
+    padding: 40px 40px;
+    border-radius: 2px;
+}
+.container .title{
+    display: flex;
+    font-size: 19px;
+    font-weight: bold;
+    color: #646262;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.container .des{
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 11px;
+}
+.container form .user-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+form .user-details .input-box{
+    margin: 10px 0px 0px 0px;
+}
+.user-details .input-box .details{
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.user-details .input-box input{
+    height: 30px;
+    width: 100%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #8e8989;
+    padding-left: 7px;
+    transition: all 0.3s ease;
+
+}
+.user-details .button input{
+    width: 25%;
+    height: 35px;
+    background-color: #52b9ce;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    margin: auto;
+    margin: 30px 0px 0px 0px;
+    transition: opacity .2s ease;
+
+}
+form .user-details .button{
+    display: flex;
+    justify-content: end;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:active{
+    border-bottom-width: 2px;
+}
+.user-details .button input:hover,
+.user-details .button input:focus,
+.user-details .button input:active{
+    opacity: 0.8;
+}
+.navbar{
+    background-image: linear-gradient(to right, #52b9ce, #548bcf);
+}
+.register .website-name{
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.register .form-register{
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #fff;
+}
+.register .form-register .form-register__infor{
+    display: block;
+    color: #fff;
+}
+.register .form-register .form-register__link{
+    display: block;
+    text-decoration: none;
+    margin-left: 3px;
+    color: #fff;
+    font-weight: bold;
+}
