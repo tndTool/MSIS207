@@ -12,18 +12,14 @@ export default function Login() {
                     <h2>SIGN IN</h2>
 
                     <div className={cx('form-login__inputBox')}>
-                        
-                        
-                        
                         <input type="text" required="required" />
-                       
+
                         <span>Email </span>
-                       
+
                         <i></i>
                     </div>
 
                     <div className={cx('form-login__inputBox')}>
-                       
                         <input type="password" required="required" />
                         <span>Password</span>
                         <i></i>
@@ -39,9 +35,7 @@ export default function Login() {
                     </div>
 
                     <div className={cx('form-login__btn')}>
-                        <Link to="/">
-                            <span>LOGIN</span>
-                        </Link>
+                        <span>LOGIN</span>
                     </div>
                 </div>
             </div>
