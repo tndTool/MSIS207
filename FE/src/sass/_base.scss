@@ -134,7 +134,7 @@ img {
     }
 
     @include mobile {
-        margin-top: calc(#{$header-mobile-height} + 10px);
+        margin-top: calc(#{$header-mobile-height} + 50px);
     }
 }
 

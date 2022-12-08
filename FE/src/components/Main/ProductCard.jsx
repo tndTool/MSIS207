@@ -29,7 +29,7 @@ const ProductCard = (props) => {
                 </div>
             </Link>
             <div className="product-card__btn">
-                <Button size="sm" icon="bx bx-cart" animate={false} onClick={() => dispatch(set(props.slug))}>
+                <Button size="sm" icon="bx bx-cart" animate={true} onClick={() => dispatch(set(props.slug))}>
                     chọn mua
                 </Button>
             </div>

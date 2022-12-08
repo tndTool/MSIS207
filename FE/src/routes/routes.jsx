@@ -7,7 +7,7 @@ import Register from '~/pages/Authen/Register';
 import Home from '~/pages/Home/Home';
 import Top from '~/pages/Home/Top';
 import Outwear from '~/pages/Home/Outwear';
-import Bottoms from '~/pages/Home/Bottom';
+import Bottom from '~/pages/Home/Bottoms';
 import Accessories from '~/pages/Home/Accessories';
 
 import Profile from '~/pages/Profile/Profile';
@@ -19,7 +19,8 @@ import Address from '~/pages/Profile/Address';
 import Account from '~/pages/Profile/Account';
 import Logout from '~/pages/Profile/Logout';
 
-import Cart from '~/pages/Cart';
+import Checkout from '~/pages/Pay/Checkout';
+import Cart from '~/pages/Pay/Cart';
 
 import ProductsAll from '~/pages/Products/productsAll';
 
@@ -32,7 +33,7 @@ const Routes = () => {
             <Route path="/" exact component={Home} />
             <Route path="/top" component={Top} />
             <Route path="/outwear" component={Outwear} />
-            <Route path="/bottoms" component={Bottoms} />
+            <Route path="/bottoms" component={Bottom} />
             <Route path="/accessories" component={Accessories} />
 
             <Route path="/profile/logout" component={Logout} />
@@ -44,6 +45,7 @@ const Routes = () => {
             <Route path="/profile/orders" component={Orders} />
             <Route path="/profile" component={Profile} />
 
+            <Route path="/checkout" component={Checkout} />
             <Route path="/cart" component={Cart} />
 
             <Route path="/:slug" component={ProductsAll} />
