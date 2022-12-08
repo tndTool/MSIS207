@@ -76,3 +76,15 @@
         color: #adadad;
     }
 }
+
+@media (max-width: 739px) {
+    .footer_content {
+        display: none;
+    }
+    .inner {
+        height: 380px;
+    }
+    .footer-p {
+        display: none;
+    }
+}

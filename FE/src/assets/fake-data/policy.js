@@ -1,7 +1,7 @@
 const policy = [
     {
         name: "Miễn phí giao hàng",
-        description: "Miễn phí ship với đơn hàng > 239K",
+        description: "Miễn phí ship với đơn hàng > 199K",
         icon: "bx bx-shopping-bag"
     },
     {

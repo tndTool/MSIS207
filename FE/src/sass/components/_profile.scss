@@ -1,0 +1,334 @@
+.header-title {
+    height: 90px;
+    width: 100%;
+    color: #f05023;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    background-color: #eee;
+    padding-top: 1rem;
+    margin: 1rem 0;
+}
+.profile {
+    @include flex(flex-start, flex-start);
+
+    @include tablet {
+        flex-direction: column;
+    }
+
+    padding: 2rem 0;
+
+    &__left {
+        @include mobile {
+            width: 100%;
+        }
+
+        @include tablet {
+            width: 100%;
+        }
+
+        border-right: 1px solid #ccc;
+        width: 25%;
+
+        &__user {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            &__name {
+                padding-left: 22px;
+                color: $txt-second-color;
+            }
+        }
+
+        img {
+            border-radius: 50%;
+        }
+
+        &__item {
+            background-color: transparent;
+            color: $txt-second-color;
+            padding: 15px 10px;
+            font-weight: 600;
+            border-bottom: 1px solid $txt-second-color !important;
+
+            &:hover {
+                cursor: pointer;
+                border-right: 3px solid $txt-main-color;
+            }
+
+            button {
+                outline: none;
+                text-decoration: none;
+                background-color: transparent;
+
+                &:hover {
+                    cursor: pointer;
+                    color: #f05023;
+                }
+            }
+        }
+    }
+
+    &__right {
+        width: 75%;
+        padding-left: 30px;
+
+        @include mobile {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @include tablet {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        &__title {
+            font-size: 1.7rem;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: #f05023;
+            border-bottom: 1px solid #f05023;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            margin-top: 0;
+            margin-bottom: 1.3em;
+
+            strong {
+                color: #777;
+                font-weight: bolder;
+            }
+        }
+
+        &__orders {
+            table {
+                width: 100%;
+            }
+
+            tbody {
+                background-color: hsla(220, 0%, 100%, 0.9);
+            }
+            thead {
+                background-color: hsla(220, 20%, 95%, 0.9);
+                th,
+                td {
+                    border-bottom-width: 2px;
+                }
+            }
+            th,
+            td {
+                text-align: center;
+                border: 1px solid #ccc;
+                border-color: transparent transparent #ccc transparent;
+                padding: 1rem;
+
+                span {
+                    margin: 0 5px;
+
+                    @include mobile {
+                        @include mobile {
+                            display: block;
+                            margin: 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__mymembership {
+            table {
+                width: 100%;
+            }
+            tbody {
+                background-color: hsla(220, 0%, 100%, 0.9);
+            }
+            thead {
+                background-color: hsla(220, 20%, 95%, 0.9);
+                th,
+                td {
+                    border-bottom-width: 2px;
+                }
+            }
+            th,
+            td {
+                text-align: center;
+                border: 1px solid #ccc;
+                border-color: transparent transparent #ccc transparent;
+                padding: 1rem;
+
+                Button {
+                    margin: 0 5px;
+                }
+            }
+            @include mobile {
+                display: inline-block;
+            }
+        }
+
+        &__points {
+            table {
+                width: 100%;
+            }
+
+            p {
+                display: block;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                margin-top: 0;
+                margin-bottom: 1.3em;
+
+                strong {
+                    color: #777;
+                    font-weight: bolder;
+                }
+            }
+            h1 {
+                font-size: 1.7rem;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+                color: #f05023;
+                margin-bottom: 2rem;
+            }
+            tbody {
+                background-color: hsla(220, 0%, 100%, 0.9);
+            }
+            thead {
+                background-color: hsla(220, 20%, 95%, 0.9);
+                th,
+                td {
+                    border-bottom-width: 2px;
+                }
+            }
+            th,
+            td {
+                text-align: center;
+                border: 1px solid #333;
+                border-color: transparent transparent #ccc transparent;
+                padding: 1rem;
+
+                Button {
+                    margin: 0 5px;
+                }
+            }
+            @include mobile {
+                display: inline-block;
+            }
+        }
+
+        &__coupons {
+            p {
+                display: block;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                margin-top: 0;
+                margin-bottom: 1.3em;
+            }
+        }
+
+        &__address {
+            p {
+                display: block;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                margin-top: 0;
+                margin-bottom: 1.3em;
+            }
+            h1 {
+                font-size: 1.7rem;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+                color: #f05023;
+                margin-bottom: 2rem;
+            }
+        }
+
+        &__account {
+            label {
+                color: var(--black);
+                font-weight: 500;
+                line-height: 1rem;
+            }
+
+            input[type='text'],
+            input[type='password'],
+            select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+                color: #f05023;
+                margin: 2rem 0;
+            }
+
+            Button {
+                margin-top: 1.6rem;
+            }
+        }
+
+        &__logout {
+            p {
+                text-align: center;
+                color: var(--black);
+                display: block;
+                margin-bottom: 1.3em;
+                font-size: 1.7rem;
+                font-weight: 500;
+                letter-spacing: 0.05em;
+                color: #f05023;
+            }
+
+            span {
+                margin: 0 10px;
+                font-size: 1.7rem;
+                text-align: center;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+
+                &:hover {
+                    color: red;
+                }
+
+                @include mobile {
+                    padding: 20px 0;
+                    display: inline-block;
+                }
+            }
+
+            span ~ span {
+                margin-left: 0;
+            }
+        }
+    }
+}

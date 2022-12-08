@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Footer.module.scss';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,10 +9,15 @@ import { faInstagram, faFacebook, faTiktok, faGithub } from '@fortawesome/free-b
 const cx = classNames.bind(styles);
 
 export default function Footer() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <footer className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('footer_content')}>
+                <div className={cx('footer_content1')}>
                     <h3 className={cx('footer__heading')}>
                         <h2>
                             <b>TATURO'S SHOP</b>
@@ -40,22 +46,22 @@ export default function Footer() {
                     </h3>
                     <ul className={cx('footer-list')}>
                         <li className={cx('footer-item')}>
-                            <Link to="/chinh-sach-doi-hang" target="_blank">
+                            <Link to="/">
                                 <span class={cx('footer-item__link')}>CHÍNH SÁCH ĐỔI HÀNG</span>
                             </Link>
                         </li>
                         <li className={cx('footer-item')}>
-                            <Link to="/chinh-sach-bao-mat" target="_blank">
+                            <Link to="/">
                                 <span className={cx('footer-item__link')}>CHÍNH SÁCH BẢO MẬT</span>
                             </Link>
                         </li>
                         <li className={cx('footer-item')}>
-                            <Link to="/he-thong-member" target="_blank">
+                            <Link to="/">
                                 <span className={cx('footer-item__link')}>HỆ THỐNG MEMBER</span>
                             </Link>
                         </li>
                         <li className={cx('footer-item')}>
-                            <Link to="/he-thong-cua-hang" target="_blank">
+                            <Link to="/">
                                 <span className={cx('footer-item__link')}>HỆ THỐNG CỬA HÀNG</span>
                             </Link>
                         </li>
@@ -68,22 +74,22 @@ export default function Footer() {
                     </h3>
                     <ul className={cx('footer-list')}>
                         <li className={cx('footer-item')}>
-                            <Link to="/giao-hang-tan-noi" target="_blank">
+                            <Link to="/">
                                 <span class={cx('footer-item__link')}>GIAO HÀNG TẬN NƠI</span>
                             </Link>
                         </li>
                         <li className={cx('footer-item')}>
-                            <Link to="/dang-ky-tai-khoan" target="_blank">
+                            <Link to="/" >
                                 <span className={cx('footer-item__link')}>HƯỚNG DẪN ĐĂNG KÝ TÀI KHOẢN</span>
                             </Link>
                         </li>
                         <li className={cx('footer-item')}>
-                            <Link to="/huong-dan-bao-quan" target="_blank">
+                            <Link to="/" >
                                 <span className={cx('footer-item__link')}>HƯỚNG DẪN BẢO QUẢN</span>
                             </Link>
                         </li>
                         <li className={cx('footer-item')}>
-                            <Link to="/tuyen-dung" target="_blank">
+                            <Link to="/" >
                                 <span className={cx('footer-item__link')}>TUYỂN DỤNG</span>
                             </Link>
                         </li>
