@@ -127,14 +127,14 @@ img {
 .main {
     margin-top: $header-height;
     margin-bottom: 2rem;
-    min-height: 73vh;
+    min-height: 70vh;
 
     @include tablet {
         margin-top: calc(#{$header-tablet-height} + 20px);
     }
 
     @include mobile {
-        margin-top: calc(#{$header-mobile-height} + 10px);
+        margin-top: calc(#{$header-mobile-height} + 30px);
     }
 }
 

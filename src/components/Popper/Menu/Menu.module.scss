@@ -1,6 +1,12 @@
 // Menu wrapper
 .menu-list {
-    width: 214px;
+    width: 200px;
+    border-top: 1px solid #333;
+
+    @media (max-width: 739px) {
+        width: 150px;
+    }
+
     .menu-item {
         margin-left: 0;
         color: (--text);

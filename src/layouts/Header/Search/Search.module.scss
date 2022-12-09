@@ -1,6 +1,6 @@
 .search,
 .search-result {
-    width: 361px;
+    width: 251px;
 }
 
 .search {
@@ -87,7 +87,7 @@
     }
 }
 
-@media (max-width: 739px) {
+@media (max-width: 1023px) {
     .inner {
         display: none;
     }
