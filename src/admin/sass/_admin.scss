@@ -1,0 +1,105 @@
+.admin-container {
+    border: 1px solid #000;
+}
+
+.admin-header__title {
+    height: 90px;
+    width: 100%;
+    color: #f05023;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    background-color: #eee;
+    padding: 2rem 0;
+}
+.admin {
+    @include flex(flex-start, flex-start);
+
+    @include tablet {
+        flex-direction: column;
+    }
+
+    padding: 2rem 0;
+
+    &__left {
+        @include mobile {
+            width: 100%;
+        }
+
+        @include tablet {
+            width: 100%;
+        }
+
+        width: 25%;
+        height: 100vh;
+    }
+
+    &__right {
+        width: 75%;
+        padding-left: 30px;
+        margin-left: 10px;
+
+        @include mobile {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @include tablet {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        &__title {
+            font-size: 1.7rem;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: #f05023;
+            border-bottom: 1px solid #f05023;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        &__image {
+            img {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                height: 50%;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: 3rem 25%;
+            }
+        }
+
+        .fun {
+            text-align: center;
+            color: #f05023;
+            text-transform: uppercase;
+        }
+
+        &__actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-right: 3rem;
+
+            &__search {
+                input[type='text'] {
+                    padding: 12px 20px;
+                    margin: 6px 8px;
+                    border: 1px solid #333;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.admin__left {
+    border: 2px solid #333;
+    height: 110vh;
+}
+
+.admin__logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #000;
+
+    img {
+        width: 200px;
+        height: 65px;
+    }
+}
+
+.admin__item {
+    margin: 3rem 0;
+
+    .admin__item-inner {
+        margin: 0 1rem;
+    }
+}
