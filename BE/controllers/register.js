@@ -1,15 +1,19 @@
 
-const bcrypt = require ('bcryptjs');
-const User = require('../model/user');
+import bcrypt from "bcryptjs";
+import User from "../model/user";
 
 
-const register = async (req, res) => {
-      const {
-        username, 
-        password: plainTextPassword, 
-        password_confirmation: someOtherPlaintextPassword, 
-        tel_or_email,
-      } = req.body
+export default register = async (req, res) => {
+      // const {
+      //   username, 
+      //   password: plainTextPassword, 
+      //   password_confirmation: someOtherPlaintextPassword, 
+      //   tel_or_email,
+      // } = req.body
+      const username = req.body.username;
+      const email = req.body.email
+      const password = req.body.password;
+      const re_password = req.body.password
       
       if (!username || typeof username !== 'string') {
         return res.json({ status: 'error', error: 'Invalid username'});
@@ -45,4 +49,3 @@ const register = async (req, res) => {
         }
 
     };
-    module.exports = register; 

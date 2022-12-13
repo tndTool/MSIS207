@@ -66,7 +66,7 @@
 }
 
 .form-login {
-    position: absolute;
+    position: relative;
     inset: 2px;
     background: #fff;
     z-index: 10;
@@ -79,13 +79,14 @@
         font-weight: 500;
         text-align: center;
         letter-spacing: 0.1em;
+        padding-bottom: 20px;
     }
 }
 
 .form-login__inputBox {
     position: relative;
     width: 300px;
-    margin: 15px 0;
+    margin: 15px 0px;
 
     input {
         position: relative;
@@ -94,7 +95,7 @@
         background: transparent;
         border: none;
         outline: none;
-        color: #333;
+        color: rgb(0, 0, 0);
         font-size: 1em;
         letter-spacing: 0.05em;
         z-index: 10;
@@ -131,10 +132,19 @@
     transform: translateX(0px) translateY(-34px);
     font-size: 0.75em;
 }
+.form-login p {
+    position: relative;
+    width: 314px;
+    font-size: 0.9em;
+    color: #c40000;
+    display: inline-block;
+    margin-top: -12px;
+    margin-bottom: 5px;
+}
 
 .form-login__inputBox input:valid ~ i,
 .form-login__inputBox input:focus ~ i {
-    height: 44px;
+    height: 40px;
 }
 
 .form-login__links {
@@ -191,4 +201,42 @@
 .form-login__btn span {
     position: relative;
     z-index: 100;
+}
+
+.ui-message_error {
+    display: flex;
+    background-color: #fff9fa;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    width: 315px;
+    padding: 5px 20px;
+    border-radius: 3px;
+    position: relative;
+    font-size: 15px;
+    border: 1px solid rgba(255,66,79,.2);
+
+    .ui-message_error-icon{
+        color: #c40000;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+}
+
+
+.ui-message_success {
+    display: flex;
+    background-color: #f9fff9;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    padding: 5px 20px;
+    border-radius: 3px;
+    position: relative;
+    font-size: 15px;
+    border: 1px solid rgba(72, 255, 66, 0.682);
+
+    .ui-message_success-icon{
+        color: #0e6c1f;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
 }

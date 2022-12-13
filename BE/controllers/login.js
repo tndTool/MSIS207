@@ -1,9 +1,9 @@
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const User = require('../model/user');
-const dotenv = require('dotenv').config();
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
+import User from "../model/user";
+from ("dotenv").config();
 
-const login =  async (req, res) => {
+export default login =  async (req, res) => {
 
     const { tel_or_email, password: plainTextPassword} = req.body
     //no value entered  
@@ -36,4 +36,3 @@ const login =  async (req, res) => {
         }
     }
   }
-module.exports = login
