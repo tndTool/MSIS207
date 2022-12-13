@@ -16,3 +16,10 @@
 @import './components/profile';
 
 @import './components/product-view-modal';
+@import './components/cart';
+@import './components/checkout';
+
+// Admin:
+@import '../admin/sass/admin';
+@import '../admin/sass/sidebar';
+@import '../admin/sass/table';

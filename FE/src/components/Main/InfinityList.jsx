@@ -53,7 +53,7 @@ const InfinityList = (props) => {
 
     return (
         <div ref={listRef}>
-            <Grid col={4} mdCol={2} smCol={1} gap={20}>
+            <Grid col={4} mdCol={2} smCol={2} gap={20}>
                 {data.map((item, index) => (
                     <ProductCard
                         key={index}

@@ -6,11 +6,73 @@ import Button from '~/components/Main/Button';
 import InfinityList from '~/components/Main/InfinityList';
 
 import productData from '~/assets/fake-data/products';
-import categoryData from '~/assets/fake-data/category';
-import colors from '~/assets/fake-data/products-color';
-import size from '~/assets/fake-data/products-size';
 
 const Top = () => {
+    const top_category = [
+        {
+            display: 'Áo Thun',
+            categorySlug: 'ao-thun',
+        },
+        {
+            display: 'Áo Polo',
+            categorySlug: 'ao-polo',
+        },
+        {
+            display: 'Áo Croptop',
+            categorySlug: 'ao-croptop',
+        },
+    ];
+
+    const colors = [
+        {
+            display: 'Trắng',
+            color: 'white',
+        },
+        {
+            display: 'Đen',
+            color: 'black',
+        },
+        {
+            display: 'Xanh dương',
+            color: 'blue',
+        },
+        {
+            display: 'Xám',
+            color: 'grey',
+        },
+        {
+            display: 'Đỏ',
+            color: 'red',
+        },
+        {
+            display: 'Nâu',
+            color: 'brown',
+        },
+        {
+            display: 'Beige',
+            color: 'be',
+        },
+    ];
+
+    const size = [
+        {
+            display: 'S',
+            size: 's',
+        },
+        {
+            display: 'M',
+            size: 'm',
+        },
+        {
+            display: 'L',
+            size: 'l',
+        },
+        {
+            display: 'XL',
+            size: 'xl',
+        },
+    ];
+
     const initFilter = {
         category: [],
         color: [],
@@ -18,8 +80,6 @@ const Top = () => {
     };
 
     const productList = productData.getAllTopProducts();
-
-    const categoryList = categoryData.getTopCategory();
 
     const [products, setProducts] = useState(productList);
 
@@ -102,7 +162,7 @@ const Top = () => {
                     <div className="category__filter__widget">
                         <div className="category__filter__widget__title">danh mục sản phẩm</div>
                         <div className="category__filter__widget__content">
-                            {categoryList.map((item, index) => (
+                            {top_category.map((item, index) => (
                                 <div key={index} className="top__filter__widget__content__item">
                                     <CheckBox
                                         label={item.display}
