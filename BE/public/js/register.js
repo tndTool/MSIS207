@@ -1,6 +1,6 @@
 form.addEventListener('submit',() => {
     const register = {
-        username: username.value,
+        username: requestAnimationFrame.body,
         password: password.value,
         password_confirmation: confirm_password.value,
         tel_or_email: tel_or_email.value
