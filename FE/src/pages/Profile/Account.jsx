@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Helmet from '~/components/Main/Helmet';
 import Button from '~/components/Main/Button';
 import ProfileSide from '~/components/Main/ProfileSide';
+import { AuthContext } from '../../context/authContext';
 
 const Account = () => {
+    const {currentUser} = useContext(AuthContext);
     return (
         <Helmet title="Account">
             <div className="header-title">
@@ -23,10 +25,10 @@ const Account = () => {
                         <input type="text" name="lastname" />
 
                         <label for="username">Username*</label>
-                        <input type="text" name="username" />
+                        <input type="text" name="username" value={currentUser?.Name}/>
 
                         <label for="email">Email*</label>
-                        <input type="text" name="email" />
+                        <input type="text" name="email" value={currentUser?.Email} />
 
                         <h1>Thay đổi mật khẩu</h1>
 

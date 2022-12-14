@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Helmet from '~/components/Main/Helmet';
 import ProfileSide from '~/components/Main/ProfileSide';
+import { AuthContext } from '../../context/authContext';
 
 const Profile = () => {
+
+    const {currentUser} = useContext(AuthContext);
+
     return (
         <Helmet title="Account">
             <div className="header-title">
@@ -14,7 +18,7 @@ const Profile = () => {
                 <div className="profile__right">
                     <div className="profile__right__title">Trang tài khoản</div>
                     <p>
-                        Xin chào <strong>Toan</strong> (không phải tài khoản <strong>Toan</strong>? Hãy thoát ra và đăng
+                        Xin chào <strong>{currentUser?.Name}</strong> (không phải tài khoản <strong>{currentUser?.Name}</strong>? Hãy thoát ra và đăng
                         nhập vào tài khoản của bạn)
                     </p>
                     <p>
