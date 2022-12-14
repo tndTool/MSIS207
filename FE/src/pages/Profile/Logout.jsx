@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Helmet from '~/components/Main/Helmet';
 import ProfileSide from '~/components/Main/ProfileSide';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandPointLeft, faHandPointRight } from '@fortawesome/free-regular-svg-icons';
+import { AuthContext } from '../../context/authContext';
 
 const Logout = () => {
+
+    const {logout} = useContext(AuthContext);
+
     return (
         <Helmet title="Account">
             <div className="header-title">
@@ -21,12 +24,12 @@ const Logout = () => {
                     <div className="profile__right__logout">
                         <p>
                             Bạn có chắc chắn muốn đăng xuất không?
-                            <Link to="/login">
+                            <Link to="/">
                             <span>
                                     <span>
                                         <FontAwesomeIcon icon={faHandPointRight} />
                                     </span>
-                                    <span>Xác nhận và đăng xuất</span>
+                                    <span onClick={logout} >Xác nhận và đăng xuất</span>
                                     <span>
                                         <FontAwesomeIcon icon={faHandPointLeft} />
                                     </span>

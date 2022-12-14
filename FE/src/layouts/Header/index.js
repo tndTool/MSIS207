@@ -1,5 +1,5 @@
 // React:
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 // Icons:
@@ -18,6 +18,7 @@ import Search from './Search';
 // CSS/SCSS:
 import classNames from 'classnames/bind';
 import styles from './Header.scss';
+import { AuthContext } from '../../context/authContext';
 
 const cx = classNames.bind(styles);
 
@@ -88,11 +89,11 @@ export default function Header() {
         },
     ];
 
-    const currentUser = true;
-
     const menuLeft = useRef(null);
 
     const menuToggle = () => menuLeft.current.classList.toggle('active');
+
+    const {currentUser} = useContext(AuthContext);
 
     return (
         <header className={cx('wrapper')}>
@@ -135,7 +136,7 @@ export default function Header() {
                                     <Menu items={userMenu} delay={[0, 0]}>
                                         <Link to="/profile">
                                             <button className={cx('user-btn')}>
-                                                <span className={cx('user-name')}>NguyenDucToan</span>
+                                                <span className={cx('user-name')}>{currentUser?.Name}</span>
                                                 <FontAwesomeIcon icon={faUser} />
                                             </button>
                                         </Link>
@@ -143,7 +144,7 @@ export default function Header() {
                                 </>
                             ) : (
                                 <Button primary to="/login">
-                                    Login / Reister
+                                    Login / Register
                                 </Button>
                             )}
                         </div>

@@ -10,9 +10,9 @@ import User from "./model/user.js";
 const app = express();
 const port = 8800;
 
-app.use(cookie());
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
+app.use(cookie());
 
 app.listen(port, () => {
   console.log(`app listening at port http://localhost:${port}`);

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/authContext';
 
 const ProfileSide = () => {
+
+    const {currentUser} = useContext(AuthContext);
     return (
         <div className="profile__left">
             <div className="profile__left__user">
@@ -10,7 +13,7 @@ const ProfileSide = () => {
                     alt="Userimage"
                 />
                 <span className="profile__left__user__name">
-                    NguyenDucToan{' '}
+                    {currentUser?.Name}{' '}
                     <span>
                         <i>#2501</i>
                     </span>
