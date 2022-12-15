@@ -1,5 +1,9 @@
 // -----------------------------------Top products-----------------------------------
 const top_products = [
+    // {
+    //     title: 'test',
+    //     categorySlug: 'ao-coto'
+    // },
     {
         title: 'RED MINI LOGO TEE',
         price: '240000',

@@ -6,68 +6,86 @@ import Button from '~/components/Main/Button';
 import InfinityList from '~/components/Main/InfinityList';
 
 import productData from '~/assets/fake-data/products';
+import request from '../../utils/request';
 
 const Bottoms = () => {
-    const bottoms_category = [
-        {
-            display: 'Short',
-            categorySlug: 'short',
-        },
-        {
-            display: 'Pants',
-            categorySlug: 'pants',
-        },
-    ];
 
-    const colors = [
-        {
-            display: 'Trắng',
-            color: 'white',
-        },
-        {
-            display: 'Đen',
-            color: 'black',
-        },
-        {
-            display: 'Xanh dương',
-            color: 'blue',
-        },
-        {
-            display: 'Xám',
-            color: 'grey',
-        },
-        {
-            display: 'Đỏ',
-            color: 'red',
-        },
-        {
-            display: 'Nâu',
-            color: 'brown',
-        },
-        {
-            display: 'Beige',
-            color: 'be',
-        },
-    ];
+    const [bottoms_category, setBottoms_category] = useState([]);
+    const [colors, setColor] = useState([]);
+    const [size, setSize] = useState([]);
 
-    const size = [
-        {
-            display: 'S',
-            size: 's',
-        },
-        {
-            display: 'M',
-            size: 'm',
-        },
-        {
-            display: 'L',
-            size: 'l',
-        },
-        {
-            display: 'XL',
-            size: 'xl',
-        },
-    ];
+    useEffect(() => {
+        async function fetchData() {
+            const req = await request.get('/bottoms/bottoms-category');
+            setBottoms_category(req.data);
+            const req2 = await request.get('/bottoms/bottoms-color');
+            setColor(req2.data);
+            const req3 = await request.get('/bottoms/bottoms-size');
+            setSize(req3.data);
+        }
+        fetchData();
+    }, []);
+
+    // const bottoms_category = [
+    //     {
+    //         display: 'Short',
+    //         categorySlug: 'short',
+    //     },
+    //     {
+    //         display: 'Pants',
+    //         categorySlug: 'pants',
+    //     },
+    // ];
+
+    // const colors = [
+    //     {
+    //         display: 'Trắng',
+    //         color: 'white',
+    //     },
+    //     {
+    //         display: 'Đen',
+    //         color: 'black',
+    //     },
+    //     {
+    //         display: 'Xanh dương',
+    //         color: 'blue',
+    //     },
+    //     {
+    //         display: 'Xám',
+    //         color: 'grey',
+    //     },
+    //     {
+    //         display: 'Đỏ',
+    //         color: 'red',
+    //     },
+    //     {
+    //         display: 'Nâu',
+    //         color: 'brown',
+    //     },
+    //     {
+    //         display: 'Beige',
+    //         color: 'be',
+    //     },
+    // ];
+
+    // const size = [
+    //     {
+    //         display: 'S',
+    //         size: 's',
+    //     },
+    //     {
+    //         display: 'M',
+    //         size: 'm',
+    //     },
+    //     {
+    //         display: 'L',
+    //         size: 'l',
+    //     },
+    //     {
+    //         display: 'XL',
+    //         size: 'xl',
+    //     },
+    // ];
 
     const initFilter = {
         category: [],

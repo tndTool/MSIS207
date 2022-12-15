@@ -6,72 +6,92 @@ import Button from '~/components/Main/Button';
 import InfinityList from '~/components/Main/InfinityList';
 
 import productData from '~/assets/fake-data/products';
+import request from '../../utils/request';
 
 const Outwear = () => {
-    const outwear_category = [
-        {
-            display: 'Hoodie',
-            categorySlug: 'hoodie',
-        },
-        {
-            display: 'Jacket',
-            categorySlug: 'jacket',
-        },
-        {
-            display: 'Varsity',
-            categorySlug: 'varsity',
-        },
-    ];
+    
 
-    const colors = [
-        {
-            display: 'Trắng',
-            color: 'white',
-        },
-        {
-            display: 'Đen',
-            color: 'black',
-        },
-        {
-            display: 'Xanh dương',
-            color: 'blue',
-        },
-        {
-            display: 'Xám',
-            color: 'grey',
-        },
-        {
-            display: 'Đỏ',
-            color: 'red',
-        },
-        {
-            display: 'Nâu',
-            color: 'brown',
-        },
-        {
-            display: 'Beige',
-            color: 'be',
-        },
-    ];
+    const [outwear_category, setOutwear_category] = useState([]);
+    const [colors, setColor] = useState([]);
+    const [size, setSize] = useState([]);
 
-    const size = [
-        {
-            display: 'S',
-            size: 's',
-        },
-        {
-            display: 'M',
-            size: 'm',
-        },
-        {
-            display: 'L',
-            size: 'l',
-        },
-        {
-            display: 'XL',
-            size: 'xl',
-        },
-    ];
+    useEffect(() => {
+        async function fetchData() {
+            const req = await request.get('/outwear/outwear-category');
+            setOutwear_category(req.data);
+            const req2 = await request.get('/outwear/outwear-color');
+            setColor(req2.data);
+            const req3 = await request.get('/outwear/outwear-size');
+            setSize(req3.data);
+        }
+        fetchData();
+    }, []);
+
+
+    // const outwear_category = [
+    //     {
+    //         display: 'Hoodie',
+    //         categorySlug: 'hoodie',
+    //     },
+    //     {
+    //         display: 'Jacket',
+    //         categorySlug: 'jacket',
+    //     },
+    //     {
+    //         display: 'Varsity',
+    //         categorySlug: 'varsity',
+    //     },
+    // ];
+
+    // const colors = [
+    //     {
+    //         display: 'Trắng',
+    //         color: 'white',
+    //     },
+    //     {
+    //         display: 'Đen',
+    //         color: 'black',
+    //     },
+    //     {
+    //         display: 'Xanh dương',
+    //         color: 'blue',
+    //     },
+    //     {
+    //         display: 'Xám',
+    //         color: 'grey',
+    //     },
+    //     {
+    //         display: 'Đỏ',
+    //         color: 'red',
+    //     },
+    //     {
+    //         display: 'Nâu',
+    //         color: 'brown',
+    //     },
+    //     {
+    //         display: 'Beige',
+    //         color: 'be',
+    //     },
+    // ];
+
+    // const size = [
+    //     {
+    //         display: 'S',
+    //         size: 's',
+    //     },
+    //     {
+    //         display: 'M',
+    //         size: 'm',
+    //     },
+    //     {
+    //         display: 'L',
+    //         size: 'l',
+    //     },
+    //     {
+    //         display: 'XL',
+    //         size: 'xl',
+    //     },
+    // ];
 
     const initFilter = {
         category: [],
