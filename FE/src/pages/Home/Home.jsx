@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Helmet from '~/components/Main/Helmet';
@@ -7,56 +7,30 @@ import Section, { SectionTitle, SectionBody } from '~/components/Main/Section';
 import Policy from '~/components/Main/Policy';
 import ProductCard from '~/components/Main/ProductCard';
 import Grid from '~/components/Main/Grid';
-
+import request from '../../utils/request';
 import productData from '~/assets/fake-data/products';
 
 const Home = () => {
-    const policy = [
-        {
-            name: 'Miễn phí giao hàng',
-            description: 'Miễn phí ship với đơn hàng > 199K',
-            icon: 'bx bx-shopping-bag',
-        },
-        {
-            name: 'Thanh toán COD',
-            description: 'Thanh toán khi nhận hàng (COD)',
-            icon: 'bx bx-credit-card',
-        },
-        {
-            name: 'Khách hàng VIP',
-            description: 'Ưu đãi dành cho khách hàng VIP',
-            icon: 'bx bx-diamond',
-        },
-        {
-            name: 'Hỗ trợ bảo hành',
-            description: 'Đổi, sửa đồ tại tất cả store',
-            icon: 'bx bx-donate-heart',
-        },
-    ];
 
-    const homeSliderData = [
-        {
-            title: 'Áo Xanh',
-            description: 'Thời trang phang thời tiết',
-            img: 'https://res.cloudinary.com/dcwka06ph/image/upload/v1669648383/Website_project/Slider/heroslider_1_ulyyoj.png',
-            color: 'darkcyan',
-            path: '/top',
-        },
-        {
-            title: 'Áo Hồng',
-            description: 'Thời trang phang thời tiết',
-            img: 'https://res.cloudinary.com/dcwka06ph/image/upload/v1669343239/Website_project/Slider/slide_2_shsclv.png',
-            color: 'pink',
-            path: '/top',
-        },
-        {
-            title: 'Áo Cam',
-            description: 'Thời trang phang thời tiết',
-            img: 'https://res.cloudinary.com/dcwka06ph/image/upload/v1669648373/Website_project/Slider/heroslider_2_yzxzeb.png',
-            color: 'orange',
-            path: '/top',
-        },
-    ];
+        const [policy, setPolicy] = useState([]);
+        const [homeSliderData, setHomeSliderData] = useState([]);
+    
+        useEffect(() => {
+            async function fetchData() {
+                const req = await request.get('/home/policy');
+                setPolicy(req.data);
+                
+            }
+            fetchData();
+        }, []);
+
+        useEffect(() => {
+            async function fetchData() {
+                const req = await request.get('/home/homeSliderData');
+                setHomeSliderData(req.data);
+            }
+            fetchData();
+        }, []);
 
     return (
         <Helmet title="Home">
