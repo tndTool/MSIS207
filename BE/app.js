@@ -51,6 +51,16 @@ app.get("/api/auth/register", (req, res) =>{
   })
 })
 
+app.get("/api/users/updateuser", (req, res) =>{
+  User.find((err, data) => {
+      if(err){
+          res.status(500).send(err)
+      } else {
+          res.status(201).send(data)
+      }
+  })
+})
+
 app.get("/api/home/policy", (req, res) =>{
   User.find((err, data) => {
       if(err){
