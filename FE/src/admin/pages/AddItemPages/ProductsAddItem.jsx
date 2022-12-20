@@ -14,7 +14,7 @@ const ProductsAddItem = () => {
                 <div className="admin">
                     <Sidebar />
                     <div className="admin__right">
-                        <div className="admin__right__title">Insert Employee</div>
+                        <div className="admin__right__title">Insert Product</div>
                         <div className="profile__right__account">
                             <label for="name">Title*</label>
                             <input type="text" name="name" />
@@ -44,7 +44,12 @@ const ProductsAddItem = () => {
                             <input type="text" name="description" />
 
                             <label for="category">Category*</label>
-                            <input type="text" name="category" />
+                            <select name="category">
+                                <option value="0">Top</option>
+                                <option value="1">Outwear</option>
+                                <option value="2">Bottoms</option>
+                                <option value="3">Accessories</option>
+                            </select>
 
                             <Button primary>Lưu thay đổi</Button>
                         </div>

@@ -14,7 +14,7 @@ const AccountsAddItem = () => {
                 <div className="admin">
                     <Sidebar />
                     <div className="admin__right">
-                        <div className="admin__right__title">Insert Employee</div>
+                        <div className="admin__right__title">Insert Account</div>
                         <div className="profile__right__account">
                             <label for="username">Username*</label>
                             <input type="text" name="username" />
