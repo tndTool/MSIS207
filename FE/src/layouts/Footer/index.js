@@ -47,7 +47,7 @@ export default function Footer() {
                     <ul className={cx('footer-list')}>
                         <li className={cx('footer-item')}>
                             <Link to="/">
-                                <span class={cx('footer-item__link')}>CHÍNH SÁCH ĐỔI HÀNG</span>
+                                <span className={cx('footer-item__link')}>CHÍNH SÁCH ĐỔI HÀNG</span>
                             </Link>
                         </li>
                         <li className={cx('footer-item')}>
@@ -75,7 +75,7 @@ export default function Footer() {
                     <ul className={cx('footer-list')}>
                         <li className={cx('footer-item')}>
                             <Link to="/">
-                                <span class={cx('footer-item__link')}>GIAO HÀNG TẬN NƠI</span>
+                                <span className={cx('footer-item__link')}>GIAO HÀNG TẬN NƠI</span>
                             </Link>
                         </li>
                         <li className={cx('footer-item')}>
@@ -103,7 +103,7 @@ export default function Footer() {
                     <ul className={cx('footer-list')}>
                         <li className={cx('footer-item')}>
                             <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
-                                <span class={cx('footer-item__link')}>
+                                <span className={cx('footer-item__link')}>
                                     <FontAwesomeIcon icon={faFacebook} />
                                     <span>Facebook</span>
                                 </span>

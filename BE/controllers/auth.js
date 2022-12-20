@@ -96,6 +96,12 @@ export const login = async (req, res) => {
     }
   }
 };
+
+export const updateUser = (req, res) => {
+  const firstname = req.body.firstname;
+  const lastname =  req.body.lastname;
+  User.findOneAndUpdate()
+}
 export const logout = (req, res) => {
     res.clearCookie('userRegister', {
     sameSite: true,

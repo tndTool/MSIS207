@@ -27,11 +27,11 @@ const renderBody = (item, index) => (
         <td>
             <Link to="#">
                 <Button size="sm">
-                    <i class="bx bxs-pencil"></i>
+                    <i className="bx bxs-pencil"></i>
                 </Button>
             </Link>
             <Button size="sm">
-                <i class="bx bxs-trash"></i>
+                <i className="bx bxs-trash"></i>
             </Button>
         </td>
     </tr>

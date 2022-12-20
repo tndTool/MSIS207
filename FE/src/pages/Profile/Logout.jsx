@@ -30,7 +30,7 @@ const Logout = () => {
                                         <FontAwesomeIcon icon={faHandPointRight} />
                                     </span>
                                     <span onClick={logout} >Xác nhận và đăng xuất</span>
-                                    <span>
+                                    <span >
                                         <FontAwesomeIcon icon={faHandPointLeft} />
                                     </span>
                                 </span>
