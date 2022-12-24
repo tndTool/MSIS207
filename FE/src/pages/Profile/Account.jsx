@@ -1,31 +1,37 @@
-import React, { useContext } from 'react';
+import React, { useEffect } from 'react';
 import Helmet from '~/components/Main/Helmet';
 import ProfileSide from '~/components/Main/ProfileSide';
-import { AuthContext } from '../../context/authContext';
 import { useState } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { updateInfo } from '../../action/userAction';
+import { useHistory } from 'react-router-dom';
 
 const Account = () => {
-    const {currentUser} = useContext(AuthContext);
-    const [userInfo, setUserInfo] = useState({
-        firstname:'',
-        lastname:'',
-    });
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const userLogin = useSelector((state) => state.userLogin);
+    const { userInfo } = userLogin;
 
-    const handleChange=((e) => {
-        setUserInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    })
+    const dispatch = useDispatch();
 
-    const {updateInfo} = useContext(AuthContext);
+    const history = useHistory();
 
-    const handleSubmit = async () => {
+    useEffect(() => {
+        if (!userInfo) {
+            history.push('/');
+        } else {
+            setFirstName(userInfo.Firstname);
+            setLastName(userInfo.Lastname);
+        }
+    }, [history, userInfo]);
+
+    const handleSubmit = () => {
         try {
-            await updateInfo(userInfo);
+            dispatch(updateInfo({ firstName, lastName }));
         } catch (error) {
             console.log(error);
         }
-
-    }
+    };
     return (
         <Helmet title="Account">
             <div className="header-title">
@@ -39,16 +45,26 @@ const Account = () => {
 
                     <div className="profile__right__account">
                         <label for="fname">Họ*</label>
-                        <input type="text" name="firstname" value={currentUser?.Firstname} onChange={handleChange} />
+                        <input
+                            type="text"
+                            name="firstname"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                        />
 
                         <label for="lname">Tên*</label>
-                        <input type="text" name="lastname" value={currentUser?.Lastname} onChange={handleChange}/>
+                        <input
+                            type="text"
+                            name="lastname"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                        />
 
                         <label for="username">Username*</label>
-                        <input type="text" name="username" value={currentUser?.Name}/>
+                        <input type="text" name="username" value={userInfo.Name} />
 
                         <label for="email">Email*</label>
-                        <input type="text" name="email" value={currentUser?.Email} />
+                        <input type="text" name="email" value={userInfo.Email} />
 
                         <h1>Thay đổi mật khẩu</h1>
 

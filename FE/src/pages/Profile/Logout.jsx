@@ -1,14 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Helmet from '~/components/Main/Helmet';
 import ProfileSide from '~/components/Main/ProfileSide';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandPointLeft, faHandPointRight } from '@fortawesome/free-regular-svg-icons';
-import { AuthContext } from '../../context/authContext';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../action/userAction';
 
 const Logout = () => {
-
-    const {logout} = useContext(AuthContext);
+    const dispatch = useDispatch();
+    const handleSubmit = (e) => {
+        dispatch(logout);
+    };
 
     return (
         <Helmet title="Account">
@@ -25,12 +28,12 @@ const Logout = () => {
                         <p>
                             Bạn có chắc chắn muốn đăng xuất không?
                             <Link to="/">
-                            <span>
+                                <span>
                                     <span>
                                         <FontAwesomeIcon icon={faHandPointRight} />
                                     </span>
-                                    <span onClick={logout} >Xác nhận và đăng xuất</span>
-                                    <span >
+                                    <span onClick={handleSubmit}>Xác nhận và đăng xuất</span>
+                                    <span>
                                         <FontAwesomeIcon icon={faHandPointLeft} />
                                     </span>
                                 </span>

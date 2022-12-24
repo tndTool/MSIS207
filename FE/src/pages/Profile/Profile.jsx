@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Helmet from '~/components/Main/Helmet';
 import ProfileSide from '~/components/Main/ProfileSide';
-import { AuthContext } from '../../context/authContext';
+
 
 const Profile = () => {
 
-    const {currentUser} = useContext(AuthContext);
+    const userLogin = useSelector((state) => state.userLogin);
+    const { userInfo } = userLogin;
 
     return (
         <Helmet title="Account">
@@ -18,7 +20,7 @@ const Profile = () => {
                 <div className="profile__right">
                     <div className="profile__right__title">Trang tài khoản</div>
                     <p>
-                        Xin chào <strong>{currentUser?.Name}</strong> (không phải tài khoản <strong>{currentUser?.Name}</strong>? Hãy thoát ra và đăng
+                        Xin chào <strong>{userInfo.Name}</strong> (không phải tài khoản <strong>{userInfo.Name}</strong>? Hãy thoát ra và đăng
                         nhập vào tài khoản của bạn)
                     </p>
                     <p>

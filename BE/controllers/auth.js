@@ -26,9 +26,10 @@ export const register = async (req, res) => {
     return res.status(402).json("Invalid email address");
   }
   if (re_password != password) {
-    return res.status(403).json("Password not match");
+    return res.status(402).json("Password not match");
   }
   const existingEmail = await User.findOne({ Email: email });
+  
   if (existingEmail) {
     res.status(409).json("email is already in use, please enter another email");
   } else {
@@ -42,7 +43,12 @@ export const register = async (req, res) => {
       if (error) console.log(error);
     });
 
-    return res.status(200).json("user successfully created");
+    return res.status(200).json({
+      _id: user._id,
+      name: user.Name,
+      email: user.Email,
+      isAdmin: user.isAdmin,
+    });
   }
 };
 export const login = async (req, res) => {
@@ -50,7 +56,7 @@ export const login = async (req, res) => {
   const password = req.body.password;
 
   if (!email || !password) {
-    return res.status(402).json("Empty pasword or email not allowed");
+    res.status(402).json("Empty pasword or email not allowed");
   } else {
     const existingEmail = await User.findOne({ Email: email });
 
@@ -98,7 +104,7 @@ export const login = async (req, res) => {
 };
 
 export const logout = (req, res) => {
-    res.clearCookie('userRegister', {
+    res.clearCookie('userInfo', {
     sameSite: true,
     secure: true
   }).status(200).json("user has been logged out")
