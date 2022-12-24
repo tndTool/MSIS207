@@ -28,7 +28,7 @@ const Account = () => {
     const handleSubmit = () => {
         try {
             dispatch(updateInfo({ firstName, lastName }));
-            window.location.reload(false);
+            window.location.reload(false)
         } catch (error) {
             console.log(error);
         }
