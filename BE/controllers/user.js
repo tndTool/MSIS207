@@ -1,8 +1,8 @@
 import User from "../model/user.js";
 
 export const updateUser = async (req, res) => {
-    const firstname = req.body.Firstname;
-    const lastname =  req.body.Lastname;
+    const firstname = req.body.firstName;
+    const lastname =  req.body.lastName;
     const id = req.body._id;
     try {
         const result = await User.findByIdAndUpdate(id, {

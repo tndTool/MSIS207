@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../context/authContext';
 
 const ProfileSide = () => {
 
-    const {currentUser} = useContext(AuthContext);
+    const userLogin = useSelector((state) => state.userLogin);
+    const { userInfo } = userLogin;
     return (
         <div className="profile__left">
             <div className="profile__left__user">
@@ -13,7 +14,7 @@ const ProfileSide = () => {
                     alt="Userimage"
                 />
                 <span className="profile__left__user__name">
-                    {currentUser?.Name}{' '}
+                    {userInfo.Name}{' '}
                     <span>
                         <i>#2501</i>
                     </span>

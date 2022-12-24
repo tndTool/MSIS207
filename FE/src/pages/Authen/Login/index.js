@@ -1,10 +1,11 @@
 import classNames from 'classnames/bind';
-import { useContext, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import styles from './Login.module.scss';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import { AuthContext } from '../../../context/authContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../../action/userAction';
 
 export default function Login() {
     const cx = classNames.bind(styles);
@@ -15,13 +16,18 @@ export default function Login() {
     });
 
     const [formErrors, setFormErrors] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
-    const [submitError, setSubmitError] = useState();
-
-    const {login, resStatus} = useContext(AuthContext);
-
 
     const history = useHistory();
+
+    const dispatch = useDispatch();
+    const userLogin = useSelector((state) => state.userLogin);
+    const { isSuccess, error, userInfo } = userLogin;
+    console.log(userLogin);
+    useEffect(() => {
+        if (userInfo) {
+            setTimeout(() => history.push('/'), 800);
+        }
+    }, [history, userInfo]);
 
     const handleChange = (e) => {
         setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -29,16 +35,10 @@ export default function Login() {
             setFormErrors((prev) => ({ ...prev, [e.target.name]: null }));
         }
     };
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        try {
-            await login(inputs)
-            setTimeout(() => history.push('/'), 800);
-        } catch (err) {
-            setSubmitError(err.response.data);
-        }
+        dispatch(login(inputs));
         setFormErrors(validate(inputs));
-        setIsSubmit(true);
     };
 
     const validate = (values) => {
@@ -59,17 +59,17 @@ export default function Login() {
                 <div className={cx('form-login')}>
                     <h2>SIGN IN</h2>
 
-                    {resStatus !== 200 && isSubmit ? (
+                    {error ? (
                         <div className={cx('ui-message_error')}>
                             <div>
                                 {' '}
                                 <HighlightOffIcon className={cx('ui-message_error-icon')} />
                             </div>
-                            <div>{submitError}</div>
+                            <div>{error}</div>
                         </div>
                     ) : null}
 
-                    {resStatus === 200 && isSubmit ? (
+                    {isSuccess ? (
                         <div className={cx('ui-message_success')}>
                             <div>
                                 {' '}
