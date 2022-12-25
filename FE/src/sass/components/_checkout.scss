@@ -41,21 +41,41 @@
         }
 
         &__box {
+            display: flex;
+            flex-wrap: wrap;
+            width: calc(100% / 2 - 20px);
             label {
                 color: var(--black);
                 font-weight: 500;
                 line-height: 1rem;
-            }
-
-            input[type='text'] {
                 width: 100%;
-                padding: 12px 20px;
+            }
+            
+            input[type='text'] {        
+                width: 100%;
+                padding: 8px 15px;
                 margin: 8px 0;
-                display: inline-block;
+                display: flex;
+                flex-wrap: wrap;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                
+            }
+            // input:nth-child(2){
+            //     justify-content: end;
+            // }
+            select{
+                width: 100%;
+                padding: 8px 15px;
+                margin: 8px 0;
+                display: flex;
+                flex-wrap: wrap;
                 border: 1px solid #ccc;
                 border-radius: 4px;
                 box-sizing: border-box;
             }
+            
         }
     }
 
