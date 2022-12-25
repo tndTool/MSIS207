@@ -40,10 +40,33 @@ const Checkout = () => {
                         <input type="text" name="email" required />
 
                         <label for="city">Tỉnh/Thành phố*</label>
-                        <input type="text" name="city" required />
+                        <select name="city" required>
+                                <option value="0">Hồ Chí Minh</option>
+                                <option value="1">Đồng Tháp</option>
+                                <option value="2">Bình Dương</option>
+                                <option value="3">Nam Định</option>
+                                <option value="3">Hà Nội</option>
+                                <option value="3">Đắc Lắk</option>
+                                <option value="3">Bình Thuận</option>
+                                <option value="3">Đồng Nai</option>
+                                <option value="3">Lâm Đồng</option>
+                                <option value="3">Điện Biên</option>
+                        </select>
 
                         <label for="district">Quận huyện*</label>
-                        <input type="text" name="district" required />
+                        <select name="district" required>
+                                <option value="0">Thành phố Thủ Đức</option>
+                                <option value="1">Quận 1</option>
+                                <option value="2">Quận 2</option>
+                                <option value="3">Quận 3</option>
+                                <option value="3">Quận 4</option>
+                                <option value="3">Quận 5</option>
+                                <option value="3">Quận 6</option>
+                                <option value="3">Quận 7</option>
+                                <option value="3">Quận 8</option>
+                                <option value="3">Quận 9</option>
+                        </select>
+
 
                         <label for="commune">Xã/Phường/Thị trấn*</label>
                         <input type="text" name="commune" required />
