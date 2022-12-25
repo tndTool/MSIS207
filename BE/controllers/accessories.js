@@ -4,9 +4,10 @@ export const addAccessoriesCategory = (req, res) => {
     const accessoriesCag = req.body;
     accessoriesCategory.create(accessoriesCag, (err, data) => {
         if(err){
-            res.status(500).send(err)
+            res.status(500).send(err);
         } else {
-            res.status(201).send(data)
+            res.status(201).send(data);
+            console.log(data);
         }
     })
 }
@@ -14,9 +15,9 @@ export const addAccessoriesCategory = (req, res) => {
 export const getAccessoriesCategory = (req, res) => {
     accessoriesCategory.find((err, data) => {
         if(err){
-            res.status(500).send(err)
+            res.status(500).send(err);
         } else {
-            res.status(201).send(data)
+            res.status(201).send(data);
         }
     })
 }
@@ -25,9 +26,9 @@ export const addAccessoriesColor = (req, res) => {
     const accessoriesCol = req.body;
     accessoriesColor.create(accessoriesCol, (err, data) => {
         if(err){
-            res.status(500).send(err)
+            res.status(500).send(err);
         } else {
-            res.status(201).send(data)
+            res.status(201).send(data);
         }
     })
 }

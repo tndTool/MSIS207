@@ -32,6 +32,7 @@ import Account from '~/pages/Profile/Account';
 import Logout from '~/pages/Profile/Logout';
 
 import Checkout from '~/pages/Pay/Checkout';
+import CheckoutView from '~/pages/Pay/CheckoutView';
 import Cart from '~/pages/Pay/Cart';
 
 import ProductsAll from '~/pages/Products/productsAll';
@@ -69,6 +70,7 @@ const Routes = () => {
 
             <Route path="/checkout" component={Checkout} />
             <Route path="/cart" component={Cart} />
+            <Route path="/view" component={CheckoutView} />
 
             <Route path="/:slug" component={ProductsAll} />
         </Switch>
