@@ -5,6 +5,7 @@ import cartItemsSlice from './cart/cartSlide';
 import userLoginSlice from './user/userLoginSlice.js';
 import userRegisterSlice from './user/userRegisterSlice.js';
 import userUpdateSlice from './user/userUpdateSlice.js';
+import userCheckoutSlice from './bill/userCheckoutSlice.js';
 
 const userInfoFromStorage = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null;
 
@@ -19,6 +20,7 @@ export const store = configureStore({
         userLogin: userLoginSlice,
         userRegister: userRegisterSlice,
         userUpdate: userUpdateSlice,
+        userCheckout: userCheckoutSlice,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         immutableCheck: false,
