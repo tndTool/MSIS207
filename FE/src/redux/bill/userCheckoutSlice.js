@@ -9,7 +9,7 @@ const userCheckoutSlice = createSlice({
     },
     reducers: {
         checkoutSuccess: (state, action) => {
-            return (state = { isSuccess: true, bill: action.payload });
+            return (state = { bill: action.payload });
         },
         checkoutFail: (state, action) => {
             return (state = { error: action.payload });

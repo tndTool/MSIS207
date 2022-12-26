@@ -11,6 +11,8 @@ import accessoriesRouters from "./routers/accessories.js";
 import homeRouters from "./routers/home.js";
 import outwearRouters from "./routers/outwear.js";
 import billRouters from "./routers/bill.js";
+import productRouter from "./routers/products.js";
+
 
 const app = express();
 const port = 8800;
@@ -27,6 +29,7 @@ app.use("/api/accessories", accessoriesRouters);
 app.use("/api/auth", authRouters);
 app.use("/api/users", userRouters);
 app.use("/api/bill", billRouters);
+app.use("/api/product", productRouter);
 
 
 mongoose

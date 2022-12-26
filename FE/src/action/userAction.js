@@ -38,5 +38,6 @@ export const updateInfo = (inputs) => async (dispatch, getState) => {
 
 export const logout = async (dispatch) => {
     localStorage.removeItem('userInfo');
+    localStorage.removeItem('bill');
     dispatch(userLogout());
 };
