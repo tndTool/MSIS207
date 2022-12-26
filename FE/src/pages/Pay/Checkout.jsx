@@ -29,7 +29,8 @@ const Checkout = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const userCheckout = useSelector((state) => state.userCheckout);
-    const { isSuccess, error } = userCheckout;
+    const { error} = userCheckout;
+    
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
 
@@ -47,9 +48,12 @@ const Checkout = () => {
             history.push('/');
             alert('Vui lòng đăng nhập để mua hàng');
         } else {
-            setEmail(userInfo.Email);
-            setName(userInfo.Firstname + ' ' + userInfo.Lastname);
-        }
+          setEmail(userInfo.Email);
+          if(userInfo.Firstname && userInfo.Lastname){
+          setName(userInfo.Firstname + " " + userInfo.Lastname)
+          };
+        };
+
     }, [history, userInfo]);
 
     const handleSubmit = () => {
@@ -61,8 +65,8 @@ const Checkout = () => {
             <div className="header-title">
                 <h2>Thanh toán</h2>
             </div>
-            {error ? <div className="checkout-fail">{error}</div> : null}
-            {isSuccess ? <div className="checkout-success">Đặt hàng thành công</div> : null}
+
+            {error && (<div className="checkout-fail">{error}</div>) }
             <div className="checkout">
                 <div className="checkout__left">
                     <div className="checkout__left__title">thông tin thanh toán</div>

@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import productModalReducer from './product-modal/productModalSlice';
+import productListSlice from './product/productListSlice.js';
 import cartItemsSlice from './cart/cartSlide';
 import userLoginSlice from './user/userLoginSlice.js';
 import userRegisterSlice from './user/userRegisterSlice.js';
@@ -21,6 +22,7 @@ export const store = configureStore({
         userRegister: userRegisterSlice,
         userUpdate: userUpdateSlice,
         userCheckout: userCheckoutSlice,
+        productList: productListSlice,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         immutableCheck: false,

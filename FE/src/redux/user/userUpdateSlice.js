@@ -8,11 +8,8 @@ const userLoginSlice = createSlice({
         updateSuccess: (state, action) => {
             return state = {userInfo: action.payload};
         },
-        updateFail: (state, action) => {
-
-        },
     },
 });
 
-export const {updateSuccess, updateFail} = userLoginSlice.actions
+export const {updateSuccess} = userLoginSlice.actions
 export default userLoginSlice.reducer;
