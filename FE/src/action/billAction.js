@@ -7,7 +7,7 @@ export const checkout = (inputs) => async (dispatch) => {
         localStorage.removeItem("cartItems");
         localStorage.setItem("bill", JSON.stringify(data));
         dispatch(checkoutSuccess(data));
-        window.location.href="/view";
+        window.location.href="/checkout/view";
     } catch (error) {
         dispatch(checkoutFail(error.response.data));
     }

@@ -15,25 +15,30 @@ const EmployeeAddItem = () => {
                     <Sidebar />
                     <div className="admin__right">
                         <div className="admin__right__title">Insert Employee</div>
-                        <div className="profile__right__account">
-                            <label for="name">Name*</label>
-                            <input type="text" name="name" />
+                        <div className="checkout__left__box">
+                            <div className="checkout__left__box__main">
+                                <div className="checkout__left__box__main__left">
+                                    <label for="name">Name*</label>
+                                    <input type="text" name="name" />
 
-                            <label for="gender">Gender*</label>
-                            <input type="text" name="gender" />
+                                    <label for="gender">Gender*</label>
+                                    <input type="text" name="gender" />
 
-                            <label for="birthday">Birthday*</label>
-                            <input type="text" name="birthday" />
+                                    <label for="birthday">Birthday*</label>
+                                    <input type="text" name="birthday" />
+                                </div>
 
-                            <label for="phone">Phone*</label>
-                            <input type="text" name="phone" />
+                                <div className="checkout__left__box__main__right">
+                                    <label for="phone">Phone*</label>
+                                    <input type="text" name="phone" />
 
-                            <label for="email">Email*</label>
-                            <input type="text" name="email" />
+                                    <label for="email">Email*</label>
+                                    <input type="text" name="email" />
 
-                            <label for="address">Address*</label>
-                            <input type="text" name="address" />
-
+                                    <label for="address">Address*</label>
+                                    <input type="text" name="address" />
+                                </div>
+                            </div>
                             <Button primary>Lưu thay đổi</Button>
                         </div>
                     </div>
