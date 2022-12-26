@@ -25,6 +25,7 @@ export const createBill = (req, res) => {
             Ward: ward,
             Street: street,
             Total: total,
+            Status: "Đang xử lí",
           });
           bill.save((error, result) => {
             if (error) console.log(error);

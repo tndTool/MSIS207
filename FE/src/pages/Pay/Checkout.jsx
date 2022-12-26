@@ -48,18 +48,8 @@ const Checkout = () => {
           setEmail(userInfo.Email);
           setName(userInfo.Firstname + " " + userInfo.Lastname);
         }
-        if(isSuccess){
-            history.push("/view")
-    }
 
-    }, [history, userInfo, isSuccess]);
-    // if(isSucccess){
-    //         history.push("/view")
-    // }
-
-    // useEffect(() => {
-    //         history.push("/view");
-    // },[history, bill])
+    }, [history, userInfo]);
 
     const handleSubmit = () => {
         dispatch(checkout({name, phone, email, city, district, ward, street, totalPrice}));
