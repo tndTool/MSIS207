@@ -40,9 +40,6 @@ const ProductsAddItem = () => {
                             <label for="size">Size*</label>
                             <input type="text" name="size" />
 
-                            <label for="description">Description*</label>
-                            <input type="text" name="description" />
-
                             <label for="category">Category*</label>
                             <select name="category">
                                 <option value="0">Top</option>
@@ -50,6 +47,11 @@ const ProductsAddItem = () => {
                                 <option value="2">Bottoms</option>
                                 <option value="3">Accessories</option>
                             </select>
+
+                            <label for="description">Description*</label>
+                            <form>
+                            <textarea></textarea>
+                            </form>
 
                             <Button primary>Lưu thay đổi</Button>
                         </div>
