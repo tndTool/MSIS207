@@ -43,7 +43,7 @@
         &__box {
             display: flex;
             flex-wrap: wrap;
-            width: calc(100% / 2 - 20px);
+            width: 100%;
             label {
                 color: var(--black);
                 font-weight: 500;
@@ -75,7 +75,22 @@
                 border-radius: 4px;
                 box-sizing: border-box;
             }
-            
+
+            &__main{
+                @include flex(flex-start, flex-start);
+                width: 100%;
+
+                @include tablet {
+                    flex-direction: column;
+                }
+                &__left{
+                    width: 100%;
+                    margin-right: 1rem;
+                }
+                &__right{
+                    width: 100%;
+                }
+            }
         }
     }
 

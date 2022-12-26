@@ -69,12 +69,10 @@ const Checkout = () => {
                     <div className="checkout__left__box">
                         <label for="fullName">Họ và tên*</label>
                         <input type="text" name="fullName" required value={name} onChange = {(e) => setName(e.target.value)}/>
-
+                        <div className="checkout__left__box__main">
+                     <div className="checkout__left__box__main__left">
                         <label for="phoneNumber">Số điện thoại*</label>
                         <input type="text" name="phonNumber" required onChange = {(e) => setPhone(e.target.value)}/>
-
-                        <label for="email">Địa chỉ email*</label>
-                        <input type="text"  name="email" required value={email} onChange={(e) => setEmail(e.target.value)}/>
 
                         <label for="city">Tỉnh/ Thành phố*</label>
                         <select id ='item' name="city" required onChange={(e) => setCity(e.target.selectedOptions[0].text)}>
@@ -91,6 +89,25 @@ const Checkout = () => {
                                 <option value="3">Tỉnh Điện Biên</option>
                         </select>
 
+                        <label for="commune">Xã/Phường/Thị trấn*</label>
+                        <select name="ward" required onChange={(e) => setWard(e.target.selectedOptions[0].text)}>
+                                <option value="0">Chọn</option>
+                                <option value="1">Phường An Khánh</option>
+                                <option value="2">Phường An Lợi Đông</option>
+                                <option value="3">Phường An Phú</option>
+                                <option value="4">Phường Bình Chiểu</option>
+                                <option value="5">Phường Bình Thọ</option>
+                                <option value="6">Phường Bình Trưng Tây</option>
+                                <option value="7">Phường An Phú</option>
+                        </select>
+                     </div>
+
+                     <div className="checkout__left__box__main__right">
+                        <label for="email">Địa chỉ email*</label>
+                        <input type="text"  name="email" required value={email} onChange={(e) => setEmail(e.target.value)}/>
+
+                            
+
                         <label for="district">Quận huyện*</label>
                         <select name="district" required onChange={(e) => setDistrict(e.target.selectedOptions[0].text)}>
                                 <option value="0">Chọn</option>
@@ -106,21 +123,10 @@ const Checkout = () => {
                                 <option value="10">Quận 9</option>
                         </select>
 
-
-                        <label for="commune">Xã/Phường/Thị trấn*</label>
-                        <select name="ward" required onChange={(e) => setWard(e.target.selectedOptions[0].text)}>
-                                <option value="0">Chọn</option>
-                                <option value="1">Phường An Khánh</option>
-                                <option value="2">Phường An Lợi Đông</option>
-                                <option value="3">Phường An Phú</option>
-                                <option value="4">Phường Bình Chiểu</option>
-                                <option value="5">Phường Bình Thọ</option>
-                                <option value="6">Phường Bình Trưng Tây</option>
-                                <option value="7">Phường An Phú</option>
-                        </select>
-
                         <label for="address">Địa chỉ *</label>
                         <input type="text" name="address" required onChange = {(e) => setStreet(e.target.value)}/>
+                    </div>
+                    </div>
                     </div>
                 </div>
 
