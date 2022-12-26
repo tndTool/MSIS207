@@ -44,6 +44,9 @@ const Bill = new Schema({
             type: String,
             required: true,
         }, 
+        Status: {
+            type: String,
+        },
         Product: [productDetail],
         Total: {
             type: String,

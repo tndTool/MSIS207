@@ -1,6 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Helmet from '~/components/Main/Helmet';
+import moment from 'moment/moment';
+
+
 
 
 
@@ -30,8 +33,8 @@ const CheckoutView = () => {
                     <span> {bill.billsID}</span>
                 </div>
                 <div>
-                    <label style={{color: '#767575'}}>Ngày:</label>
-                    <span> {bill.createdAt}</span>
+                    <label style={{color: '#767575'}}>Ngày tạo:</label>
+                    <span> {moment(JSON.parse(bill.billsID)).format('DD-MM-YYYY, hh:mm:ss a')}</span>
                 </div>
                 <div>
                     <label style={{color: '#767575'}}>Người Nhận:</label>

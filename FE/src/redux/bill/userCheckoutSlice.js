@@ -1,8 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const billInfoFromStorage = localStorage.getItem("bill") ? JSON.parse(localStorage.getItem("bill")) : null;
+
 const userCheckoutSlice = createSlice({
     name: 'checkout',
-    initialState: {},
+    initialState: {
+        bill: billInfoFromStorage,
+    },
     reducers: {
         checkoutSuccess: (state, action) => {
             return (state = { isSuccess: true, bill: action.payload });
