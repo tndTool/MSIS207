@@ -15,25 +15,28 @@ const AccountsAddItem = () => {
                     <Sidebar />
                     <div className="admin__right">
                         <div className="admin__right__title">Insert Account</div>
-                        <div className="profile__right__account">
-                            <label for="username">Username*</label>
-                            <input type="text" name="username" />
+                        <div className="checkout__left__box">
+                            <div className="checkout__left__box__main">
+                                <div className="checkout__left__box__main__left">
+                                    <label for="username">Username*</label>
+                                    <input type="text" name="username" />
 
-                            <label for="email">Email*</label>
-                            <input type="text" name="email" />
+                                    <label for="email">Email*</label>
+                                    <input type="text" name="email" />
+                                </div>
+                                <div className="checkout__left__box__main__right">
+                                    <label for="password">Password*</label>
+                                    <input type="password" name="password" />
 
-                            <label for="password">Password*</label>
-                            <input type="password" name="password" />
-
-                            <label for="password">Confirm Password*</label>
-                            <input type="password" name="password" />
-
+                                    <label for="password">Confirm Password*</label>
+                                    <input type="password" name="password" />
+                                </div>
+                            </div>
                             <label for="Role">Role*</label>
                             <select name="role">
                                 <option value="0">Admin</option>
                                 <option value="1">User</option>
                             </select>
-
                             <Button primary>Lưu thay đổi</Button>
                         </div>
                     </div>

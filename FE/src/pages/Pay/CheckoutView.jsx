@@ -10,7 +10,7 @@ import CheckoutSlide from '~/components/Main/CheckoutSlide';
 
 const CheckoutView = () => {
     const userCheckout = useSelector((state) => state.userCheckout);
-    const {bill} = userCheckout;
+    const { bill } = userCheckout;
 
     const cartItems = useSelector((state) => state.cartItems.value);
     const [cartProducts, setCartProducts] = useState(productData.getCartItemsInfo(cartItems));
@@ -18,71 +18,78 @@ const CheckoutView = () => {
 
     useEffect(() => {
         setCartProducts(productData.getCartItemsInfo(cartItems));
-        setTotalPrice(numberWithCommas(Number(cartItems.reduce((total, item) => total + Number(item.quantity) * Number(item.price), 0))));
+        setTotalPrice(
+            numberWithCommas(
+                Number(cartItems.reduce((total, item) => total + Number(item.quantity) * Number(item.price), 0)),
+            ),
+        );
     }, [cartItems]);
-    
-    return(
-    <Helmet title="CheckoutView">
-    <div className="header-title">
-        <h2>Thanh toán</h2>
-    </div>
-    <div className="checkout">
-        <div className="checkout__right">
-            <div className="checkout__right__title">Chi tiết đơn hàng</div>
-            <div className="checkout__right__box">
-                <div className="checkout__right__list">
-                    {cartProducts.map((item, index) => (
-                        <CheckoutSlide item={item} key={index} />
-                    ))}
-                </div>
-                <div className="checkout__right__price">
-                    <span>Thành tiền:</span> <span>{totalPrice}₫</span>
-                </div>
-            </div>
-        </div>
 
-        <div className="checkout__right">
-            <div className="checkout__right__message" style={{color: '#0e6c1f', fontWeight:"bold", margin: "20px", textAlign: "center"}}>
-                Cảm ơn bạn. Đơn hàng đã được nhận
+    return (
+        <Helmet title="CheckoutView">
+            <div className="header-title">
+                <h2>Thanh toán</h2>
             </div>
-            <div className='checkout__right__detail'>
-                <div>
-                    <label style={{color: '#767575'}}>Mã đơn hàng:</label>
-                    <span> {bill.billsID}</span>
+            <div className="checkout">
+                <div className="checkout__right">
+                    <div className="checkout__right__title">Chi tiết đơn hàng</div>
+                    <div className="checkout__right__box">
+                        <div className="checkout__right__list">
+                            {cartProducts.map((item, index) => (
+                                <CheckoutSlide item={item} key={index} />
+                            ))}
+                        </div>
+                        <div className="checkout__right__price">
+                            <span>Thành tiền:</span> <span>{totalPrice}₫</span>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label style={{color: '#767575'}}>Ngày tạo:</label>
-                    <span> {moment(JSON.parse(bill.billsID)).format('DD-MM-YYYY, hh:mm:ss a')}</span>
-                </div>
-                <div>
-                    <label style={{color: '#767575'}}>Người Nhận:</label>
-                    <span> {bill.Name}</span>
-                </div>
-                <div>
-                    <label style={{color: '#767575'}}>Email:</label>
-                    <span> {bill.Email}</span>
-                </div>
-                <div>
-                    <label style={{color: '#767575'}}>Số điện thoại:</label>
-                    <span> {bill.Phone}</span>
-                </div>
-                <div>
-                    <label style={{color: '#767575'}}>Địa chỉ:</label>
-                    <span> {bill.Street + ", " + bill.Ward + ", " + bill.District + ", " + bill.City}</span>
-                </div>
-                <div>
-                    <label style={{color: '#767575'}}>Tổng cộng:</label>
-                    <span> {bill.Total}</span>
-                </div>
-                <div>
-                    <label style={{color: '#767575'}}>Phương thức thanh toán:</label>
-                    <span> Trả tiền khi nhận hàng</span>
+
+                <div className="checkout__right">
+                    <div
+                        className="checkout__right__message"
+                        style={{ color: '#0e6c1f', fontWeight: 'bold', margin: '20px', textAlign: 'center' }}
+                    >
+                        Cảm ơn bạn. Đơn hàng đã được nhận
+                    </div>
+                    <div className="checkout__right__detail">
+                        <div>
+                            <label style={{ color: '#767575' }}>Mã đơn hàng:</label>
+                            <span> {bill.billsID}</span>
+                        </div>
+                        <div>
+                            <label style={{ color: '#767575' }}>Ngày tạo:</label>
+                            <span> {moment(JSON.parse(bill.billsID)).format('DD-MM-YYYY, hh:mm:ss a')}</span>
+                        </div>
+                        <div>
+                            <label style={{ color: '#767575' }}>Người Nhận:</label>
+                            <span> {bill.Name}</span>
+                        </div>
+                        <div>
+                            <label style={{ color: '#767575' }}>Email:</label>
+                            <span> {bill.Email}</span>
+                        </div>
+                        <div>
+                            <label style={{ color: '#767575' }}>Số điện thoại:</label>
+                            <span> {bill.Phone}</span>
+                        </div>
+                        <div>
+                            <label style={{ color: '#767575' }}>Địa chỉ:</label>
+                            <span> {bill.Street + ', ' + bill.Ward + ', ' + bill.District + ', ' + bill.City}</span>
+                        </div>
+                        <div>
+                            <label style={{ color: '#767575' }}>Tổng cộng:</label>
+                            <span> {bill.Total}</span>
+                        </div>
+                        <div>
+                            <label style={{ color: '#767575' }}>Phương thức thanh toán:</label>
+                            <span> Trả tiền khi nhận hàng</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</Helmet>
-    )
+        </Helmet>
+    );
 };
 
 export default CheckoutView;

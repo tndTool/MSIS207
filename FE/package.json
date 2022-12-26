@@ -58,6 +58,7 @@
     },
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^6.2.1",
-        "babel-plugin-module-resolver": "^4.1.0"
+        "babel-plugin-module-resolver": "^4.1.0",
+        "prettier": "2.8.1"
     }
 }

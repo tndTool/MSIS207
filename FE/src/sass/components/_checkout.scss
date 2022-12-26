@@ -50,24 +50,23 @@
                 line-height: 1rem;
                 width: 100%;
             }
-            
-            input[type='text'] {        
+
+            input[type='text'],
+            input[type='password'] {
                 width: 100%;
-                padding: 8px 15px;
+                padding: 12px 15px;
                 margin: 8px 0;
                 display: flex;
                 flex-wrap: wrap;
                 border: 1px solid #ccc;
                 border-radius: 4px;
                 box-sizing: border-box;
-                
+                font-size: 1.6rem;
             }
-            // input:nth-child(2){
-            //     justify-content: end;
-            // }
-            select{
+
+            select {
                 width: 100%;
-                padding: 8px 15px;
+                padding: 12px 15px;
                 margin: 8px 0;
                 display: flex;
                 flex-wrap: wrap;
@@ -76,18 +75,18 @@
                 box-sizing: border-box;
             }
 
-            &__main{
+            &__main {
                 @include flex(flex-start, flex-start);
                 width: 100%;
 
                 @include tablet {
                     flex-direction: column;
                 }
-                &__left{
+                &__left {
                     width: 100%;
                     margin-right: 1rem;
                 }
-                &__right{
+                &__right {
                     width: 100%;
                 }
             }
@@ -162,7 +161,7 @@
                 table {
                     width: 100%;
                 }
-    
+
                 tbody {
                     background-color: hsla(220, 0%, 100%, 0.9);
                 }
@@ -179,10 +178,10 @@
                     border: 1px solid #ccc;
                     border-color: transparent transparent #ccc transparent;
                     padding: 1rem;
-    
+
                     span {
                         margin: 0 5px;
-    
+
                         @include mobile {
                             @include mobile {
                                 display: block;
