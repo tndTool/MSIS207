@@ -43,7 +43,7 @@ const CartItem = (props) => {
                 <div className="cart__item__info__name">
                     <Link to={`/${item.slug}`}>{`${item.product.title} - ${item.color} - ${item.size}`}</Link>
                 </div>
-                <div className="cart__item__info__price">{numberWithCommas(item.price)}</div>
+                <div className="cart__item__info__price">{numberWithCommas(item.price)}₫</div>
                 <div className="cart__item__info__quantity">
                     <div className="product__info__item__quantity">
                         <div className="product__info__item__quantity__btn" onClick={() => updateQuantity('-')}>

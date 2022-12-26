@@ -96,8 +96,10 @@
 
     &__right {
         width: 45%;
-        border: 2px solid var(--black);
+        border: 1px solid #f6f6f6;
+        box-shadow: $box-shadow;
         margin-left: 1rem;
+        padding: 1rem 1rem;
 
         @include mobile {
             width: 100%;
@@ -109,6 +111,10 @@
             width: 100%;
             margin: 0;
             padding: 0;
+        }
+
+        &__detail {
+            text-align: center;
         }
 
         &__title {
@@ -151,6 +157,39 @@
 
                 &__price {
                     color: #f05023;
+                }
+
+                table {
+                    width: 100%;
+                }
+    
+                tbody {
+                    background-color: hsla(220, 0%, 100%, 0.9);
+                }
+                thead {
+                    background-color: hsla(220, 20%, 95%, 0.9);
+                    th,
+                    td {
+                        border-bottom-width: 2px;
+                    }
+                }
+                th,
+                td {
+                    text-align: center;
+                    border: 1px solid #ccc;
+                    border-color: transparent transparent #ccc transparent;
+                    padding: 1rem;
+    
+                    span {
+                        margin: 0 5px;
+    
+                        @include mobile {
+                            @include mobile {
+                                display: block;
+                                margin: 10px 0;
+                            }
+                        }
+                    }
                 }
             }
         }

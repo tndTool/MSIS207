@@ -140,7 +140,7 @@ const Checkout = () => {
                     </div>
 
                     <div className="checkout__right__price">
-                        <span>Thành tiền:</span> <span>{totalPrice}</span>
+                        <span>Thành tiền:</span> <span>{totalPrice}₫</span>
                     </div>
                     
                     <div className="checkout__right__button">
