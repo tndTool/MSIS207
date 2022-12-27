@@ -4,19 +4,19 @@ export const addOutwearCategory = (req, res) => {
     const outwearCag = req.body;
     outwearCategory.create(outwearCag, (err, data) => {
         if(err){
-            res.status(500).send(err)
+            res.status(500).send(err);
         } else {
-            res.status(201).send(data)
+            res.status(201).send(data);
         }
-    })
-}
+    });
+};
 
 export const getOutwearCategory = (req, res) => {
     outwearCategory.find((err, data) => {
         if(err){
-            res.status(500).send(err)
+            res.status(500).send(err);
         } else {
-            res.status(201).send(data)
+            res.status(201).send(data);
         }
     })
 }
