@@ -28,7 +28,7 @@ const ProductsAll = (props) => {
             <Section>
                 <SectionTitle>Khám phá thêm</SectionTitle>
                 <SectionBody>
-                    <Grid col={4} mdCol={2} smCol={1} gap={20}>
+                    <Grid col={4} mdCol={2} smCol={2} gap={20}>
                         {relatedProducts.map((item, index) => (
                             <ProductCard
                                 key={index}
