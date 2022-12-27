@@ -7,7 +7,6 @@ export const addAccessoriesCategory = (req, res) => {
             res.status(500).send(err);
         } else {
             res.status(201).send(data);
-            console.log(data);
         }
     })
 }

@@ -22,7 +22,6 @@ export default function Login() {
     const dispatch = useDispatch();
     const userLogin = useSelector((state) => state.userLogin);
     const { isSuccess, error, userInfo } = userLogin;
-    console.log(userLogin);
     useEffect(() => {
         if (userInfo) {
             setTimeout(() => history.push('/'), 800);
