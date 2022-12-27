@@ -18,7 +18,6 @@ export const login = (inputs) => async (dispatch) => {
         dispatch(loginSuccess(data));
         localStorage.setItem('userInfo', JSON.stringify(data));
     } catch (error) {
-        console.log(error.response.data);
         dispatch(loginFail(error.response.data));
     }
 };
