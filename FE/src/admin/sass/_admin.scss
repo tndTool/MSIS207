@@ -1,5 +1,7 @@
 .admin-container {
     border: 1px solid #000;
+    padding: 1rem 1rem;
+    margin-top: calc((#{$header-height} * -1) + 1rem);
 }
 
 .admin-header__title {
