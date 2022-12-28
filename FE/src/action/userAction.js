@@ -2,6 +2,7 @@ import request from '../utils/request';
 import { registerSuccess, registerFail } from '~/redux/user/userRegisterSlice';
 import { loginSuccess, loginFail, userLogout } from '~/redux/user/userLoginSlice';
 import { updateSuccess } from '../redux/user/userUpdateSlice';
+import { resetFail, resetSuccess } from '../redux/user/userForgotSlice';
 
 export const register = (inputs) => async (dispatch) => {
     try {
@@ -34,6 +35,15 @@ export const updateInfo = (inputs) => async (dispatch, getState) => {
         console.log(error);
     }
 };
+
+export const resetPassword = (inputs) => async (dispatch) => {
+    try {
+        await request.post('/users/sendPasswordLink', inputs)
+        dispatch(resetSuccess());
+    } catch (error) {
+        dispatch(resetFail(error.response.data));
+    }
+}
 
 export const logout = async (dispatch) => {
     localStorage.removeItem('userInfo');

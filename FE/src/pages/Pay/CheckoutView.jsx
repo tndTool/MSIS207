@@ -24,6 +24,9 @@ const CheckoutView = () => {
             ),
         );
     }, [cartItems]);
+    const handleSubmit = () => {
+        localStorage.removeItem("cartItems");
+    }
 
     return (
         <Helmet title="CheckoutView">
@@ -87,6 +90,7 @@ const CheckoutView = () => {
                         </div>
                     </div>
                 </div>
+                <button onClick={handleSubmit}>Tiếp tục mua hàng</button>
             </div>
         </Helmet>
     );
