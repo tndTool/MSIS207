@@ -7,6 +7,7 @@ import userLoginSlice from './user/userLoginSlice.js';
 import userRegisterSlice from './user/userRegisterSlice.js';
 import userUpdateSlice from './user/userUpdateSlice.js';
 import userCheckoutSlice from './bill/userCheckoutSlice.js';
+import userForgotSlice from './user/userForgotSlice';
 
 const userInfoFromStorage = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null;
 
@@ -21,6 +22,7 @@ export const store = configureStore({
         userLogin: userLoginSlice,
         userRegister: userRegisterSlice,
         userUpdate: userUpdateSlice,
+        userForgot: userForgotSlice,
         userCheckout: userCheckoutSlice,
         productList: productListSlice,
     },

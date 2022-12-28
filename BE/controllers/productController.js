@@ -1,12 +1,12 @@
 import Product from "../model/product.js";
 
 export const productController = async (req, res) => {
-  await Product.find((err,data) => {
-    if(err){
-      res.status(500).send(err);
-  } else {
-      res.status(201).send(data);
+  try {
+    const getdata = await Product.find({});
+    // console.log(getdata);
+    return res.status(200).json(getdata);
+  } catch (error) {
+    return res.status(400).json(error);
   }
-  });
   // res.json(products); 
 };

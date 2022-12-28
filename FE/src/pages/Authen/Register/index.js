@@ -23,9 +23,7 @@ function Register() {
 
     const dispatch = useDispatch();
     const userRegister = useSelector((state) => state.userRegister);
-    console.log(userRegister)
     const { error, isSuccess, userInfo} = userRegister
-    console.log(error)
 
     useEffect(() => {
         if (userInfo) {

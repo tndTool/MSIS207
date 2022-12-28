@@ -1,43 +1,33 @@
 import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import styles from './Login.module.scss';
+import { useState } from 'react';
+import styles from './Reset.module.scss';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../../../action/userAction';
+import { resetPassword } from '../../../action/userAction';
 
-export default function Login() {
+export default function ForgotPassword() {
     const cx = classNames.bind(styles);
 
-    const [inputs, setInputs] = useState({
-        email: '',
-        password: '',
-    });
+    const [email, setEmail] = useState("");
 
     const [formErrors, setFormErrors] = useState({});
 
-    const history = useHistory();
 
     const dispatch = useDispatch();
-    const userLogin = useSelector((state) => state.userLogin);
-    const { isSuccess, error, userInfo } = userLogin;
-    useEffect(() => {
-        if (userInfo) {
-            setTimeout(() => history.push('/'), 800);
-        }
-    }, [history, userInfo]);
+    const userForgot = useSelector((state) => state.userForgot);
+    const { isSuccess, error } = userForgot;
 
     const handleChange = (e) => {
-        setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+        setEmail((prev) => ({ ...prev, [e.target.name]: e.target.value }));
         if (e.target.value !== 0 && Object.keys(formErrors).length !== 0) {
             setFormErrors((prev) => ({ ...prev, [e.target.name]: null }));
         }
     };
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(login(inputs));
-        setFormErrors(validate(inputs));
+        dispatch(resetPassword(email));
+        setFormErrors(validate(email));
     };
 
     const validate = (values) => {
@@ -46,9 +36,6 @@ export default function Login() {
         if (!values.email) {
             errors.email = 'Enter your email';
         }
-        if (!values.password) {
-            errors.password = 'Enter your password';
-        }
 
         return errors;
     };
@@ -56,7 +43,7 @@ export default function Login() {
         <div className={cx('container')}>
             <div className={cx('box')}>
                 <div className={cx('form-login')}>
-                    <h2>SIGN IN</h2>
+                    <h2>RESET PASSWORD</h2>
 
                     {error ? (
                         <div className={cx('ui-message_error')}>
@@ -74,7 +61,7 @@ export default function Login() {
                                 {' '}
                                 <CheckCircleOutlineIcon className={cx('ui-message_success-icon')} />
                             </div>
-                            <div>Signed in succes</div>
+                            <div>Verification code has been sent to email address, please confirm</div>
                         </div>
                     ) : null}
 
@@ -87,24 +74,8 @@ export default function Login() {
                     </div>
                     <p>{formErrors.email}</p>
 
-                    <div className={cx('form-login__inputBox')}>
-                        <input type="password" required="required" name="password" onChange={handleChange} />
-                        <span>Password</span>
-                        <i></i>
-                    </div>
-                    <p>{formErrors.password}</p>
-
-                    <div className={cx('form-login__links')}>
-                        <Link to="/forgotpassword">
-                            <span>Forgot password?</span>
-                        </Link>
-                        <Link to="/register">
-                            <span>SIGN UP</span>
-                        </Link>
-                    </div>
-
                     <div className={cx('form-login__btn')}>
-                        <span onClick={handleSubmit}>LOGIN</span>
+                        <span onClick={handleSubmit}>Send</span>
                     </div>
                 </div>
             </div>
