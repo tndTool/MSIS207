@@ -30,6 +30,7 @@ app.use("/api/auth", authRouters);
 app.use("/api/users", userRouters);
 app.use("/api/bill", billRouters);
 app.use("/api/product", productRouter);
+app.use(express.static('./public/docs/'))
 
 
 mongoose

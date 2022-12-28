@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import Helmet from '~/components/Main/Helmet';
 import HomeSlider from '~/components/Main/HomeSlider';
@@ -43,9 +42,7 @@ const Home = () => {
                 <SectionBody>
                     <Grid col={4} mdCol={2} smCol={1} gap={20}>
                         {policy.map((item, index) => (
-                            <Link key={index} to="/">
                                 <Policy name={item.name} description={item.description} icon={item.icon} />
-                            </Link>
                         ))}
                     </Grid>
                 </SectionBody>

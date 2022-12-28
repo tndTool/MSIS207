@@ -24,8 +24,13 @@ export default function Login() {
     const { isSuccess, error, userInfo } = userLogin;
     useEffect(() => {
         if (userInfo) {
-            setTimeout(() => history.push('/'), 800);
+            if(userInfo.isAdmin){
+                setTimeout(() => history.push('/admin'), 800);
+            } else {
+                setTimeout(() => history.push('/'), 800);
+            }
         }
+
     }, [history, userInfo]);
 
     const handleChange = (e) => {
