@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Helmet from '~/components/Main/Helmet';
 import moment from 'moment/moment';
@@ -7,6 +8,7 @@ import productData from '~/assets/fake-data/products';
 import numberWithCommas from '~/utils/numberWithCommas';
 
 import CheckoutSlide from '~/components/Main/CheckoutSlide';
+import Button from '../../components/Main/Button';
 
 const CheckoutView = () => {
     const userCheckout = useSelector((state) => state.userCheckout);
@@ -82,13 +84,19 @@ const CheckoutView = () => {
                         </div>
                         <div>
                             <label style={{ color: '#767575' }}>Tổng cộng:</label>
-                            <span> {bill.Total}</span>
+                            <span style={{ color: '#f05023' }}> {bill.Total}₫</span>
                         </div>
                         <div>
                             <label style={{ color: '#767575' }}>Phương thức thanh toán:</label>
                             <span> Trả tiền khi nhận hàng</span>
                         </div>
                     </div>
+
+                    <Link to="/">
+                        <Button onClick="" size="block">
+                            Tiếp tục mua hàng
+                        </Button>
+                    </Link>
                 </div>
                 <button onClick={handleSubmit}>Tiếp tục mua hàng</button>
             </div>
