@@ -35,7 +35,11 @@ Tech stack
 
 =======
 
-Link website: https://taturoshop.online
+Link website: http://taturoshop.online
+
+-------
+
+Link API Doc: http://localhost:8800
 
 ## Usage
 
@@ -45,8 +49,8 @@ Link website: https://taturoshop.online
 4. type ```npm start``` to execute the api server
 5. type ```npm run genAPIDoc``` to generate the apidoc documents
 6. to check the result: open web browser
-      + API Doc: http://localhost:3000/docs
-      + API URL: http://localhost:4000/...
+      + API Doc: http://localhost:8800
+      + API URL: http://localhost:8800/...
 
 ## License
 
