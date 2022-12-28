@@ -28,6 +28,7 @@ const CheckoutView = () => {
     }, [cartItems]);
     const handleSubmit = () => {
         localStorage.removeItem("cartItems");
+        window.location.href = '/';
     }
 
     return (
@@ -93,12 +94,11 @@ const CheckoutView = () => {
                     </div>
 
                     <Link to="/">
-                        <Button onClick="" size="block">
+                        <Button onClick={handleSubmit} size="block">
                             Tiếp tục mua hàng
                         </Button>
                     </Link>
                 </div>
-                <button onClick={handleSubmit}>Tiếp tục mua hàng</button>
             </div>
         </Helmet>
     );

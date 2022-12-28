@@ -38,6 +38,7 @@ export const register = async (req, res) => {
       Name: username,
       Email: email,
       Password: Password,
+      isAdmin: false,
     });
     user.save((error, result) => {
       if (error) console.log(error);

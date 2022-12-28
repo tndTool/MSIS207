@@ -3,8 +3,14 @@ import Button from '~/components/Main/Button';
 import Helmet from '~/components/Main/Helmet';
 import ProfileSide from '~/components/Main/ProfileSide';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
+import { useSelector } from 'react-redux';
 
 const Orders = () => {
+
+    const userCheckout = useSelector((state) => state.userCheckout);
+    const { bill } = userCheckout;
+
     return (
         <Helmet title="Account">
             <div className="header-title">
@@ -30,9 +36,9 @@ const Orders = () => {
                             <tbody>
                                 <tr>
                                     <td>#1</td>
-                                    <td>04/02/2021</td>
-                                    <td>Đã hoàn thành</td>
-                                    <td>350,000₫ </td>
+                                    <td>{moment(JSON.parse(bill.billsID)).format('DD/MM/YYYY')}</td>
+                                    <td>{bill.Status}</td>
+                                    <td>{bill.Total} </td>
                                     <td>
                                         <span>
                                             <Link to="#">

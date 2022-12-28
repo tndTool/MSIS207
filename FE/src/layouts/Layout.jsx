@@ -15,6 +15,7 @@ const Layout = () => {
                     <div>
                         {props.location.pathname !== '/login' &&
                         props.location.pathname !== '/register' &&
+                        props.location.pathname !== '/forgotpassword' &&
                         props.location.pathname !== '/admin' &&
                         props.location.pathname !== '/admin/employee' &&
                         props.location.pathname !== '/admin/products' &&
@@ -33,6 +34,7 @@ const Layout = () => {
                         </div>
                         {props.location.pathname !== '/login' &&
                         props.location.pathname !== '/register' &&
+                        props.location.pathname !== '/forgotpassword' &&
                         props.location.pathname !== '/admin' &&
                         props.location.pathname !== '/admin/employee' &&
                         props.location.pathname !== '/admin/products' &&
