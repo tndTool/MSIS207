@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import ForgotPassword from '../pages/Authen/ForgotPassword/ForgotPassword';
 import Login from '~/pages/Authen/Login';
 import Register from '~/pages/Authen/Register';
 
@@ -50,6 +51,7 @@ const Routes = () => {
             <Route path="/admin/employee" component={Employee} />
             <Route path="/admin" component={Admin} />
 
+            <Route path="/forgotpassword" component={ForgotPassword} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
 
