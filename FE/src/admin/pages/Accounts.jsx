@@ -25,7 +25,7 @@ const renderBody = (item, index) => (
             </select>
         </td>
         <td>
-            <Link to="#">
+            <Link to="/admin/accounts/update">
                 <Button size="sm">
                     <i className="bx bxs-pencil"></i>
                 </Button>

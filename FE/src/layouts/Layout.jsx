@@ -24,7 +24,10 @@ const Layout = () => {
                         props.location.pathname !== '/admin/exit' &&
                         props.location.pathname !== '/admin/employee/add' &&
                         props.location.pathname !== '/admin/products/add' &&
-                        props.location.pathname !== '/admin/accounts/add' ? (
+                        props.location.pathname !== '/admin/accounts/add' &&
+                        props.location.pathname !== '/admin/employee/update' &&
+                        props.location.pathname !== '/admin/products/update' &&
+                        props.location.pathname !== '/admin/accounts/update' ? (
                             <Header />
                         ) : null}
                         <div className="container">
@@ -43,7 +46,10 @@ const Layout = () => {
                         props.location.pathname !== '/admin/exit' &&
                         props.location.pathname !== '/admin/employee/add' &&
                         props.location.pathname !== '/admin/products/add' &&
-                        props.location.pathname !== '/admin/accounts/add' ? (
+                        props.location.pathname !== '/admin/accounts/add' &&
+                        props.location.pathname !== '/admin/employee/update' &&
+                        props.location.pathname !== '/admin/products/update' &&
+                        props.location.pathname !== '/admin/accounts/update' ? (
                             <Footer />
                         ) : null}
                         <ProductViewModal />

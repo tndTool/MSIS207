@@ -5,14 +5,14 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetPassword } from '../../../action/userAction';
+import { Link } from 'react-router-dom';
 
 export default function ForgotPassword() {
     const cx = classNames.bind(styles);
 
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState('');
 
     const [formErrors, setFormErrors] = useState({});
-
 
     const dispatch = useDispatch();
     const userForgot = useSelector((state) => state.userForgot);
@@ -73,6 +73,12 @@ export default function ForgotPassword() {
                         <i></i>
                     </div>
                     <p>{formErrors.email}</p>
+
+                    <div className={cx('form-register__links')}>
+                        <Link to="/login">
+                            <span>LOGIN</span>
+                        </Link>
+                    </div>
 
                     <div className={cx('form-login__btn')}>
                         <span onClick={handleSubmit}>Send</span>

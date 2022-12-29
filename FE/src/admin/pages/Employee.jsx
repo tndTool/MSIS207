@@ -22,7 +22,7 @@ const renderBody = (item, index) => (
         <td>{item.email}</td>
         <td>{item.address}</td>
         <td>
-            <Link to="#">
+            <Link to="/admin/employee/update">
                 <Button size="sm">
                     <i className="bx bxs-pencil"></i>
                 </Button>

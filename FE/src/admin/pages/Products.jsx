@@ -37,7 +37,7 @@ const renderBody = (item, index) => (
         <td>{item.description}</td>
         <td>{item.category}</td>
         <td>
-            <Link to="#">
+            <Link to="/admin/products/update">
                 <Button size="sm">
                     <i className="bx bxs-pencil"></i>
                 </Button>
