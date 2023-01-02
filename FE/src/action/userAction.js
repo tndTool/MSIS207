@@ -22,13 +22,9 @@ export const login = (inputs) => async (dispatch) => {
         dispatch(loginFail(error.response.data));
     }
 };
-export const updateInfo = (inputs) => async (dispatch, getState) => {
+export const updateInfo = (inputs) => async (dispatch) => {
     try {
-        const {
-            userLogin: { userInfo },
-        } = getState();
-        const user = Object.assign(userInfo, inputs);
-        const { data } = await request.post('/users/updateuser', user);
+        const {data} = await request.post('/users/updateuser', inputs);
         dispatch(updateSuccess(data));
         localStorage.setItem('userInfo', JSON.stringify(data));
     } catch (error) {

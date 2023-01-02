@@ -1,4 +1,4 @@
-import User from "../model/user.js";
+import User from "../models/user.js";
 import nodemailer from "nodemailer"
 
 const transporter = nodemailer.createTransport({
@@ -12,15 +12,21 @@ const transporter = nodemailer.createTransport({
 export const updateUser = async (req, res) => {
     const firstname = req.body.firstName;
     const lastname =  req.body.lastName;
-    const id = req.body._id;
+    const id = req.body.id;
     try {
-        const result = await User.findByIdAndUpdate(id, {
-            Firstname: firstname, 
-            Lastname: lastname}, 
+        await User.update(
             {
-            new: true
-        })
-        res.status(200).send(result);
+                Firstname: firstname, 
+                Lastname: lastname
+            },
+            {
+                where: {id}
+            }
+            )
+        const result = await User.findAll({raw: true});
+        const {Password, ...other} = result[0];
+        console.log(other)
+        res.status(200).send(other);
     } catch (error) {
         res.status(400).send(error);
     }

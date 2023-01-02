@@ -1,4 +1,4 @@
-import { homeSliderData, policy } from "../model/webDB.js";
+import { homeSliderData, policy } from "../models/webDB.js";
 
 export const addPolicy = (req, res) => {
     const policyDB = req.body;
