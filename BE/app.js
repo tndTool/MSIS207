@@ -1,5 +1,4 @@
 import express from "express";
-import mongoose from "mongoose";
 import cookie from "cookie-parser";
 import cors from "cors";
 import postRouters from "./routers/posts.js";
@@ -31,16 +30,6 @@ app.use("/api/users", userRouters);
 app.use("/api/bill", billRouters);
 app.use("/api/product", productRouter);
 app.use(express.static('./public/docs/'))
-
-
-mongoose
-.connect("mongodb+srv://dop:Tiensi1408@dop.xzl7rjj.mongodb.net/webdev")
-.then(() => {
-  console.log("database connected");
-  })
-  .catch((err) => {
-    console.log("database not connected" + err);
-  });
 
 
 app.listen(port, () => {

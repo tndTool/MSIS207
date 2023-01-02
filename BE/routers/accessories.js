@@ -14,14 +14,14 @@ const router = express.Router();
      * 
      * @apiDescription Login user by admin or moderator
      * 
-     * @apiBody {String} required_variable email Email of User
-     * @apiBody {String} required_variable password Password of User
+     * @apiBody {String}  email Email of User
+     * @apiBody {String}  password Password of User
      * 
      *
-     * @apiSuccess {Number} required_variable id The new User-ID
-     * @apiSuccess {String} required_variable username The new User-Username
-     * @apiSuccess {String} required_variable email The new User-Email
-     * @apiSuccess {Boolean} required_variable isAdmin The new User-isAdmin
+     * @apiSuccess {Number}  id The new User-ID
+     * @apiSuccess {String}  username The new User-Username
+     * @apiSuccess {String}  email The new User-Email
+     * @apiSuccess {Boolean}  isAdmin The new User-isAdmin
      * @apiSuccessExample Success-Response:
      *     {
      *    "_id": "63a5f58970113e3fed99908e",
@@ -31,9 +31,9 @@ const router = express.Router();
      *     "Firstname": "Sĩ",
      *     "Lastname": "Trầnn"
      *     }
-     * @apiError required_variable Emptypaswordoremailnotallowed Username or email or password empty
-     * @apiError required_variable Invalidemailaddress email not correct
-     * @apiError required_variable EmailInUse Email have already user in use
+     * @apiError  Emptypaswordoremailnotallowed Username or email or password empty
+     * @apiError  Invalidemailaddress email not correct
+     * @apiError  EmailInUse Email have already user in use
      * @apiErrorExample Error-Response:
      *     {
      *         "We cannot find an account with that email address"
@@ -50,14 +50,14 @@ router.post("/accessories-category", addAccessoriesCategory);
      * 
      * @apiDescription Login user by admin or moderator
      * 
-     * @apiBody {String} required_variable email Email of User
-     * @apiBody {String} required_variable password Password of User
+     * @apiBody {String}  email Email of User
+     * @apiBody {String}  password Password of User
      * 
      *
-     * @apiSuccess {Number} required_variable id The new User-ID
-     * @apiSuccess {String} required_variable username The new User-Username
-     * @apiSuccess {String} required_variable email The new User-Email
-     * @apiSuccess {Boolean} required_variable isAdmin The new User-isAdmin
+     * @apiSuccess {Number}  id The new User-ID
+     * @apiSuccess {String}  username The new User-Username
+     * @apiSuccess {String}  email The new User-Email
+     * @apiSuccess {Boolean}  isAdmin The new User-isAdmin
      * @apiSuccessExample Success-Response:
      *     {
      *    "_id": "63a5f58970113e3fed99908e",
@@ -67,9 +67,9 @@ router.post("/accessories-category", addAccessoriesCategory);
      *     "Firstname": "Sĩ",
      *     "Lastname": "Trầnn"
      *     }
-     * @apiError required_variable Emptypaswordoremailnotallowed Username or email or password empty
-     * @apiError required_variable Invalidemailaddress email not correct
-     * @apiError required_variable EmailInUse Email have already user in use
+     * @apiError  Emptypaswordoremailnotallowed Username or email or password empty
+     * @apiError  Invalidemailaddress email not correct
+     * @apiError  EmailInUse Email have already user in use
      * @apiErrorExample Error-Response:
      *     {
      *         "We cannot find an account with that email address"
@@ -87,14 +87,14 @@ router.post("/accessories-color", addAccessoriesColor);
      * 
      * @apiDescription Login user by admin or moderator
      * 
-     * @apiBody {String} required_variable email Email of User
-     * @apiBody {String} required_variable password Password of User
+     * @apiBody {String}  email Email of User
+     * @apiBody {String}  password Password of User
      * 
      *
-     * @apiSuccess {Number} required_variable id The new User-ID
-     * @apiSuccess {String} required_variable username The new User-Username
-     * @apiSuccess {String} required_variable email The new User-Email
-     * @apiSuccess {Boolean} required_variable isAdmin The new User-isAdmin
+     * @apiSuccess {Number}  id The new User-ID
+     * @apiSuccess {String}  username The new User-Username
+     * @apiSuccess {String}  email The new User-Email
+     * @apiSuccess {Boolean}  isAdmin The new User-isAdmin
      * @apiSuccessExample Success-Response:
      *     {
      *    "_id": "63a5f58970113e3fed99908e",
@@ -104,9 +104,9 @@ router.post("/accessories-color", addAccessoriesColor);
      *     "Firstname": "Sĩ",
      *     "Lastname": "Trầnn"
      *     }
-     * @apiError required_variable Emptypaswordoremailnotallowed Username or email or password empty
-     * @apiError required_variable Invalidemailaddress email not correct
-     * @apiError required_variable EmailInUse Email have already user in use
+     * @apiError  Emptypaswordoremailnotallowed Username or email or password empty
+     * @apiError  Invalidemailaddress email not correct
+     * @apiError  EmailInUse Email have already user in use
      * @apiErrorExample Error-Response:
      *     {
      *         "We cannot find an account with that email address"
@@ -124,14 +124,14 @@ router.post("/accessories-size", addAccessoriesSize);
      * 
      * @apiDescription Login user by admin or moderator
      * 
-     * @apiBody {String} required_variable email Email of User
-     * @apiBody {String} required_variable password Password of User
+     * @apiBody {String}  email Email of User
+     * @apiBody {String}  password Password of User
      * 
      *
-     * @apiSuccess {Number} required_variable id The new User-ID
-     * @apiSuccess {String} required_variable username The new User-Username
-     * @apiSuccess {String} required_variable email The new User-Email
-     * @apiSuccess {Boolean} required_variable isAdmin The new User-isAdmin
+     * @apiSuccess {Number}  id The new User-ID
+     * @apiSuccess {String}  username The new User-Username
+     * @apiSuccess {String}  email The new User-Email
+     * @apiSuccess {Boolean}  isAdmin The new User-isAdmin
      * @apiSuccessExample Success-Response:
      *     {
      *    "_id": "63a5f58970113e3fed99908e",
@@ -141,9 +141,9 @@ router.post("/accessories-size", addAccessoriesSize);
      *     "Firstname": "Sĩ",
      *     "Lastname": "Trầnn"
      *     }
-     * @apiError required_variable Emptypaswordoremailnotallowed Username or email or password empty
-     * @apiError required_variable Invalidemailaddress email not correct
-     * @apiError required_variable EmailInUse Email have already user in use
+     * @apiError  Emptypaswordoremailnotallowed Username or email or password empty
+     * @apiError  Invalidemailaddress email not correct
+     * @apiError  EmailInUse Email have already user in use
      * @apiErrorExample Error-Response:
      *     {
      *         "We cannot find an account with that email address"

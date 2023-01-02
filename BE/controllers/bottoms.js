@@ -1,4 +1,4 @@
-import { bottomsCategory, bottomsColor, bottomsSize } from "../model/webDB.js";
+import { bottomsCategory, bottomsColor, bottomsSize } from "../models/webDB.js";
 
 export const addBottomsCategory = (req, res) => {
     const bottomsCag = req.body;

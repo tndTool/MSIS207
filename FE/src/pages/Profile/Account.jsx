@@ -9,6 +9,7 @@ import { useHistory } from 'react-router-dom';
 const Account = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
+    const [id, setID] = useState('');
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
 
@@ -22,12 +23,13 @@ const Account = () => {
         } else {
             setFirstName(userInfo.Firstname);
             setLastName(userInfo.Lastname);
+            setID(userInfo.id)
         }
     }, [history, userInfo]);
 
     const handleSubmit = () => {
         try {
-            dispatch(updateInfo({ firstName, lastName }));
+            dispatch(updateInfo({ firstName, lastName, id}));
             window.location.reload(false)
         } catch (error) {
             console.log(error);

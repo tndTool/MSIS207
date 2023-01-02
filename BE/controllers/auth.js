@@ -1,7 +1,8 @@
 import bcrypt from "bcryptjs";
-import User from "../model/user.js";
+import User from "../models/user.js";
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
+
 dotenv.config();
 
 
@@ -28,7 +29,7 @@ export const register = async (req, res) => {
   if (re_password != password) {
     return res.status(402).json("Password not match");
   }
-  const existingEmail = await User.findOne({ Email: email });
+  const existingEmail = await User.findOne({ Email: email});
   
   if (existingEmail) {
     res.status(409).json("email is already in use, please enter another email");
@@ -59,8 +60,7 @@ export const login = async (req, res) => {
   if (!email || !password) {
     res.status(402).json("Empty pasword or email not allowed");
   } else {
-    const existingEmail = await User.findOne({ Email: email });
-
+    const existingEmail = await User.findOne({ Email: email, raw: true });
     //enter wrong email or password
     if (!existingEmail) {
       return res
@@ -86,9 +86,8 @@ export const login = async (req, res) => {
           expiresIn: process.env.JWT_EXPIRES,
         }
       );
-      const temp = JSON.stringify(existingEmail);
-      const data = JSON.parse(temp);
-      const {Password, ...other} = data;
+      console.log(existingEmail)
+      const {Password, ...other} = existingEmail;
       const cookie_option = {
         expiresIn: new Date(
           Date.now() + process.env.COOKIE_EXPIRES * 24 * 60 * 60 * 1000
