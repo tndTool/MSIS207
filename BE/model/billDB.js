@@ -1,7 +1,7 @@
 // This model using for mongoose. While app is running on mysql as default 
 // if u want to using mongoose for app please change folder imported in controllers from ../models -> ../model 
 // and change code in that right for your model
-// u also create connnection in app.js for using mongoose
+// u also need to create connnection in app.js for using mongoose
 
 import mongoose from "mongoose";
 
