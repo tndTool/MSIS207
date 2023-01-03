@@ -1,64 +1,58 @@
 import { topCategory, topColor, topSize } from "../models/webDB.js";
 
-export const addTopCategory = (req, res) => {
+export const addTopCategory = async (req, res) => {
     const topCag = req.body;
-    topCategory.create(topCag, (err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+    try {
+        const result = await topCategory.create(topCag, {raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const getTopCategory = (req, res) => {
-    topCategory.find((err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+export const getTopCategory = async (req, res) => {
+    try {
+        const result = await topCategory.findAll({raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const addTopColor = (req, res) => {
+export const addTopColor = async (req, res) => {
     const topCol = req.body;
-    topColor.create(topCol, (err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+    try {
+        const result = await topColor.create(topCol, {raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const getTopColor = (req, res) => {
-    topColor.find((err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+export const getTopColor = async (req, res) => {
+    try {
+        const result = await topColor.findAll({raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const addTopSize = (req, res) => {
+export const addTopSize = async (req, res) => {
     const topSiz = req.body;
-    topSize.create(topSiz, (err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+    try {
+        const result = await topSize.create(topSiz, {raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const getTopSize = (req, res) => {
-    topSize.find((err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+export const getTopSize = async (req, res) => {
+    try {
+        const result = await topSize.findAll({raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
