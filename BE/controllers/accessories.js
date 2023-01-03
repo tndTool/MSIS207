@@ -1,64 +1,58 @@
 import { accessoriesCategory, accessoriesColor, accessoriesSize } from "../models/webDB.js";
 
-export const addAccessoriesCategory = (req, res) => {
+export const addAccessoriesCategory = async (req, res) => {
     const accessoriesCag = req.body;
-    accessoriesCategory.create(accessoriesCag, (err, data) => {
-        if(err){
-            res.status(500).send(err);
-        } else {
-            res.status(201).send(data);
-        }
-    })
+    try {
+        const result = await accessoriesCategory.create(accessoriesCag, {raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const getAccessoriesCategory = (req, res) => {
-    accessoriesCategory.find((err, data) => {
-        if(err){
-            res.status(500).send(err);
-        } else {
-            res.status(201).send(data);
-        }
-    })
+export const getAccessoriesCategory = async (req, res) => {
+    try {
+        const result = await accessoriesCategory.findAll({raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const addAccessoriesColor = (req, res) => {
+export const addAccessoriesColor = async (req, res) => {
     const accessoriesCol = req.body;
-    accessoriesColor.create(accessoriesCol, (err, data) => {
-        if(err){
-            res.status(500).send(err);
-        } else {
-            res.status(201).send(data);
-        }
-    })
+    try {
+        const result = await accessoriesColor.create(accessoriesCol, {raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const getAccessoriesColor = (req, res) => {
-    accessoriesColor.find((err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+export const getAccessoriesColor = async (req, res) => {
+    try {
+        const result = await accessoriesColor.findAll({raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const addAccessoriesSize = (req, res) => {
+export const addAccessoriesSize = async (req, res) => {
     const accessoriesSiz = req.body;
-    accessoriesSize.create(accessoriesSiz, (err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+    try {
+        const result = await accessoriesSize.create(accessoriesSiz, {raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const getAccessoriesSize = (req, res) => {
-    accessoriesSize.find((err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+export const getAccessoriesSize = async (req, res) => {
+    try {
+        const result = await accessoriesSize.findAll({raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }

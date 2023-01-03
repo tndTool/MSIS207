@@ -1,64 +1,58 @@
 import { bottomsCategory, bottomsColor, bottomsSize } from "../models/webDB.js";
 
-export const addBottomsCategory = (req, res) => {
+export const addBottomsCategory = async (req, res) => {
     const bottomsCag = req.body;
-    bottomsCategory.create(bottomsCag, (err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+    try {
+        const result = await bottomsCategory.create(bottomsCag, {raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const getBottomsCategory = (req, res) => {
-    bottomsCategory.find((err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+export const getBottomsCategory = async (req, res) => {
+    try {
+        const result = await bottomsCategory.findAll({raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const addBottomsColor = (req, res) => {
+export const addBottomsColor = async (req, res) => {
     const bottomsCol = req.body;
-    bottomsColor.create(bottomsCol, (err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+    try {
+        const result = await bottomsColor.create(bottomsCol, {raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const getBottomsColor = (req, res) => {
-    bottomsColor.find((err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+export const getBottomsColor = async (req, res) => {
+    try {
+        const result = await bottomsColor.findAll({raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const addBottomsSize = (req, res) => {
+export const addBottomsSize = async (req, res) => {
     const bottomsSiz = req.body;
-    bottomsSize.create(bottomsSiz, (err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+    try {
+        const result = await bottomsSize.create(bottomsSiz, {raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-export const getBottomsSize = (req, res) => {
-    bottomsSize.find((err, data) => {
-        if(err){
-            res.status(500).send(err)
-        } else {
-            res.status(201).send(data)
-        }
-    })
+export const getBottomsSize = async (req, res) => {
+    try {
+        const result = await bottomsSize.findAll({raw: true});
+        res.status(201).send(result);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
