@@ -16,9 +16,13 @@ const Home = () => {
     
         useEffect(() => {
             async function fetchData() {
-                const req = await request.get('/home/policy');
-                setPolicy(req.data);
-                
+                try {
+                    const req = await request.get('/home/policy');
+                    console.log(req)
+                    setPolicy(req.data);
+                } catch (error) {
+                    console.log(error)
+                }      
             }
             fetchData();
         }, []);
