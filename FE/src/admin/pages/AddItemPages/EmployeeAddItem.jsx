@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Sidebar from '~/admin/components/sidebar/Sidebar';
 import Helmet from '~/components/Main/Helmet';
 import Button from '~/components/Main/Button';
+import { useDispatch } from 'react-redux';
+import { addEmployee } from '../../../action/employeeAction';
 
 const EmployeeAddItem = () => {
+
+    const [name, setName] = useState("");
+    const [gender, setGender] = useState("");
+    const [birthday, setBirthday] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [address, setAddress] = useState("");
+
+    const dispatch = useDispatch();
+    
+    const handleSubmit = () => {
+        dispatch(addEmployee({name, gender, birthday, email, phone, address}))
+    }
+
     return (
         <Helmet title="Admin">
             <div className="admin-container">
@@ -19,27 +35,31 @@ const EmployeeAddItem = () => {
                             <div className="checkout__left__box__main">
                                 <div className="checkout__left__box__main__left">
                                     <label for="name">Name*</label>
-                                    <input type="text" name="name" />
+                                    <input type="text" name="name" onChange={(e) => setName(e.target.value)}/>
 
                                     <label for="gender">Gender*</label>
-                                    <input type="text" name="gender" />
+                                    <select name="gender" onClick={(e) => setGender(e.target.selectedOptions[0].text)}>
+                                        <option value="0">Chọn</option>
+                                        <option value="0">Male</option>
+                                        <option value="1">Female</option>
+                                    </select>
 
                                     <label for="birthday">Birthday*</label>
-                                    <input type="text" name="birthday" />
+                                    <input type="text" name="birthday" onChange={(e) => setBirthday(e.target.value)}/>
                                 </div>
 
                                 <div className="checkout__left__box__main__right">
                                     <label for="phone">Phone*</label>
-                                    <input type="text" name="phone" />
+                                    <input type="text" name="phone" onChange={(e) => setPhone(e.target.value)}/>
 
                                     <label for="email">Email*</label>
-                                    <input type="text" name="email" />
+                                    <input type="text" name="email" onChange={(e) => setEmail(e.target.value)}/>
 
                                     <label for="address">Address*</label>
-                                    <input type="text" name="address" />
+                                    <input type="text" name="address" onChange={(e) => setAddress(e.target.value)}/>
                                 </div>
                             </div>
-                            <Button primary>Lưu thay đổi</Button>
+                            <Button onClick={handleSubmit}primary>Lưu thay đổi</Button>
                         </div>
                     </div>
                 </div>
