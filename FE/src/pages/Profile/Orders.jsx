@@ -34,7 +34,8 @@ const Orders = () => {
                             </thead>
 
                             <tbody>
-                                <tr>
+                                {bill ?
+                                (<tr>
                                     <td>#1</td>
                                     <td>{moment(JSON.parse(bill.billsID)).format('DD/MM/YYYY')}</td>
                                     <td>{bill.Status}</td>
@@ -48,7 +49,10 @@ const Orders = () => {
                                             </Link>
                                         </span>
                                     </td>
-                                </tr>
+                                </tr>) : 
+                                (<div>
+                                    <p>bạn chưa có đơn hàng nào</p>
+                                </div>)}
                             </tbody>
                         </table>
                     </div>

@@ -5,11 +5,11 @@ import CheckBox from '~/components/Main/CheckBox';
 import Button from '~/components/Main/Button';
 import InfinityList from '~/components/Main/InfinityList';
 
-import productData from '~/assets/fake-data/products';
 import request from '../../utils/request';
 
 const Bottoms = () => {
 
+    const [allProduct, setAllProduct] = useState([]);
     const [bottoms_category, setBottoms_category] = useState([]);
     const [colors, setColor] = useState([]);
     const [size, setSize] = useState([]);
@@ -22,6 +22,8 @@ const Bottoms = () => {
             setColor(req2.data);
             const req3 = await request.get('/bottoms/bottoms-size');
             setSize(req3.data);
+            const {data} = await request.get('/product/getAll');
+            setAllProduct(data);
         }
         fetchData();
     }, []);
@@ -93,7 +95,7 @@ const Bottoms = () => {
         size: [],
     };
 
-    const productList = productData.getAllBottomsProducts();
+    const productList = allProduct.filter((e) => e.Category === 'bottoms')
 
     const [products, setProducts] = useState(productList);
 
@@ -138,19 +140,19 @@ const Bottoms = () => {
         let temp = productList;
 
         if (filter.category.length > 0) {
-            temp = temp.filter((e) => filter.category.includes(e.categorySlug));
+            temp = temp.filter((e) => filter.category.includes(e.CategorySlug));
         }
 
         if (filter.color.length > 0) {
             temp = temp.filter((e) => {
-                const check = e.colors.find((color) => filter.color.includes(color));
+                const check = e.Colors.find((color) => filter.color.includes(color));
                 return check !== undefined;
             });
         }
 
         if (filter.size.length > 0) {
             temp = temp.filter((e) => {
-                const check = e.size.find((size) => filter.size.includes(size));
+                const check = e.Size.find((size) => filter.size.includes(size));
                 return check !== undefined;
             });
         }

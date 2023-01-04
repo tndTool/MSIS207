@@ -20,7 +20,7 @@ const sidebar_items = [
         to: '/admin/bills',
     },
     {
-        display_name: 'Account',
+        display_name: 'accounts',
         to: '/admin/accounts',
     },
     {

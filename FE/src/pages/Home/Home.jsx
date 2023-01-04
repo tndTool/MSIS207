@@ -7,10 +7,10 @@ import Policy from '~/components/Main/Policy';
 import ProductCard from '~/components/Main/ProductCard';
 import Grid from '~/components/Main/Grid';
 import request from '../../utils/request';
-import productData from '~/assets/fake-data/products';
 
 const Home = () => {
 
+        const [allProduct, setAllProduct] = useState([])
         const [policy, setPolicy] = useState([]);
         const [homeSliderData, setHomeSliderData] = useState([]);
     
@@ -18,19 +18,14 @@ const Home = () => {
             async function fetchData() {
                 try {
                     const req = await request.get('/home/policy');
-                    console.log(req)
                     setPolicy(req.data);
+                    const req2 = await request.get('/home/homeSliderData');
+                    setHomeSliderData(req2.data);
+                    const {data}= await request.get('/product/getAll');
+                    setAllProduct(data);
                 } catch (error) {
                     console.log(error)
                 }      
-            }
-            fetchData();
-        }, []);
-
-        useEffect(() => {
-            async function fetchData() {
-                const req = await request.get('/home/homeSliderData');
-                setHomeSliderData(req.data);
             }
             fetchData();
         }, []);
@@ -58,14 +53,14 @@ const Home = () => {
                 <SectionTitle>top sản phẩm bán chạy trong tuần</SectionTitle>
                 <SectionBody>
                     <Grid col={4} mdCol={2} smCol={2} gap={20}>
-                        {productData.getProducts(4).map((item, index) => (
+                        {allProduct.slice(0, 4).map((item, index) => (
                             <ProductCard
                                 key={index}
-                                img01={item.image01}
-                                img02={item.image02}
-                                name={item.title}
-                                price={Number(item.price)}
-                                slug={item.slug}
+                                img01={item.Image01}
+                                img02={item.Image02}
+                                name={item.Title}
+                                price={Number(item.Price)}
+                                slug={item.Slug}
                             />
                         ))}
                     </Grid>
@@ -78,14 +73,14 @@ const Home = () => {
                 <SectionTitle>sản phẩm mới</SectionTitle>
                 <SectionBody>
                     <Grid col={4} mdCol={2} smCol={2} gap={20}>
-                        {productData.getProducts(4).map((item, index) => (
+                        {allProduct.slice(0, 4).map((item, index) => (
                             <ProductCard
                                 key={index}
-                                img01={item.image01}
-                                img02={item.image02}
-                                name={item.title}
-                                price={Number(item.price)}
-                                slug={item.slug}
+                                img01={item.Image01}
+                                img02={item.Image02}
+                                name={item.Title}
+                                price={Number(item.Price)}
+                                slug={item.Slug}
                             />
                         ))}
                     </Grid>
@@ -98,14 +93,14 @@ const Home = () => {
                 <SectionTitle>phổ biến</SectionTitle>
                 <SectionBody>
                     <Grid col={4} mdCol={2} smCol={2} gap={20}>
-                        {productData.getProducts(4).map((item, index) => (
+                        {allProduct.slice(0, 4).map((item, index) => (
                             <ProductCard
                                 key={index}
-                                img01={item.image01}
-                                img02={item.image02}
-                                name={item.title}
-                                price={Number(item.price)}
-                                slug={item.slug}
+                                img01={item.Image01}
+                                img02={item.Image02}
+                                name={item.Title}
+                                price={Number(item.Price)}
+                                slug={item.Slug}
                             />
                         ))}
                     </Grid>

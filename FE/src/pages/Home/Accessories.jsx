@@ -5,15 +5,15 @@ import CheckBox from '~/components/Main/CheckBox';
 import Button from '~/components/Main/Button';
 import InfinityList from '~/components/Main/InfinityList';
 
-import productData from '~/assets/fake-data/products';
 import request from '../../utils/request';
 
 const Accessories = () => {
-
+    
+    const [allProduct, setAllProduct] = useState([]);
     const [accessories_category, setAccessories_category] = useState([]);
     const [colors, setColor] = useState([]);
     const [size, setSize] = useState([]);
-
+    
     useEffect(() => {
         async function fetchData() {
             const req = await request.get('/accessories/accessories-category');
@@ -22,11 +22,13 @@ const Accessories = () => {
             setColor(req2.data);
             const req3 = await request.get('/accessories/accessories-size');
             setSize(req3.data);
+            const {data} = await request.get('/product/getAll');
+            setAllProduct(data);
         }
         fetchData();
     }, []);
     // const accessories_category = [
-    //     {
+        //     {
     //         display: 'Wallet',
     //         categorySlug: 'wallet',
     //     },
@@ -62,7 +64,7 @@ const Accessories = () => {
     //         color: 'red',
     //     },
     //     {
-    //         display: 'Nâu',
+        //         display: 'Nâu',
     //         color: 'brown',
     //     },
     //     {
@@ -72,7 +74,7 @@ const Accessories = () => {
     // ];
 
     // const size = [
-    //     {
+        //     {
     //         display: 'S',
     //         size: 's',
     //     },
@@ -95,10 +97,12 @@ const Accessories = () => {
         color: [],
         size: [],
     };
-
-    const productList = productData.getAllAccessoriesProducts();
+    
+    // const productList = productData.getAllAccessoriesProducts();
+    const productList = allProduct.filter((e) => e.Category === 'accessories')
 
     const [products, setProducts] = useState(productList);
+
 
     const [filter, setFilter] = useState(initFilter);
 
@@ -108,9 +112,9 @@ const Accessories = () => {
                 case 'CATEGORY':
                     setFilter({ ...filter, category: [...filter.category, item.categorySlug] });
                     break;
-                case 'COLOR':
-                    setFilter({ ...filter, color: [...filter.color, item.color] });
-                    break;
+                    case 'COLOR':
+                        setFilter({ ...filter, color: [...filter.color, item.color] });
+                        break;
                 case 'SIZE':
                     setFilter({ ...filter, size: [...filter.size, item.size] });
                     break;
@@ -139,21 +143,21 @@ const Accessories = () => {
 
     const updateProducts = useCallback(() => {
         let temp = productList;
-
+        
         if (filter.category.length > 0) {
-            temp = temp.filter((e) => filter.category.includes(e.categorySlug));
+            temp = temp.filter((e) => filter.category.includes(e.CategorySlug));
         }
 
         if (filter.color.length > 0) {
             temp = temp.filter((e) => {
-                const check = e.colors.find((color) => filter.color.includes(color));
+                const check = e.Colors.find((color) => filter.color.includes(color));
                 return check !== undefined;
             });
         }
 
         if (filter.size.length > 0) {
             temp = temp.filter((e) => {
-                const check = e.size.find((size) => filter.size.includes(size));
+                const check = e.Size.find((size) => filter.size.includes(size));
                 return check !== undefined;
             });
         }
@@ -164,9 +168,9 @@ const Accessories = () => {
     useEffect(() => {
         updateProducts();
     }, [updateProducts]);
-
+    
     const filterRef = useRef(null);
-
+    
     const showHideFilter = () => filterRef.current.classList.toggle('active');
 
     return (

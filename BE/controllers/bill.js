@@ -1,6 +1,6 @@
 import Bill from "../models/billDB.js";
 
-export const createBill = (req, res) => {
+export const createBill = async (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
     const phone = req.body.phone;
@@ -15,7 +15,7 @@ export const createBill = (req, res) => {
         return res.status(400).json("Vui lòng điền đầy đủ thông tin");
     }
     else{
-        const bill = new Bill({
+        const bill = Bill.build({
             billsID: BillID,
             Name: name,
             Email: email,
@@ -27,9 +27,11 @@ export const createBill = (req, res) => {
             Total: total,
             Status: "Đang xử lí",
           });
-          bill.save((error, result) => {
-            if (error) console.log(error);
-            return res.status(200).json(result);
-          });
+          try {
+            const result = await bill.save()
+            return res.status(200).json(result.get({raw: true}));
+          } catch (error) {
+            console.log(error);
+          }
     }
 }

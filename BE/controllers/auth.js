@@ -56,26 +56,21 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-
+  
   if (!email || !password) {
     res.status(402).json("Empty pasword or email not allowed");
   } else {
-    const existingEmail = await User.findOne({ Email: email, raw: true });
-    //enter wrong email or password
-    if (!existingEmail) {
-      return res
-        .status(401)
-        .json("We cannot find an account with that email address");
-    }
-    //In case the username, password is entered correctly
-    else {
+    try {
+      const existingEmail = await User.findOne({ where: {Email: email}, raw: true });
       const validPassword = bcrypt.compareSync(
         password,
         existingEmail.Password
-      );
-      if (!validPassword && password) {
-        return res.status(401).json("Your password is incorrect");
-      }
+        );
+        //enter wrong email or password
+        if (!validPassword && password) {
+          return res.status(401).json("Your password is incorrect");
+        }
+        //In case the username, password is entered correctly
       const token = jwt.sign(
         {
           id: existingEmail.id,
@@ -86,7 +81,6 @@ export const login = async (req, res) => {
           expiresIn: process.env.JWT_EXPIRES,
         }
       );
-      console.log(existingEmail)
       const {Password, ...other} = existingEmail;
       const cookie_option = {
         expiresIn: new Date(
@@ -99,6 +93,11 @@ export const login = async (req, res) => {
         .cookie("userRegister", token, cookie_option)
         .status(200)
         .json(other);
+      }
+      catch (error) {
+        return res
+          .status(401)
+          .json("We cannot find an account with that email address");
     }
   }
 };

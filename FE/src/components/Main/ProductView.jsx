@@ -16,20 +16,21 @@ const ProductView = (props) => {
 
     let product = props.product;
 
-    if (product === undefined)
+    if (product === undefined){
         product = {
-            title: '',
-            price: '',
-            image01: null,
-            image02: null,
-            categorySlug: '',
-            colors: [],
-            slug: '',
-            size: [],
-            description: '',
+            Title: '',
+            Price: '',
+            Image01: null,
+            Image02: null,
+            CategorySlug: '',
+            Colors: [],
+            Slug: '',
+            Size: [],
+            Description: '',
         };
+    }
 
-    const [previewImg, setPreviewImg] = useState(product.image01);
+    const [previewImg, setPreviewImg] = useState(product.Image01);
 
     const [descriptionExpand, setDescriptionExpand] = useState(false);
 
@@ -48,7 +49,7 @@ const ProductView = (props) => {
     };
 
     useEffect(() => {
-        setPreviewImg(product.image01);
+        setPreviewImg(product.Image01);
         setQuantity(1);
         setColor(undefined);
         setSize(undefined);
@@ -71,10 +72,10 @@ const ProductView = (props) => {
     const addToCart = () => {
         if (check()) {
             let newItem = {
-                slug: product.slug,
+                slug: product.Slug,
                 color: color,
                 size: size,
-                price: product.price,
+                price: product.Price,
                 quantity: quantity,
             };
             if (dispatch(addItem(newItem))) {
@@ -88,10 +89,10 @@ const ProductView = (props) => {
     const goToCart = () => {
         if (check()) {
             let newItem = {
-                slug: product.slug,
+                slug: product.Slug,
                 color: color,
                 size: size,
-                price: product.price,
+                price: product.Price,
                 quantity: quantity,
             };
             if (dispatch(addItem(newItem))) {
@@ -107,11 +108,11 @@ const ProductView = (props) => {
         <div className="product">
             <div className="product__images">
                 <div className="product__images__list">
-                    <div className="product__images__list__item" onClick={() => setPreviewImg(product.image01)}>
-                        <img src={product.image01} alt="" />
+                    <div className="product__images__list__item" onClick={() => setPreviewImg(product.Image01)}>
+                        <img src={product.Image01} alt="" />
                     </div>
-                    <div className="product__images__list__item" onClick={() => setPreviewImg(product.image02)}>
-                        <img src={product.image02} alt="" />
+                    <div className="product__images__list__item" onClick={() => setPreviewImg(product.Image02)}>
+                        <img src={product.Image02} alt="" />
                     </div>
                 </div>
                 <div className="product__images__main">
@@ -121,7 +122,7 @@ const ProductView = (props) => {
                     <div className="product-description__title">Chi tiết sản phẩm</div>
                     <div
                         className="product-description__content"
-                        dangerouslySetInnerHTML={{ __html: product.description }}
+                        dangerouslySetInnerHTML={{ __html: product.Description }}
                     ></div>
                     <div className="product-description__toggle">
                         <button onClick={() => setDescriptionExpand(!descriptionExpand)}>
@@ -131,15 +132,15 @@ const ProductView = (props) => {
                 </div>
             </div>
             <div className="product__info">
-                <h1 className="product__info__title">{product.title}</h1>
+                <h1 className="product__info__title">{product.Title}</h1>
                 <div className="product__info__item">
-                    <span className="product__info__item__price">{numberWithCommas(product.price)}</span>
+                    <span className="product__info__item__price">{numberWithCommas(product.Price)}</span>
                 </div>
 
                 <div className="product__info__item">
                     <div className="product__info__item__title">Màu sắc</div>
                     <div className="product__info__item__list">
-                        {product.colors.map((item, index) => (
+                        {product.Colors.map((item, index) => (
                             <div
                                 key={index}
                                 className={`product__info__item__list__item ${color === item ? 'active' : ''}`}
@@ -154,7 +155,7 @@ const ProductView = (props) => {
                 <div className="product__info__item">
                     <div className="product__info__item__title">Kích cỡ</div>
                     <div className="product__info__item__list">
-                        {product.size.map((item, index) => (
+                        {product.Size.map((item, index) => (
                             <div
                                 key={index}
                                 className={`product__info__item__list__item ${size === item ? 'active' : ''}`}
@@ -188,7 +189,7 @@ const ProductView = (props) => {
                 <div className="product-description__title">Chi tiết sản phẩm</div>
                 <div
                     className="product-description__content"
-                    dangerouslySetInnerHTML={{ __html: product.description }}
+                    dangerouslySetInnerHTML={{ __html: product.Description }}
                 ></div>
                 <div className="product-description__toggle">
                     <Button size="sm" onClick={() => setDescriptionExpand(!descriptionExpand)}>

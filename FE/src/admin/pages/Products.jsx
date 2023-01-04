@@ -1,55 +1,25 @@
 import React from 'react';
 
-import Table from '../components/table/Table';
 import Sidebar from '../components/sidebar/Sidebar';
 import Helmet from '~/components/Main/Helmet';
 
-import productsList from '../JSON/products-list.json';
 import Button from '~/components/Main/Button';
 import { Link } from 'react-router-dom';
-
-const customerTableHead = [
-    'Title',
-    'Price',
-    'Image01',
-    'Image02',
-    'CategorySlug',
-    'Colors',
-    'Slug',
-    'Size',
-    'Description',
-    'Category',
-    'Actions',
-];
-
-const renderHead = (item, index) => <th key={index}>{item}</th>;
-
-const renderBody = (item, index) => (
-    <tr key={index}>
-        <td>{item.title}</td>
-        <td>{item.price}</td>
-        <td>{item.image01}</td>
-        <td>{item.image02}</td>
-        <td>{item.categorySlug}</td>
-        <td>{item.colors}</td>
-        <td>{item.slug}</td>
-        <td>{item.size}</td>
-        <td>{item.description}</td>
-        <td>{item.category}</td>
-        <td>
-            <Link to="/admin/products/update">
-                <Button size="sm">
-                    <i className="bx bxs-pencil"></i>
-                </Button>
-            </Link>
-            <Button size="sm">
-                <i className="bx bxs-trash"></i>
-            </Button>
-        </td>
-    </tr>
-);
+import { useEffect } from 'react';
+import { deleteProduct, listProduct } from '../../action/productAction';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Products = () => {
+    const {product} = useSelector((state) => state.productList)
+    const dispatch = useDispatch();
+
+    const handleDelete = (id) => {
+        dispatch(deleteProduct(id));
+    }
+
+    useEffect(() => {
+        dispatch(listProduct())
+    },[dispatch])
     return (
         <Helmet title="Admin">
             <div className="admin-container">
@@ -74,13 +44,51 @@ const Products = () => {
                             </div>
                         </div>
                         <div className="card__body">
-                            <Table
-                                limit="10"
-                                headData={customerTableHead}
-                                renderHead={(item, index) => renderHead(item, index)}
-                                bodyData={productsList}
-                                renderBody={(item, index) => renderBody(item, index)}
-                            />
+                           <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Title</th>
+                                        <th>Price</th>
+                                        <th>Image01</th>
+                                        <th>Image02</th>
+                                        <th>CategorySlug</th>
+                                        <th>Colors</th>
+                                        <th>Slug</th>
+                                        <th>Size</th>
+                                        <th>Description</th>
+                                        <th>Category</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {product?.map((item) => (
+                                    <tr>
+                                        <td>{item.id}</td>
+                                        <td>{item.Title}</td>
+                                        <td>{item.Price}</td>
+                                        <td>{item.Image01}</td>
+                                        <td>{item.Image02}</td>
+                                        <td>{item.CategorySlug}</td>
+                                        <td>{item.Colors}</td>
+                                        <td>{item.Slug}</td>
+                                        <td>{item.Size}</td>
+                                        <td>{item.Description}</td>
+                                        <td>{item.Category}</td>
+                                        <td>
+                                            <Link to="/admin/products/update">
+                                                <Button size="sm">
+                                                <i class='bx bxs-pencil'></i>
+                                                </Button>
+                                            </Link>
+                                            <Button size="sm" onClick = {() => handleDelete(item.id)}>
+                                                <i className="bx bxs-trash"></i>
+                                            </Button>
+                                        </td>
+                                    </tr>
+                                    ))}
+                                </tbody>
+                           </table>
                         </div>
                     </div>
                 </div>

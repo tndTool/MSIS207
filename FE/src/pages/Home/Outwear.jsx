@@ -5,12 +5,11 @@ import CheckBox from '~/components/Main/CheckBox';
 import Button from '~/components/Main/Button';
 import InfinityList from '~/components/Main/InfinityList';
 
-import productData from '~/assets/fake-data/products';
 import request from '../../utils/request';
 
 const Outwear = () => {
     
-
+    const [allProduct, setAllProduct] = useState([]);
     const [outwear_category, setOutwear_category] = useState([]);
     const [colors, setColor] = useState([]);
     const [size, setSize] = useState([]);
@@ -23,6 +22,8 @@ const Outwear = () => {
             setColor(req2.data);
             const req3 = await request.get('/outwear/outwear-size');
             setSize(req3.data);
+            const {data} = await request.get('/product/getAll');
+            setAllProduct(data);
         }
         fetchData();
     }, []);
@@ -99,7 +100,7 @@ const Outwear = () => {
         size: [],
     };
 
-    const productList = productData.getAllOutwearProducts();
+    const productList = allProduct.filter((e) => e.Category === 'outwear')
 
     const [products, setProducts] = useState(productList);
 
@@ -144,19 +145,19 @@ const Outwear = () => {
         let temp = productList;
 
         if (filter.category.length > 0) {
-            temp = temp.filter((e) => filter.category.includes(e.categorySlug));
+            temp = temp.filter((e) => filter.category.includes(e.CategorySlug));
         }
 
         if (filter.color.length > 0) {
             temp = temp.filter((e) => {
-                const check = e.colors.find((color) => filter.color.includes(color));
+                const check = e.Colors.find((color) => filter.color.includes(color));
                 return check !== undefined;
             });
         }
 
         if (filter.size.length > 0) {
             temp = temp.filter((e) => {
-                const check = e.size.find((size) => filter.size.includes(size));
+                const check = e.Size.find((size) => filter.size.includes(size));
                 return check !== undefined;
             });
         }

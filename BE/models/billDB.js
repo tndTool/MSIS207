@@ -38,13 +38,8 @@ const Bill = db.define('Bill', {
             type: DataTypes.STRING,
         },
         Product: {
-            type: DataTypes.STRING,
-            get: function() {
-                return JSON.parse(this.getDataValue('Product'));
-            }, 
-            set: function(val) {
-                return this.setDataValue('Product', JSON.stringify(val));
-            },
+            type: DataTypes.JSON,
+            
         },
         Total: {
             type: DataTypes.STRING,

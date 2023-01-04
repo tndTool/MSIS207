@@ -9,6 +9,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandPointLeft, faHandPointRight } from '@fortawesome/free-regular-svg-icons';
 
 const Exit = () => {
+
+    const handleSubmit = () => {
+        localStorage.removeItem('userInfo');
+        window.location.href = '/login';
+    }
     return (
         <Helmet title="Admin">
             <div className="admin-container">
@@ -22,12 +27,12 @@ const Exit = () => {
                         <div className="profile__right__logout">
                             <p>
                                 Are you sure you want to sign out?
-                                <Link to="/login">
+                                <Link>
                                     <span>
                                         <span>
                                             <FontAwesomeIcon icon={faHandPointRight} />
                                         </span>
-                                        <span>Confirm and Logout</span>
+                                        <span onClick={handleSubmit}>Confirm and Logout</span>
                                         <span>
                                             <FontAwesomeIcon icon={faHandPointLeft} />
                                         </span>
