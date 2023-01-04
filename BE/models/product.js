@@ -24,19 +24,19 @@ const product = db.define("Product", {
         allowNull: false,
     },
     Colors: {
-        type: DataTypes.STRING,
-        default: undefined,
+        type: DataTypes.JSON,
+        allowNull: false,
     },
     Slug: {
         type: DataTypes.STRING,
         allowNull: false,
     },
     Size: {
-        type: DataTypes.STRING,
-        default: undefined,
+        type: DataTypes.JSON,
+        allowNull: false,
     },
     Description: {
-        type: DataTypes.STRING
+        type: DataTypes.TEXT('long')
     },
 });
 

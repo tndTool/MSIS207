@@ -1,5 +1,6 @@
 import User from "../models/user.js";
 import nodemailer from "nodemailer"
+import { where } from "sequelize";
 
 const transporter = nodemailer.createTransport({
     service:"gmail",
@@ -25,7 +26,6 @@ export const updateUser = async (req, res) => {
             )
         const result = await User.findAll({raw: true});
         const {Password, ...other} = result[0];
-        console.log(other)
         res.status(200).send(other);
     } catch (error) {
         res.status(400).send(error);
@@ -34,7 +34,7 @@ export const updateUser = async (req, res) => {
 
   export const sendPasswordLink = async (req, res) => {
     const email = req.body.email;
-        const existingEmail = await User.findOne({Email: email});
+        const existingEmail = await User.findOne({where:{Email: email}}, {raw: true});
         if(existingEmail){
             const mailOptions = {
                 from: "tranluongtiensi@gmail.com", // sender address
@@ -82,4 +82,14 @@ export const updateUser = async (req, res) => {
         } else {
         res.status(400).json("Email not found");
     }
-} 
+};
+
+
+export const getUsers = async (req, res) => {
+    try {
+        const result = await User.findAll({raw: true})
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Helmet from '~/components/Main/Helmet';
 import Section, { SectionBody, SectionTitle } from '~/components/Main/Section';
@@ -6,19 +6,29 @@ import Grid from '~/components/Main/Grid';
 import ProductCard from '~/components/Main/ProductCard';
 import ProductView from '~/components/Main/ProductView';
 
-import productData from '~/assets/fake-data/products';
+import request from '../../utils/request';
 
 const ProductsAll = (props) => {
-    const product = productData.getProductBySlug(props.match.params.slug);
+    
+    const [relatedProducts, setRelatedProducts] = useState([]);
+    const product = relatedProducts.find((e) => e.Slug === props.match.params.slug);
 
-    const relatedProducts = productData.getProducts(4);
+    useEffect(() => {
+        async function fetchData() {
+            console.log('tranluongtiensi')
+            const {data} = await request.get('/product/getAll');
+            
+            setRelatedProducts(data)
+        }
+        fetchData();
+    },[]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [product]);
 
     return (
-        <Helmet title={product.title}>
+        <Helmet title={product}>
             <Section>
                 <SectionBody>
                     <ProductView product={product} />
@@ -32,11 +42,11 @@ const ProductsAll = (props) => {
                         {relatedProducts.map((item, index) => (
                             <ProductCard
                                 key={index}
-                                img01={item.image01}
-                                img02={item.image02}
-                                name={item.title}
-                                price={Number(item.price)}
-                                slug={item.slug}
+                                img01={item.Image01}
+                                img02={item.Image02}
+                                name={item.Title}
+                                price={Number(item.Price)}
+                                slug={item.Slug}
                             />
                         ))}
                     </Grid>

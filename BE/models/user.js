@@ -31,6 +31,9 @@ const User = db.define('User', {
       Lastname: {
         type: DataTypes.STRING
       },
+      Address: {
+        type: DataTypes.STRING
+      }
     },{
       timestamps: false
     });

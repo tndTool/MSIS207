@@ -40,14 +40,20 @@ import Checkout from '~/pages/Pay/Checkout';
 import CheckoutView from '~/pages/Pay/CheckoutView';
 
 import ProductsAll from '~/pages/Products/productsAll';
+import { useSelector } from 'react-redux';
 
 const Routes = () => {
+    const userLogin = useSelector((state) => state.userLogin)
+    const {userInfo} = userLogin
     return (
         <Switch>
+
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/forgotpassword" component={ForgotPassword} />
 
+            {userInfo ? ( userInfo.isAdmin ? (
+            <>
             <Route path="/admin" exact component={Admin} />
             <Route path="/admin/employee" exact component={Employee} />
             <Route path="/admin/products" exact component={Products} />
@@ -60,6 +66,7 @@ const Routes = () => {
             <Route path="/admin/employee/update" component={EmployeeUpdateItem} />
             <Route path="/admin/products/update" component={ProductsUpdateItem} />
             <Route path="/admin/accounts/update" component={AccountsUpdateItem} />
+            </> ): null) : null }
 
             <Route path="/" exact component={Home} />
             <Route path="/top" component={Top} />
@@ -80,7 +87,7 @@ const Routes = () => {
             <Route path="/checkout" exact component={Checkout} />
             <Route path="/checkout/view" component={CheckoutView} />
 
-            <Route path="/:slug" component={ProductsAll} />
+            <Route path="/:slug" component={ProductsAll} /> 
         </Switch>
     );
 };

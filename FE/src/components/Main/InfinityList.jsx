@@ -57,11 +57,11 @@ const InfinityList = (props) => {
                 {data.map((item, index) => (
                     <ProductCard
                         key={index}
-                        img01={item.image01}
-                        img02={item.image02}
-                        name={item.title}
-                        price={Number(item.price)}
-                        slug={item.slug}
+                        img01={item.Image01}
+                        img02={item.Image02}
+                        name={item.Title}
+                        price={Number(item.Price)}
+                        slug={item.Slug}
                     />
                 ))}
             </Grid>

@@ -4,7 +4,7 @@ const Table = (props) => {
     const initDataShow = props.limit && props.bodyData ? props.bodyData.slice(0, Number(props.limit)) : props.bodyData;
 
     const [dataShow, setDataShow] = useState(initDataShow);
-
+    
     let pages = 1;
 
     let range = [];
@@ -13,12 +13,15 @@ const Table = (props) => {
         let page = Math.floor(props.bodyData.length / Number(props.limit));
         pages = props.bodyData.length % Number(props.limit) === 0 ? page : page + 1;
         range = [...Array(pages).keys()];
+        console.log(pages)
     }
 
     const [currPage, setCurrPage] = useState(0);
+    // console.log(currPage)
 
     const selectPage = (page) => {
         const start = Number(props.limit) * page;
+
         const end = start + Number(props.limit);
 
         setDataShow(props.bodyData.slice(start, end));

@@ -11,8 +11,14 @@ const productListSlice = createSlice({
         listFail: (state, action) => {
             return state = {error: action.payload};
         },
+        deleteSuccess: (state, action) => {
+            return state = {product: action.payload};
+        },
+        deleteFail: (state, action) => {
+            return state = {error: action.payload};
+        },
     },
 });
 
-export const {listSuccess, listFail} = productListSlice.actions;
+export const {listSuccess, listFail, deleteSuccess, deleteFail} = productListSlice.actions;
 export default productListSlice.reducer;

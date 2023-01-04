@@ -1,43 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import Table from '../components/table/Table';
 import Sidebar from '../components/sidebar/Sidebar';
 import Helmet from '~/components/Main/Helmet';
 
-import accountsList from '../JSON/accounts-list.json';
 import Button from '~/components/Main/Button';
+import request from '../../utils/request';
 
-const customerTableHead = ['Id', 'Username', 'Email', 'Password', 'Role', 'Actions'];
-
-const renderHead = (item, index) => <th key={index}>{item}</th>;
-
-const renderBody = (item, index) => (
-    <tr key={index}>
-        <td>{item.id}</td>
-        <td>{item.username}</td>
-        <td>{item.email}</td>
-        <td>{item.password}</td>
-        <td>
-            <select>
-                <option value="0">Admin</option>
-                <option value="1">User</option>
-            </select>
-        </td>
-        <td>
-            <Link to="/admin/accounts/update">
-                <Button size="sm">
-                    <i className="bx bxs-pencil"></i>
-                </Button>
-            </Link>
-            <Button size="sm">
-                <i className="bx bxs-trash"></i>
-            </Button>
-        </td>
-    </tr>
-);
 
 const Accounts = () => {
+
+    const [user, setUser] = useState([]);
+    
+    useEffect(() => {
+        async function fetchData() {
+            const {data} = await request.get('/users/getUsers');
+            setUser(data)
+        }
+        fetchData();
+    },[]);
+
     return (
         <Helmet title="Admin">
             <div className="admin-container">
@@ -62,13 +44,50 @@ const Accounts = () => {
                             </div>
                         </div>
                         <div className="card__body">
-                            <Table
-                                limit="10"
-                                headData={customerTableHead}
-                                renderHead={(item, index) => renderHead(item, index)}
-                                bodyData={accountsList}
-                                renderBody={(item, index) => renderBody(item, index)}
-                            />
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Address</th>
+                                        <th>Role</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {user.map((item) => (
+                                    <tr>
+                                        <td>{item.id}</td>
+                                        <td>{item.Name}</td>
+                                        <td>{item.Email}</td>
+                                        <td>{item.Address}</td>
+                                        <td>
+                                        {!item.isAdmin ?
+                                        <select>
+                                            <option value="0">User</option>
+                                            <option value="1">Admin</option>
+                                        </select>
+                                        :
+                                        <select>
+                                            <option value="0">Admin</option>
+                                            <option value="1">User</option>
+                                        </select>}
+                                        </td>
+                                        <td>
+                                            <Link to="/admin/accounts/update">
+                                                <Button size="sm">
+                                                <i class='bx bxs-show'></i>
+                                                </Button>
+                                            </Link>
+                                            <Button size="sm">
+                                                <i className="bx bxs-trash"></i>
+                                            </Button>
+                                        </td>
+                                    </tr>
+                                    ))}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
