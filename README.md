@@ -31,7 +31,7 @@
 
 Tech stack
 - Front-end: ⚛️Reactjs
-- Back-end: 💻Nodejs + MongoDB
+- Back-end: 💻Nodejs + MongoDB or MySQL
 
 =======
 
