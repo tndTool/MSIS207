@@ -11,6 +11,7 @@ import homeRouters from "./routers/home.js";
 import outwearRouters from "./routers/outwear.js";
 import billRouters from "./routers/bill.js";
 import productRouter from "./routers/products.js";
+import employeeRouter from "./routers/employee.js"
 
 
 const app = express();
@@ -29,6 +30,7 @@ app.use("/api/auth", authRouters);
 app.use("/api/users", userRouters);
 app.use("/api/bill", billRouters);
 app.use("/api/product", productRouter);
+app.use("/api/employee", employeeRouter);
 app.use(express.static('./public/docs/'))
 
 

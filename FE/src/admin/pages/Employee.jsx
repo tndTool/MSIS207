@@ -1,40 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import Table from '../components/table/Table';
 import Sidebar from '../components/sidebar/Sidebar';
 import Helmet from '~/components/Main/Helmet';
 
-import employeeList from '../JSON/employee-list.json';
 import Button from '~/components/Main/Button';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteEmployee, getEmployee } from '../../action/employeeAction';
+import moment from 'moment/moment';
 
-const customerTableHead = ['Id', 'Name', 'Gender', 'Birthday', 'Phone', 'Email', 'Address', 'Actions'];
 
-const renderHead = (item, index) => <th key={index}>{item}</th>;
-
-const renderBody = (item, index) => (
-    <tr key={index}>
-        <td>{item.id}</td>
-        <td>{item.name}</td>
-        <td>{item.gender}</td>
-        <td>{item.birthday}</td>
-        <td>{item.phone}</td>
-        <td>{item.email}</td>
-        <td>{item.address}</td>
-        <td>
-            <Link to="/admin/employee/update">
-                <Button size="sm">
-                    <i className="bx bxs-pencil"></i>
-                </Button>
-            </Link>
-            <Button size="sm">
-                <i className="bx bxs-trash"></i>
-            </Button>
-        </td>
-    </tr>
-);
 
 const Employee = () => {
+
+    const {employee} = useSelector((state) => state.employeeList)
+    const dispatch = useDispatch();
+
+    const handleDelete = (id) => {
+        dispatch(deleteEmployee({id}));
+    }
+
+    useEffect(() => {
+        dispatch(getEmployee())
+    },[dispatch])
+
     return (
         <Helmet title="Admin">
             <div className="admin-container">
@@ -59,13 +48,43 @@ const Employee = () => {
                             </div>
                         </div>
                         <div className="card__body">
-                            <Table
-                                limit="10"
-                                headData={customerTableHead}
-                                renderHead={(item, index) => renderHead(item, index)}
-                                bodyData={employeeList}
-                                renderBody={(item, index) => renderBody(item, index)}
-                            />
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>Birthday</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
+                                        <th>Address</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {employee?.map((item) => (
+                                    <tr>
+                                        <td>{item.id}</td>
+                                        <td>{item.Name}</td>
+                                        <td>{item.Gender}</td>
+                                        <td>{moment(item.Birthday).format('DD/MM/YYYY')}</td>
+                                        <td>{item.Phone}</td>
+                                        <td>{item.Email}</td>
+                                        <td>{item.Address}</td>
+                                        <td>
+                                            <Link to="/admin/employee/update">
+                                                <Button size="sm">
+                                                    <i className="bx bxs-pencil"></i>
+                                                </Button>
+                                            </Link>
+                                            <Button onClick = {() => handleDelete(item.id)}size="sm">
+                                                <i className="bx bxs-trash"></i>
+                                            </Button>
+                                        </td>
+                                    </tr>
+                                    ))};
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

@@ -5,20 +5,30 @@ const productListSlice = createSlice({
     name: 'product',
     initialState: {},
     reducers: {
+        //GET ALL PRODUCT
         listSuccess: (state, action) => {
-            return state = {product: action.payload};
+            state.product = action.payload;
         },
         listFail: (state, action) => {
-            return state = {error: action.payload};
+            state.error = action.payload;
         },
+
+        // DETETE
         deleteSuccess: (state, action) => {
-            return state = {product: action.payload};
+            state.product = action.payload;
         },
         deleteFail: (state, action) => {
-            return state = {error: action.payload};
+            state.error = action.payload;
+        },
+        // ADD
+        addSuccess: (state, action) => {
+            state.product = action.payload;
+        },
+        addFail: (state, action) => {
+            state.error = action.payload;
         },
     },
 });
 
-export const {listSuccess, listFail, deleteSuccess, deleteFail} = productListSlice.actions;
+export const {listSuccess, listFail, deleteSuccess, deleteFail, addSuccess, addFail} = productListSlice.actions;
 export default productListSlice.reducer;

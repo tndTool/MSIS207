@@ -14,7 +14,7 @@ const Products = () => {
     const dispatch = useDispatch();
 
     const handleDelete = (id) => {
-        dispatch(deleteProduct(id));
+        dispatch(deleteProduct({id}));
     }
 
     useEffect(() => {
