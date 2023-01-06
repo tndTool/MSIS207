@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Sidebar from '../components/sidebar/Sidebar';
 import Helmet from '~/components/Main/Helmet';
+import Pagination from '../components/table/Pagination';
 
 import Button from '~/components/Main/Button';
 import { Link } from 'react-router-dom';
@@ -11,6 +12,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Products = () => {
     const {product} = useSelector((state) => state.productList)
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postPerPage] = useState(6);
     const dispatch = useDispatch();
 
     const handleDelete = (id) => {
@@ -20,6 +23,13 @@ const Products = () => {
     useEffect(() => {
         dispatch(listProduct())
     },[dispatch])
+
+    // GET current posts
+    const indexOfLastPost = currentPage * postPerPage;
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
+    
+    // CHANGE PAGE
+    const paginate = pageNumber => setCurrentPage(pageNumber);
     return (
         <Helmet title="Admin">
             <div className="admin-container">
@@ -43,7 +53,8 @@ const Products = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="card__body">
+                        
+                        <div className="table-wrapper">
                            <table>
                                 <thead>
                                     <tr>
@@ -62,25 +73,22 @@ const Products = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {product?.map((item) => (
+                                    {product?.slice(indexOfFirstPost, indexOfLastPost).map((item) => (
                                     <tr>
                                         <td>{item.id}</td>
                                         <td>{item.Title}</td>
                                         <td>{item.Price}</td>
-                                        <td>{item.Image01}</td>
-                                        <td>{item.Image02}</td>
-                                        <td>{item.CategorySlug}</td>
+                                        <td><img src={item.Image01} alt="#"/></td>
+                                        <td><img src={item.Image02} alt="#"/></td>
                                         <td>{item.Colors}</td>
                                         <td>{item.Slug}</td>
                                         <td>{item.Size}</td>
                                         <td>{item.Description}</td>
                                         <td>{item.Category}</td>
                                         <td>
-                                            <Link to="/admin/products/update">
-                                                <Button size="sm">
+                                            <Button size="sm">
                                                 <i class='bx bxs-pencil'></i>
-                                                </Button>
-                                            </Link>
+                                            </Button>
                                             <Button size="sm" onClick = {() => handleDelete(item.id)}>
                                                 <i className="bx bxs-trash"></i>
                                             </Button>
@@ -90,6 +98,11 @@ const Products = () => {
                                 </tbody>
                            </table>
                         </div>
+                        <Pagination 
+                            postPerPage={postPerPage}
+                            totalPost={product?.length}
+                            paginate={paginate}
+                        />
                     </div>
                 </div>
             </div>

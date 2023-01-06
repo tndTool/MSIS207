@@ -2,6 +2,7 @@ import bcrypt from "bcryptjs";
 import User from "../models/user.js";
 import jwt from "jsonwebtoken";
 import dotenv from 'dotenv';
+import { where } from "sequelize";
 
 dotenv.config();
 
@@ -29,7 +30,7 @@ export const register = async (req, res) => {
   if (re_password != password) {
     return res.status(402).json("Password not match");
   }
-  const existingEmail = await User.findOne({ Email: email});
+  const existingEmail = await User.findOne({where: { Email: email}});
   
   if (existingEmail) {
     res.status(409).json("email is already in use, please enter another email");

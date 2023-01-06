@@ -1,5 +1,5 @@
 import express from "express";
-import { createBill } from "../controllers/bill.js";
+import { createBill, getAll } from "../controllers/bill.js";
 
 const router = express.Router();
 
@@ -108,5 +108,6 @@ router.post("/checkout", createBill);
      *         "We cannot find an account with that email address"
      *     }
      */
+     router.get("/getall", getAll);
 
 export default router;

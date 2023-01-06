@@ -9,6 +9,7 @@ import userUpdateSlice from './user/userUpdateSlice.js';
 import userCheckoutSlice from './bill/userCheckoutSlice.js';
 import userForgotSlice from './user/userForgotSlice';
 import employeeSlice from './employee/employeeSlice';
+import billsListSlice from './bill/billsListSlice';
 
 const userInfoFromStorage = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null;
 
@@ -27,6 +28,7 @@ export const store = configureStore({
         userCheckout: userCheckoutSlice,
         productList: productListSlice,
         employeeList: employeeSlice,
+        billsList: billsListSlice
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         immutableCheck: false,

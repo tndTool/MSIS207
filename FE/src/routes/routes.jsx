@@ -28,12 +28,14 @@ import Accessories from '~/pages/Home/Accessories';
 
 import Profile from '~/pages/Profile/Profile';
 import Orders from '~/pages/Profile/Orders';
+import InvoiceView from '~/pages/Profile/invoiceView';
 import MyMembership from '~/pages/Profile/MyMembership';
 import Points from '~/pages/Profile/Points';
 import Coupons from '~/pages/Profile/Coupons';
 import Address from '~/pages/Profile/Address';
 import Account from '~/pages/Profile/Account';
 import Logout from '~/pages/Profile/Logout';
+
 
 import Cart from '~/pages/Pay/Cart';
 import Checkout from '~/pages/Pay/Checkout';
@@ -76,12 +78,14 @@ const Routes = () => {
 
             <Route path="/profile" exact component={Profile} />
             <Route path="/profile/orders" component={Orders} />
+            <Route path="/profile/view" component={InvoiceView}/>
             <Route path="/profile/membership" component={MyMembership} />
             <Route path="/profile/points" component={Points} />
             <Route path="/profile/coupons" component={Coupons} />
             <Route path="/profile/address" component={Address} />
             <Route path="/profile/account" component={Account} />
             <Route path="/profile/logout" component={Logout} />
+
 
             <Route path="/cart" component={Cart} />
             <Route path="/checkout" exact component={Checkout} />

@@ -1,7 +1,7 @@
 import db from './database.js';
 import { DataTypes } from 'sequelize';
 
-const Bill = db.define('Bill', {
+const Bill = db.define('bill', {
         billsID: {
             type: DataTypes.STRING,
             allowNull: false,

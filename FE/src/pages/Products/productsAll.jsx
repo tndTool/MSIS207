@@ -15,7 +15,6 @@ const ProductsAll = (props) => {
 
     useEffect(() => {
         async function fetchData() {
-            console.log('tranluongtiensi')
             const {data} = await request.get('/product/getAll');
             
             setRelatedProducts(data)

@@ -9,6 +9,18 @@ export const getEmployee = async (req, res) => {
     }
 };
 
+export const deleteEmployee = async (req, res) => {
+    const id = req.body.id
+    try {
+      await Employee.destroy({where: {id: id}}, {raw: true})
+      const data = await Employee.findAll({raw: true});
+      return res.status(200).send(data);
+    } catch (error) {
+      console.log("error", error)
+      return res.status(400).json(error);
+    }
+  };
+
 export const addEmployee = async (req, res) => {
     const name = req.body.name;
     const gender = req.body.gender;

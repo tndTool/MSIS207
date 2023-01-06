@@ -8,21 +8,17 @@ import { addProduct } from '../../../action/productAction';
 
 const ProductsAddItem = () => {
 
-    const [title, setTitle] = useState('');
-    const [price, setPrice] = useState('');
-    const [image01, setImage01] = useState('');
-    const [image02, setImage02] = useState('');
-    const [categorySlug, setCategorySlug] = useState('');
-    const [colors, setColors] = useState('');
-    const [slug, setSlug] = useState('')
-    const [size, setSize] = useState('');
-    const [category, setCategory] = useState('')
-    const [description, setDescription] = useState('');
+    const [inputs, setInputs] = useState({});
 
     const dispatch = useDispatch();
     
+    const handleChange = (e) => {
+        setInputs((prev) => {
+            return { ...prev, [e.target.name]: e.target.value };
+          });
+    }
     const handleSubmit = () => {
-        dispatch(addProduct( {price, title, image01, image02, categorySlug, colors, slug, size, category, description}))
+        dispatch(addProduct(inputs))
     }
 
 
@@ -40,44 +36,44 @@ const ProductsAddItem = () => {
                             <div className="checkout__left__box__main">
                                 <div className="checkout__left__box__main__left">
                                     <label for="name">Title*</label>
-                                    <input type="text" name="name" onChange={(e) => setTitle(e.target.value)}/>
+                                    <input type="text" name="title" onChange={handleChange}/>
 
                                     <label for="price">Price*</label>
-                                    <input type="text" name="price" onChange={(e) => setPrice(e.target.value)}/>
+                                    <input type="text" name="price" onChange={handleChange}/>
 
                                     <label for="image01">Image01*</label>
-                                    <input type="text" name="image01" onChange={(e) => setImage01(e.target.value)}/>
+                                    <input type="text" name="image01" onChange={handleChange}/>
 
                                     <label for="image02">Image02*</label>
-                                    <input type="text" name="image02" onChange={(e) => setImage02(e.target.value)}/>
+                                    <input type="text" name="image02" onChange={handleChange}/>
 
                                     <label for="categorySlug">CategorySlug*</label>
-                                    <input type="text" name="categorySlug" onChange={(e) => setCategorySlug(e.target.value)}/>
+                                    <input type="text" name="categorySlug" onChange={handleChange}/>
                                 </div>
                                 <div className="checkout__left__box__main__right">
                                     <label for="colors">Colors*</label>
-                                    <input type="text" name="colors" onChange={(e) => setColors(e.target.value)}/>
+                                    <input type="text" name="colors" onChange={handleChange}/>
 
                                     <label for="slug">Slug*</label>
-                                    <input type="text" name="slug" onChange={(e) => setSlug(e.target.value)}/>
+                                    <input type="text" name="slug" onChange={handleChange}/>
 
                                     <label for="size">Size*</label>
-                                    <input type="text" name="size" onChange={(e) => setSize(e.target.value)}/>
+                                    <input type="text" name="size" onChange={handleChange}/>
 
                                     <label for="category">Category*</label>
-                                    <select name="category" onClick={(e) => setCategory(e.target.selectedOptions[0].text)}>
-                                        <option value="0">Chọn</option>
-                                        <option value="1">top</option>
-                                        <option value="2">outwear</option>
-                                        <option value="3">bottoms</option>
-                                        <option value="4">accessories</option>
+                                    <select name="category" onClick={handleChange}>
+                                        <option value="">Chọn</option>
+                                        <option value="top">top</option>
+                                        <option value="outwear">outwear</option>
+                                        <option value="bottoms">bottoms</option>
+                                        <option value="accessories">accessories</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <label for="description">Description*</label>
                         <form>
-                            <textarea onChange={(e) => setDescription(e.target.value)} placeholder="Description..."></textarea>
+                            <textarea name="description" onChange={handleChange} placeholder="Description..."></textarea>
                         </form>
                         <Button onClick={handleSubmit} primary>Lưu thay đổi</Button>
                     </div>
