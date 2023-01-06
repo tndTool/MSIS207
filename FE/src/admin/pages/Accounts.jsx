@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Sidebar from '../components/sidebar/Sidebar';
 import Helmet from '~/components/Main/Helmet';
+import Pagination from '../components/table/Pagination';
 
 import Button from '~/components/Main/Button';
 import request from '../../utils/request';
@@ -10,6 +11,8 @@ import request from '../../utils/request';
 
 const Accounts = () => {
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postPerPage] = useState(8);
     const [user, setUser] = useState([]);
     
     useEffect(() => {
@@ -19,6 +22,13 @@ const Accounts = () => {
         }
         fetchData();
     },[]);
+
+    // GET current posts
+    const indexOfLastPost = currentPage * postPerPage;
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
+    
+    // CHANGE PAGE
+    const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
         <Helmet title="Admin">
@@ -56,7 +66,7 @@ const Accounts = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {user.map((item) => (
+                                    {user.slice(indexOfFirstPost, indexOfLastPost).map((item) => (
                                     <tr>
                                         <td>{item.id}</td>
                                         <td>{item.Name}</td>
@@ -89,6 +99,11 @@ const Accounts = () => {
                                 </tbody>
                             </table>
                         </div>
+                        <Pagination 
+                            postPerPage={postPerPage}
+                            totalPost={user?.length}
+                            paginate={paginate}
+                        />
                     </div>
                 </div>
             </div>

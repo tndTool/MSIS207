@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import db from "./database.js";
 
-const Employee = db.define('Employee', {
+const Employee = db.define('employee', {
       Name: { 
         type: DataTypes.STRING,
         allowNull: false,

@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Sidebar from '../components/sidebar/Sidebar';
 import Helmet from '~/components/Main/Helmet';
+import Pagination from '../components/table/Pagination';
 
 import Button from '~/components/Main/Button';
 import { Link } from 'react-router-dom';
@@ -11,9 +12,12 @@ import moment from 'moment/moment';
 
 
 
+
 const Employee = () => {
 
     const {employee} = useSelector((state) => state.employeeList)
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postPerPage] = useState(8);
     const dispatch = useDispatch();
 
     const handleDelete = (id) => {
@@ -23,6 +27,13 @@ const Employee = () => {
     useEffect(() => {
         dispatch(getEmployee())
     },[dispatch])
+
+    // GET current posts
+    const indexOfLastPost = currentPage * postPerPage;
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
+    
+    // CHANGE PAGE
+    const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
         <Helmet title="Admin">
@@ -47,7 +58,7 @@ const Employee = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="card__body">
+                        <div className="table-wrapper">
                             <table>
                                 <thead>
                                     <tr>
@@ -62,7 +73,7 @@ const Employee = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {employee?.map((item) => (
+                                    {employee?.slice(indexOfFirstPost, indexOfLastPost).map((item) => (
                                     <tr>
                                         <td>{item.id}</td>
                                         <td>{item.Name}</td>
@@ -72,20 +83,23 @@ const Employee = () => {
                                         <td>{item.Email}</td>
                                         <td>{item.Address}</td>
                                         <td>
-                                            <Link to="/admin/employee/update">
-                                                <Button size="sm">
-                                                    <i className="bx bxs-pencil"></i>
-                                                </Button>
-                                            </Link>
+                                            <Button size="sm">
+                                                <i className="bx bxs-pencil"></i>
+                                            </Button>
                                             <Button onClick = {() => handleDelete(item.id)}size="sm">
                                                 <i className="bx bxs-trash"></i>
                                             </Button>
                                         </td>
                                     </tr>
-                                    ))};
+                                    ))}
                                 </tbody>
                             </table>
                         </div>
+                        <Pagination 
+                            postPerPage={postPerPage}
+                            totalPost={employee?.length}
+                            paginate={paginate}
+                        />
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import db from "./database.js";
 
 
-const policy = db.define("Policy", {
+const policy = db.define("policy", {
   name: { type: DataTypes.STRING },
   description: { type: DataTypes.STRING },
   icon: { type: DataTypes.STRING },

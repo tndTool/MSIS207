@@ -10,6 +10,7 @@ export const createBill = async (req, res) => {
     const street = req.body.street;
     const total = req.body.totalPrice;
     const BillID = Date.now();
+    const ProductName = req.body.productName;
     //check if input is empty
     if(!name || !email || !phone || !city || !district || !ward || !street) {
         return res.status(400).json("Vui lòng điền đầy đủ thông tin");
@@ -26,6 +27,7 @@ export const createBill = async (req, res) => {
             Street: street,
             Total: total,
             Status: "Đang xử lí",
+            Product: ProductName
           });
           try {
             const result = await bill.save()
@@ -34,4 +36,13 @@ export const createBill = async (req, res) => {
             console.log(error);
           }
     }
-}
+};
+
+export const getAll = async (req, res) => {
+  try {
+    const getdata = await Bill.findAll({raw: true});
+    return res.status(200).json(getdata);
+  } catch (error) {
+    return res.status(400).json(error);
+  }
+};

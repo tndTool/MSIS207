@@ -8,17 +8,18 @@ import { addEmployee } from '../../../action/employeeAction';
 
 const EmployeeAddItem = () => {
 
-    const [name, setName] = useState("");
-    const [gender, setGender] = useState("");
-    const [birthday, setBirthday] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [address, setAddress] = useState("");
+    const [inputs, setInputs] = useState({});
 
     const dispatch = useDispatch();
+
+    const handleChange = (e) => {
+        setInputs((prev) => {
+            return { ...prev, [e.target.name]: e.target.value };
+          });
+    }
     
     const handleSubmit = () => {
-        dispatch(addEmployee({name, gender, birthday, email, phone, address}))
+        dispatch(addEmployee(inputs))
     }
 
     return (
@@ -35,28 +36,28 @@ const EmployeeAddItem = () => {
                             <div className="checkout__left__box__main">
                                 <div className="checkout__left__box__main__left">
                                     <label for="name">Name*</label>
-                                    <input type="text" name="name" onChange={(e) => setName(e.target.value)}/>
+                                    <input type="text" name="name" onChange={handleChange}/>
 
                                     <label for="gender">Gender*</label>
-                                    <select name="gender" onClick={(e) => setGender(e.target.selectedOptions[0].text)}>
-                                        <option value="0">Chọn</option>
-                                        <option value="0">Male</option>
-                                        <option value="1">Female</option>
+                                    <select name="gender" onClick={handleChange}>
+                                        <option value="">Chọn</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                     </select>
 
                                     <label for="birthday">Birthday*</label>
-                                    <input type="text" name="birthday" onChange={(e) => setBirthday(e.target.value)}/>
+                                    <input type="text" name="birthday" onChange={handleChange}/>
                                 </div>
 
                                 <div className="checkout__left__box__main__right">
                                     <label for="phone">Phone*</label>
-                                    <input type="text" name="phone" onChange={(e) => setPhone(e.target.value)}/>
+                                    <input type="text" name="phone" onChange={handleChange}/>
 
                                     <label for="email">Email*</label>
-                                    <input type="text" name="email" onChange={(e) => setEmail(e.target.value)}/>
+                                    <input type="text" name="email" onChange={handleChange}/>
 
                                     <label for="address">Address*</label>
-                                    <input type="text" name="address" onChange={(e) => setAddress(e.target.value)}/>
+                                    <input type="text" name="address" onChange={handleChange}/>
                                 </div>
                             </div>
                             <Button onClick={handleSubmit}primary>Lưu thay đổi</Button>

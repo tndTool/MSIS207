@@ -11,7 +11,7 @@ import Button from '~/components/Main/Button';
 import { checkout } from '../../action/billAction';
 import { useHistory } from 'react-router-dom';
 
-const Checkout = () => {
+const InvoiceView = () => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [city, setCity] = useState('');
@@ -24,9 +24,9 @@ const Checkout = () => {
 
     const [cartProducts, setCartProducts] = useState(productData.getCartItemsInfo(cartItems));
 
+    console.log(cartProducts)
 
     const [totalPrice, setTotalPrice] = useState(0);
-    const [productName, setProductName] = useState("");
 
     const history = useHistory();
     const dispatch = useDispatch();
@@ -53,14 +53,13 @@ const Checkout = () => {
           setEmail(userInfo.Email);
           if(userInfo.Firstname && userInfo.Lastname){
           setName(userInfo.Firstname + " " + userInfo.Lastname)
-          setProductName(cartProducts[0].product.title)
           };
         };
 
-    }, [history, userInfo, cartProducts]);
+    }, [history, userInfo]);
 
     const handleSubmit = () => {
-        dispatch(checkout({ name, phone, email, city, district, ward, street, totalPrice, productName }));
+        dispatch(checkout({ name, phone, email, city, district, ward, street, totalPrice,  }));
     };
 
     return (
@@ -194,4 +193,4 @@ const Checkout = () => {
     );
 };
 
-export default Checkout;
+export default InvoiceView;

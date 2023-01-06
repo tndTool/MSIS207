@@ -36,14 +36,14 @@ const Orders = () => {
                             <tbody>
                                 {bill ?
                                 (<tr>
-                                    <td>#1</td>
+                                    <td>#{bill.billsID}</td>
                                     <td>{moment(JSON.parse(bill.billsID)).format('DD/MM/YYYY')}</td>
                                     <td>{bill.Status}</td>
                                     <td>{bill.Total} </td>
                                     <td>
                                         <span>
-                                            <Link to="#">
-                                                <Button to="/" size="sm">
+                                            <Link to="/profile/view">
+                                                <Button size="sm">
                                                     Hóa đơn
                                                 </Button>
                                             </Link>

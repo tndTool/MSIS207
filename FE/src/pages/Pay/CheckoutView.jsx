@@ -27,7 +27,7 @@ const CheckoutView = () => {
         );
     }, [cartItems]);
     const handleSubmit = () => {
-        localStorage.removeItem("cartItems");
+        // localStorage.removeItem("cartItems");
         window.location.href = '/';
     }
 
