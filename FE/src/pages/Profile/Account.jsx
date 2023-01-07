@@ -30,7 +30,6 @@ const Account = () => {
     const handleSubmit = () => {
         try {
             dispatch(updateInfo({ firstName, lastName, id}));
-            window.location.reload(false)
         } catch (error) {
             console.log(error);
         }
