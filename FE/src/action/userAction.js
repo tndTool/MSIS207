@@ -27,6 +27,7 @@ export const updateInfo = (inputs) => async (dispatch) => {
         const {data} = await request.post('/users/updateuser', inputs);
         dispatch(updateSuccess(data));
         localStorage.setItem('userInfo', JSON.stringify(data));
+        window.location.reload(false)
     } catch (error) {
         console.log(error);
     }
