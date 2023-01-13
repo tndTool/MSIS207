@@ -80,6 +80,7 @@ const Products = () => {
                                         <td>{item.Price}</td>
                                         <td><img src={item.Image01} alt="#"/></td>
                                         <td><img src={item.Image02} alt="#"/></td>
+                                        <td>{item.CategorySlug}</td>
                                         <td>{item.Colors}</td>
                                         <td>{item.Slug}</td>
                                         <td>{item.Size}</td>
