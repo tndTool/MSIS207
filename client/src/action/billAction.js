@@ -4,7 +4,7 @@ import request from '../utils/request';
 
 export const checkout = (inputs) => async (dispatch) => {
     try {
-        console.log(inputs)
+        console.log(inputs);
         const { data } = await request.post('/bill/checkout', inputs);
         localStorage.setItem('bill', JSON.stringify(data));
         dispatch(checkoutSuccess(data));
@@ -16,8 +16,8 @@ export const checkout = (inputs) => async (dispatch) => {
 
 export const listBills = () => async (dispatch) => {
     try {
-       const {data} = await request.get('/bill/getAll');
-       dispatch(listSuccess(data));
+        const { data } = await request.get('/bill/getAll');
+        dispatch(listSuccess(data));
     } catch (error) {
         dispatch(listFail(error.response.data));
     }
