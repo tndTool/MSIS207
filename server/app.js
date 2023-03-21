@@ -12,6 +12,7 @@ import outwearRouters from "./routers/outwear.js";
 import billRouters from "./routers/bill.js";
 import productRouter from "./routers/products.js";
 import employeeRouter from "./routers/employee.js";
+import mongoose from "mongoose";
 
 const app = express();
 const port = 8800;
@@ -31,6 +32,13 @@ app.use("/api/bill", billRouters);
 app.use("/api/product", productRouter);
 app.use("/api/employee", employeeRouter);
 app.use(express.static("./public/docs/"));
+
+try {
+  mongoose.connect("mongodb+srv://dop:Tiensi1408@dop.xzl7rjj.mongodb.net/webdev");
+  console.log("database connected")
+} catch (error) {
+  console.log(error);
+}
 
 app.listen(port, () => {
   console.log(`app listening at port http://localhost:${port}`);

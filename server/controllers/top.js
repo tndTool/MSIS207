@@ -1,4 +1,4 @@
-import { topCategory, topColor, topSize } from "../models/webDB.js";
+import { topCategory, topColor, topSize } from "../model/webDB.js";
 
 export const addTopCategory = async (req, res) => {
     const topCag = req.body;

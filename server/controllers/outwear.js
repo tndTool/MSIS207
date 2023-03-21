@@ -1,4 +1,4 @@
-import { outwearCategory, outwearColor, outwearSize } from "../models/webDB.js";
+import { outwearCategory, outwearColor, outwearSize } from "../model/webDB.js";
 
 export const addOutwearCategory = async(req, res) => {
     const outwearCag = req.body;

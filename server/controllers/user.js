@@ -1,48 +1,47 @@
-import User from "../models/user.js";
-import nodemailer from "nodemailer"
-import { where } from "sequelize";
+import User from '../model/user.js';
+import nodemailer from 'nodemailer';
+import { where } from 'sequelize';
 
 const transporter = nodemailer.createTransport({
-    service:"gmail",
+    service: 'gmail',
     auth: {
-      user: "tranluongtiensi@gmail.com",
-      pass: "vcobnhmpqjcnztov",
+        user: 'tranluongtiensi@gmail.com',
+        pass: 'vcobnhmpqjcnztov',
     },
-  });
+});
 
 export const updateUser = async (req, res) => {
     const firstname = req.body.firstName;
-    const lastname =  req.body.lastName;
+    const lastname = req.body.lastName;
     const id = req.body.id;
     try {
         await User.update(
             {
-                Firstname: firstname, 
-                Lastname: lastname
+                Firstname: firstname,
+                Lastname: lastname,
             },
             {
-                where: {id}
-            }
-            )
-        const result = await User.findAll({raw: true});
-        const {Password, ...other} = result[0];
+                where: { id },
+            },
+        );
+        const result = await User.findAll({ raw: true });
+        const { Password, ...other } = result[0];
         res.status(200).send(other);
     } catch (error) {
         res.status(400).send(error);
     }
-  }
+};
 
-  export const sendPasswordLink = async (req, res) => {
+export const sendPasswordLink = async (req, res) => {
     const email = req.body.email;
-        const existingEmail = await User.findOne({where:{Email: email}}, {raw: true});
-        if(existingEmail){
-            const mailOptions = {
-                from: "tranluongtiensi@gmail.com", // sender address
+    const existingEmail = await User.findOne({ where: { Email: email } }, { raw: true });
+    if (existingEmail) {
+        const mailOptions = {
+            from: 'tranluongtiensi@gmail.com', // sender address
             to: email, // list of receivers
-            subject: "Password Reset Request for Taturoshop", // Subject line
+            subject: 'Password Reset Request for Taturoshop', // Subject line
             text: `Hello ${existingEmail.Lastname},`,
-            html: 
-            `<!DOCTYPE html>
+            html: `<!DOCTYPE html>
             <html lang="en">
             <head>
                 <meta charset="UTF-8">
@@ -69,27 +68,26 @@ export const updateUser = async (req, res) => {
                 </div>
             </body>
             </html>`,
+        };
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log('error', error);
+                res.status(400).json({ message: 'email not send' });
+            } else {
+                console.log('email sent', info.response);
+                res.status(200).json(info.response);
             }
-            transporter.sendMail(mailOptions, (error, info) => {
-                if(error){
-                console.log("error", error);
-                res.status(400).json({message: "email not send"})
-                } else {
-                    console.log("email sent", info.response);
-                    res.status(200).json(info.response);
-                }
-            })
-        } else {
-        res.status(400).json("Email not found");
+        });
+    } else {
+        res.status(400).json('Email not found');
     }
 };
 
-
 export const getUsers = async (req, res) => {
     try {
-        const result = await User.findAll({raw: true})
+        const result = await User.findAll({ raw: true });
         res.status(200).json(result);
     } catch (error) {
         console.log(error);
     }
-}
+};

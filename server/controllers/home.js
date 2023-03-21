@@ -1,20 +1,24 @@
-import { homeSliderData, policy } from "../models/webDB.js";
+import { homeSliderData, policy } from "../model/webDB.js";
 
 export const addPolicy = async (req, res) => {
     const policyDB = req.body;
     try {
         const result = await policy.create(policyDB, {raw: true});
+
         res.status(200).send(result);
     } catch (error) {
+        console.log("huhuh")
         res.status(500).send(error);
     }
 }
 
 export const getPolicy = async (req, res) => {
     try {
+        
         const result = await policy.findAll({raw: true});
         res.status(200).send(result);
     } catch (error) {
+        console.log("keke")
         res.status(500).send(error);
     }
 }

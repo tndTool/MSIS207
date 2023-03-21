@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import User from "../models/user.js";
+import User from "../model/user.js";
 import jwt from "jsonwebtoken";
 import dotenv from 'dotenv';
 import { where } from "sequelize";

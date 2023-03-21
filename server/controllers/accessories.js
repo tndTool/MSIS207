@@ -1,4 +1,4 @@
-import { accessoriesCategory, accessoriesColor, accessoriesSize } from "../models/webDB.js";
+import { accessoriesCategory, accessoriesColor, accessoriesSize } from "../model/webDB.js";
 
 export const addAccessoriesCategory = async (req, res) => {
     const accessoriesCag = req.body;

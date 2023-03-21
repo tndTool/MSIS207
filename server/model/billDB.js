@@ -60,9 +60,6 @@ const Bill = new Schema({
     {
         timestamps: true,
     },
-    {
-
-    }
 );
 
 export default mongoose.model("Bill", Bill);

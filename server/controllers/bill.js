@@ -1,4 +1,4 @@
-import Bill from "../models/billDB.js";
+import Bill from "../model/billDB.js";
 
 export const createBill = async (req, res) => {
     const name = req.body.name;
